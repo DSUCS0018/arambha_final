@@ -3,38 +3,38 @@ import { motion } from "motion/react";
 import { Check, School, BadgeCheck, Briefcase, RotateCcw, Star, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-import heroBg        from "../assets/services/hero-bg.png";
-import skillCertImg  from "../assets/services/skill-certification.jpg";
-import manpowerImg   from "../assets/services/manpower-solutions.jpg";
-import admissionImg  from "../assets/services/admission-support.jpg";
-import trainingImg   from "../assets/services/training-workforce.jpg";
-import placementImg  from "../assets/services/placement-assistance.jpg";
+import hero1 from "../assets/services/hero1.png";
+import skillCertImg from "../assets/services/skill-certification.jpg";
+import manpowerImg from "../assets/services/manpower-solutions.jpg";
+import admissionImg from "../assets/services/admission-support.jpg";
+import trainingImg from "../assets/services/training-workforce.jpg";
+import placementImg from "../assets/services/placement-assistance.jpg";
 import liveProjectImg from "../assets/services/live-projects.jpg";
 import "./Services.css";
 
 const SERVICES_DATA = [
-  { title: "Skill Certification",                   description: "We offer industry-relevant courses and upskilling programs designed to enhance knowledge and employability. Learners receive recognized certifications upon successful completion.", image: skillCertImg },
-  { title: "Manpower Solutions for Companies",      description: "We provide skilled and job-ready candidates to meet the manpower requirements of various organizations across industries, ensuring the right talent for the right role.",      image: manpowerImg },
-  { title: "Admission Support for Colleges & Learners", description: "We assist students and institutions with seamless admission processes, helping learners choose the right courses and colleges for their career growth.",               image: admissionImg },
-  { title: "Training for Skilled & Unskilled Workforce", description: "We deliver practical training programs for both skilled and unskilled individuals, focusing on job readiness, productivity, and career development.",             image: trainingImg },
-  { title: "Placement Assistance & Career Support", description: "We support learners with placement opportunities, interview preparation, and career guidance to help them secure suitable jobs.",                                           image: placementImg },
-  { title: "Live Projects & Industry-Driven Learning", description: "Get hands-on experience by working on real-time projects under the guidance of industry experts. Build practical skills and become job-ready with confidence.",         image: liveProjectImg },
+  { title: "Skill Certification", description: "We offer industry-relevant courses and upskilling programs designed to enhance knowledge and employability. Learners receive recognized certifications upon successful completion.", image: skillCertImg },
+  { title: "Manpower Solutions for Companies", description: "We provide skilled and job-ready candidates to meet the manpower requirements of various organizations across industries, ensuring the right talent for the right role.", image: manpowerImg },
+  { title: "Admission Support for Colleges & Learners", description: "We assist students and institutions with seamless admission processes, helping learners choose the right courses and colleges for their career growth.", image: admissionImg },
+  { title: "Training for Skilled & Unskilled Workforce", description: "We deliver practical training programs for both skilled and unskilled individuals, focusing on job readiness, productivity, and career development.", image: trainingImg },
+  { title: "Placement Assistance & Career Support", description: "We support learners with placement opportunities, interview preparation, and career guidance to help them secure suitable jobs.", image: placementImg },
+  { title: "Live Projects & Industry-Driven Learning", description: "Get hands-on experience by working on real-time projects under the guidance of industry experts. Build practical skills and become job-ready with confidence.", image: liveProjectImg },
 ];
 
 const TESTIMONIALS = [
-  { text: "The certification program was intense but rewarding. I secured a job within 2 months of completion.",           name: "Rohan Sharma",  role: "Software Developer",   initials: "RS", dark: true  },
-  { text: "Arambha provided me the mentorship I needed to switch careers into Digital Marketing. Truly grateful!",         name: "Priya Verma",   role: "Marketing Specialist", initials: "PV", dark: false },
-  { text: "The live projects were the highlight. Dealing with real client briefs gave me immense confidence.",             name: "Ankit Kapoor",  role: "UI/UX Designer",       initials: "AK", dark: true  },
-  { text: "Flexible learning meant I could study while working my part-time job. Excellent support system!",              name: "Sneha Mehta",   role: "Data Analyst",         initials: "SM", dark: false },
-  { text: "Industry-led sessions helped me understand the latest trends in DevOps that no textbook covers.",              name: "Vikram Jha",    role: "Cloud Engineer",       initials: "VJ", dark: true  },
-  { text: "The resume optimization service changed everything for me. Response rate tripled in two weeks.",               name: "Rahul Das",     role: "Business Analyst",     initials: "RD", dark: false },
-  { text: "Placement support was genuine. They don't just send you links, they prepare you for the room.",                name: "Neha Singh",    role: "HR Executive",         initials: "NS", dark: true  },
-  { text: "Best investment I made for my career. The network you build here is invaluable.",                              name: "Arjun Gupta",   role: "Full Stack Dev",       initials: "AG", dark: false },
+  { text: "The certification program was intense but rewarding. I secured a job within 2 months of completion.", name: "Rohan Sharma", role: "Software Developer", initials: "RS", dark: true },
+  { text: "Arambha provided me the mentorship I needed to switch careers into Digital Marketing. Truly grateful!", name: "Priya Verma", role: "Marketing Specialist", initials: "PV", dark: false },
+  { text: "The live projects were the highlight. Dealing with real client briefs gave me immense confidence.", name: "Ankit Kapoor", role: "UI/UX Designer", initials: "AK", dark: true },
+  { text: "Flexible learning meant I could study while working my part-time job. Excellent support system!", name: "Sneha Mehta", role: "Data Analyst", initials: "SM", dark: false },
+  { text: "Industry-led sessions helped me understand the latest trends in DevOps that no textbook covers.", name: "Vikram Jha", role: "Cloud Engineer", initials: "VJ", dark: true },
+  { text: "The resume optimization service changed everything for me. Response rate tripled in two weeks.", name: "Rahul Das", role: "Business Analyst", initials: "RD", dark: false },
+  { text: "Placement support was genuine. They don't just send you links, they prepare you for the room.", name: "Neha Singh", role: "HR Executive", initials: "NS", dark: true },
+  { text: "Best investment I made for my career. The network you build here is invaluable.", name: "Arjun Gupta", role: "Full Stack Dev", initials: "AG", dark: false },
 ];
 
 export default function Services() {
   const navigate = useNavigate();
-  
+
   return (
     <div className="bg-[#F7F9FB]">
 
@@ -50,32 +50,10 @@ export default function Services() {
               <div className="image-orbit" aria-hidden>
                 <div className="main-card">
                   <img
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b7b2b1f3a3f2d2c2d2a"
-                    alt="Student using laptop"
+                    src={hero1}
+                    alt="E - learning services"
                     className="main-card__img"
                   />
-                </div>
-
-                {/* floating feature cards */}
-                <div className="feature-card fc-1">
-                  <div className="fc-icon">📘</div>
-                  <div className="fc-text">Course & Curriculum<br/>Development</div>
-                </div>
-                <div className="feature-card fc-2">
-                  <div className="fc-icon">💻</div>
-                  <div className="fc-text">E-Learning<br/>Solutions</div>
-                </div>
-                <div className="feature-card fc-3">
-                  <div className="fc-icon">🎓</div>
-                  <div className="fc-text">Certification<br/>Programs</div>
-                </div>
-                <div className="feature-card fc-4">
-                  <div className="fc-icon">🧑‍🏫</div>
-                  <div className="fc-text">Trainer<br/>Support</div>
-                </div>
-                <div className="feature-card fc-5">
-                  <div className="fc-icon">🎧</div>
-                  <div className="fc-text">Student<br/>Support</div>
                 </div>
 
                 {/* svg connectors */}
@@ -85,9 +63,6 @@ export default function Services() {
                 </svg>
 
                 {/* decorative dots */}
-                <span className="dot dot-a" />
-                <span className="dot dot-b" />
-                <span className="dot dot-c" />
               </div>
             </div>
 
@@ -145,10 +120,10 @@ export default function Services() {
 
             <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
-                { Icon: School,    title: "Learn from Industry Experts", desc: "Get trained by professionals with real-world experience.",          delay: 0,    offset: false, neg: false },
-                { Icon: BadgeCheck,title: "Certified Programs",          desc: "Earn certifications that actually matter in the job market.",       delay: 0.1,  offset: true,  neg: false },
-                { Icon: Briefcase, title: "Career Support",              desc: "Resume building, interview prep, and placement guidance.",          delay: 0.2,  offset: false, neg: true  },
-                { Icon: RotateCcw, title: "Live Projects",               desc: "Work on real-world projects to build your portfolio.",             delay: 0.3,  offset: false, neg: false },
+                { Icon: School, title: "Learn from Industry Experts", desc: "Get trained by professionals with real-world experience.", delay: 0, offset: false, neg: false },
+                { Icon: BadgeCheck, title: "Certified Programs", desc: "Earn certifications that actually matter in the job market.", delay: 0.1, offset: true, neg: false },
+                { Icon: Briefcase, title: "Career Support", desc: "Resume building, interview prep, and placement guidance.", delay: 0.2, offset: false, neg: true },
+                { Icon: RotateCcw, title: "Live Projects", desc: "Work on real-world projects to build your portfolio.", delay: 0.3, offset: false, neg: false },
               ].map(({ Icon, title, desc, delay, offset, neg }, i) => (
                 <motion.div
                   key={i}
@@ -202,7 +177,7 @@ export default function Services() {
                   <h3 className="text-xl font-bold text-[#2C4D8A] mb-3" style={{ fontFamily: "'Lora', serif" }}>
                     {service.title}
                   </h3>
-                    <p className="text-[#3A5785] text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>{service.description}</p>
+                  <p className="text-[#3A5785] text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>{service.description}</p>
                 </div>
               </motion.div>
             ))}
