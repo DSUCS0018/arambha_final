@@ -96,7 +96,7 @@ const Hero = () => (
       >
         A Decade of Disruption, Growth & Transformational Impact. We are not just an institution; we are the bridge between potential and excellence.
       </motion.p>
-      <div className="flex flex-wrap gap-12 md:gap-24 justify-end">
+      <div className="flex flex-wrap gap-10 md:gap-16 justify-end max-w-4xl ml-auto">
         <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }} className="flex flex-col items-center text-center">
           <span className="text-4xl md:text-5xl font-black font-display text-primary">50+</span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Industry Programs</span>
@@ -111,13 +111,13 @@ const Hero = () => (
           <span className="text-4xl md:text-5xl font-black font-display text-primary">95%</span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Placement Rate</span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300"></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }} className="flex flex-col items-center text-center">
-          <span className="text-4xl md:text-5xl font-black font-display text-primary">500+</span>
+        <div className="w-px h-16 hidden md:block bg-slate-300 "></div>
+        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }} className="flex flex-col items-center text-center -translate-x-30">
+          <span className="text-4xl md:text-5xl font-black font-display text-primary ml-6">500+</span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Strategic Partnerships</span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300"></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0 }} className="flex flex-col items-center text-center">
+        <div className="w-px h-16 hidden md:block bg-slate-300 -translate-x-34"></div>
+        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0 }} className="flex flex-col items-center text-center -translate-x-40">
           <span className="text-4xl md:text-5xl font-black font-display text-primary">100+</span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Institutional Collaborations</span>
         </motion.div>
@@ -126,28 +126,55 @@ const Hero = () => (
   </section>
 );
 
-const TimelineItem = ({ year, title, description, icon: Icon, subTitle, subDesc, align = 'right' }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    className="relative grid grid-cols-1 md:grid-cols-2 gap-16 mb-32 items-center"
-  >
-    <div className={`${align === 'right' ? 'md:text-right' : 'md:order-2'}`}>
-      <div className="inline-block px-4 py-1.5 bg-accent-gold/10 text-accent-gold font-bold text-sm rounded-lg mb-6">{year}</div>
-      <h3 className="text-headline-md font-display mb-4 text-primary italic">{title}</h3>
-      <p className="text-on-surface-variant leading-relaxed font-inter">{description}</p>
-    </div>
-    <div className={`relative ${align === 'right' ? '' : 'md:order-1'}`}>
-      <div className={`absolute ${align === 'right' ? 'left-0 md:-left-[35px]' : 'right-0 md:-right-[35px]'} top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-accent-gold timeline-dot z-10 hidden md:block`}></div>
-      <div className={`p-8 bg-surface rounded-xl border border-outline-variant hover-lift ${align === 'left' ? 'text-right' : ''}`}>
-        <Icon className="text-4xl text-secondary mb-6 h-10 w-10" />
-        <h4 className="font-bold text-title-lg mb-2 text-primary font-display italic">{subTitle}</h4>
-        <p className="text-on-surface-variant font-inter">{subDesc}</p>
+function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc, align = "right" }) {
+  return (
+    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+      
+      {/* TEXT SIDE (UNCHANGED) */}
+      <div className={align === "left" ? "md:order-2" : "md:text-right"}>
+        <div className="inline-block px-4 py-1.5 bg-accent-gold/10 text-accent-gold font-bold text-sm rounded-lg mb-6">
+          {year}
+        </div>
+
+        <h3 className="text-headline-md font-display mb-4 text-primary italic">
+          {title}
+        </h3>
+
+        <p className="text-on-surface-variant leading-relaxed font-inter">
+          {description}
+        </p>
+      </div>
+
+      {/* BOX SIDE (THIS NOW MATCHES "GOING GLOBAL") */}
+      <div className="relative">
+        
+        {/* CENTER ICON DOT (UNCHANGED) */}
+        <div className="absolute left-0 md:-left-[45px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full brand-gradient-gold text-white flex items-center justify-center border-4 border-white z-10 shadow-lg hidden md:flex">
+          <Icon className="h-5 w-5" />
+        </div>
+
+        {/* 🔥 SAME STYLE AS "GOING GLOBAL" */}
+        <div className="p-10 brand-gradient-navy rounded-2xl border border-white/10 shadow-2xl">
+          
+          <div className="flex flex-col items-center text-center text-white">
+            
+            <Icon className="h-12 w-12 text-secondary mb-6" />
+
+            <h4 className="text-2xl font-bold font-display mb-2 italic">
+              {subTitle}
+            </h4>
+
+            <p className="text-white/80 text-sm leading-relaxed">
+              {subDesc}
+            </p>
+
+          </div>
+
+        </div>
       </div>
     </div>
-  </motion.div>
-);
+  );
+}
 
 const Evolution = () => (
   <section className="py-32 bg-white relative overflow-hidden">

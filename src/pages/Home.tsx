@@ -236,8 +236,8 @@ export default function Home() {
             </div>
             <div className="relative w-full overflow-hidden py-12">
               <div 
-  className="flex whitespace-nowrap items-center py-4 gap-8"
-  style={{ animation: "scroll 2s linear infinite" }}
+  className="flex whitespace-nowrap items-center py-4 gap-8 animate-scroll"
+  style={{ animation: "scroll 1s linear infinite" }}
 >
                 {[
                   { name: 'Netflix', domain: 'netflix.com' },

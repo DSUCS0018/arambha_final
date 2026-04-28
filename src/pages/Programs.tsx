@@ -169,7 +169,7 @@ export default function ProgramsScreen() {
               <img
                 src={heroStudentsImg}
                 alt="Students learning"
-                className="w-full h-auto"
+                className="w-full h-auto -mt-25 -ml-10 [mask-image:linear-gradient(to_right,transparent,black_20%)]"
               />
             </motion.div>
           </div>
