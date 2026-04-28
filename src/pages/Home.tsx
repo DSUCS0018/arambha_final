@@ -1,0 +1,514 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import {
+  ArrowRight,
+  MessageCircle,
+  Globe,
+  Briefcase,
+  CheckCircle2,
+  School,
+  CreditCard,
+  Rocket,
+  RotateCcw,
+  Users,
+  Terminal,
+  Mic2,
+  MessageSquare,
+  TrendingUp,
+  ChevronRight,
+  ShieldCheck,
+  Handshake,
+  Brain,
+  Wallet,
+  Zap
+} from "lucide-react";
+
+import heroBg from "../assets/Hero-Bg.svg";
+import engImg from "../assets/home-english.png";
+
+// Import program images
+import spokenEnglishImg from "../assets/programs/spoken-english-mastery.png";
+import campusToCorporateImg from "../assets/programs/campus-to-corporate.png";
+import fullStackJavaImg from "../assets/programs/full-stack-java.png";
+
+function LogoBox({ alt, domain }: { alt: string, domain: string }) {
+  const iconUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+  
+  return (
+    <div className="flex-shrink-0 px-10 py-6 bg-white border-2 border-slate-100 rounded-2xl shadow-sm flex items-center justify-center min-w-[200px] h-28 hover:border-accent-gold hover:shadow-lg transition-all group">
+      
+      <div className="w-16 h-16 rounded-lg bg-slate-50 flex items-center justify-center group-hover:bg-accent-gold/10 transition-colors shrink-0 overflow-hidden border border-slate-100">
+        
+        <img 
+          src={iconUrl}
+          alt={`${alt} logo`}
+          className="w-12 h-12 object-contain transition-transform group-hover:scale-110"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = `https://ui-avatars.com/api/?name=${alt}&background=transparent&color=1B2B48&bold=true`;
+          }}
+        />
+
+      </div>
+    </div>
+  );
+}
+
+export default function Home() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section
+        className="relative pt-16 sm:pt-24 pb-20 sm:pb-32 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center lg:text-left grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="z-10"
+          >
+            <motion.h1 variants={itemVariants} className="font-serif text-3xl sm:text-5xl md:text-7xl text-primary mb-6 leading-tight font-extrabold">
+              From Learning to <span className="text-accent-gold italic">Earning</span> – Start Your Journey Today.
+            </motion.h1>
+            <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-on-surface-variant mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0 font-sans leading-relaxed">
+              Speak confidently, gain skills, and step into your career. We bridge the gap between where you are and where you want to be with academic excellence.
+            </motion.p>
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-12">
+              <button className="brand-gradient-gold text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base shadow-xl hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                Book a Class
+                <ArrowRight size={18} />
+              </button>
+              <button className="bg-white/90 backdrop-blur-sm border border-outline-variant text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base hover:bg-white transition-all flex items-center justify-center gap-2">
+                <MessageCircle size={18} className="text-accent-gold" />
+                WhatsApp Now
+              </button>
+            </motion.div>
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-left">
+              <div className="flex items-start gap-3">
+                <Globe className="text-accent-gold" size={24} />
+                <div>
+                  <p className="font-bold text-primary">Daily Practice</p>
+                  <p className="text-sm text-on-surface-variant">Native language tailored</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Briefcase className="text-accent-gold" size={24} />
+                <div>
+                  <p className="font-bold text-primary">Live Projects</p>
+                  <p className="text-sm text-on-surface-variant">Real career opportunities</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="text-accent-gold" size={24} />
+                <div>
+                  <p className="font-bold text-primary">Outcome-Driven</p>
+                  <p className="text-sm text-on-surface-variant">Measurable results</p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden lg:block"
+          ></motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 sm:py-16 bg-white border-y border-outline-variant">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 text-center"
+          >
+            <motion.div variants={itemVariants}>
+              <p className="font-serif text-3xl sm:text-5xl text-primary mb-2 font-extrabold">5000+</p>
+              <p className="text-[10px] sm:text-xs text-accent-gold uppercase tracking-widest font-bold">Active Students</p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <p className="font-serif text-3xl sm:text-5xl text-primary mb-2 font-extrabold">30,000+</p>
+              <p className="text-[10px] sm:text-xs text-accent-gold uppercase tracking-widest font-bold">Offline Alumni</p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <p className="font-serif text-3xl sm:text-5xl text-primary mb-2 font-extrabold">100+</p>
+              <p className="text-[10px] sm:text-xs text-accent-gold uppercase tracking-widest font-bold">Hiring Partners</p>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <p className="font-serif text-3xl sm:text-5xl text-primary mb-2 font-extrabold">4.9/5</p>
+              <p className="text-[10px] sm:text-xs text-accent-gold uppercase tracking-widest font-bold">Satisfaction Score</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature Grid Section */}
+      <section className="py-16 sm:py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 sm:gap-12 lg:gap-20">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="lg:w-1/3"
+            >
+              <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold leading-tight">Comprehensive Skill Eco-system</h2>
+              <p className="text-sm sm:text-base text-on-surface-variant font-sans mb-6 sm:mb-8">Everything you need to transform from a student to a professional in a structured, efficient environment.</p>
+              <div className="flex items-center gap-2 text-accent-gold font-bold">
+                <Zap size={20} />
+                <span className="uppercase tracking-wider text-sm">Built for rapid growth</span>
+              </div>
+            </motion.div>
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="lg:w-2/3"
+            >
+              <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+                {[
+                  { icon: School, label: "Skill Training" },
+                  { icon: CreditCard, label: "Certification" },
+                  { icon: Rocket, label: "Career Ready" },
+                  { icon: RotateCcw, label: "Daily Practice" },
+                  { icon: Users, label: "Expert Mentors" },
+                  { icon: Terminal, label: "Live Projects" },
+                  { icon: Mic2, label: "Mock Interviews" },
+                  { icon: MessageSquare, label: "Peer Learning" },
+                  { icon: TrendingUp, label: "Job Outcomes" }
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    variants={itemVariants}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl border border-slate-100 bg-surface/50 hover:bg-white hover:shadow-md transition-all group"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg brand-gradient-gold/10 flex items-center justify-center text-accent-gold">
+                      <item.icon size={18} className="sm:w-5 sm:h-5" />
+                    </div>
+                    <span className="font-semibold text-primary text-xs sm:text-sm">{item.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted By Section */}
+      <section className="py-16 sm:py-24 bg-white border-t border-slate-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-1 items-center">
+            <div className="text-left">
+              <p className="text-[10px] sm:text-xs text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest font-bold">Trusted by Alumni At</p>
+              <h2 className="font-serif text-2xl sm:text-4xl text-primary leading-tight font-bold">
+                Teams speaking at the world's most ambitious <span className="text-accent-gold">companies</span>.
+              </h2>
+            </div>
+            <div className="relative w-full overflow-hidden py-12">
+              <div 
+  className="flex whitespace-nowrap items-center py-4 gap-8"
+  style={{ animation: "scroll 2s linear infinite" }}
+>
+                {[
+                  { name: 'Netflix', domain: 'netflix.com' },
+                  { name: 'Amazon', domain: 'amazon.com' },
+                  { name: 'Cisco', domain: 'cisco.com' },
+                  { name: 'Infosys', domain: 'infosys.com' },
+                  { name: 'Cognizant', domain: 'cognizant.com' },
+                  { name: 'Flipkart', domain: 'flipkart.com' },
+                  { name: 'EY', domain: 'ey.com' },
+                  { name: 'TCS', domain: 'tcs.com' },
+                  { name: 'Capgemini', domain: 'capgemini.com' },
+                  { name: 'Tech Mahindra', domain: 'techmahindra.com' },
+                ].concat([
+                  { name: 'Netflix', domain: 'netflix.com' },
+                  { name: 'Amazon', domain: 'amazon.com' },
+                  { name: 'Cisco', domain: 'cisco.com' },
+                  { name: 'Infosys', domain: 'infosys.com' },
+                  { name: 'Cognizant', domain: 'cognizant.com' },
+                  { name: 'Flipkart', domain: 'flipkart.com' },
+                  { name: 'EY', domain: 'ey.com' },
+                  { name: 'TCS', domain: 'tcs.com' },
+                  { name: 'Capgemini', domain: 'capgemini.com' },
+                  { name: 'Tech Mahindra', domain: 'techmahindra.com' },
+                ]).map((company, i) => (
+                  <LogoBox key={i} alt={company.name} domain={company.domain} />
+                ))}
+              </div>
+              <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-40 h-full bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Program */}
+      <section className="py-16 sm:py-32 bg-white overflow-hidden relative border-y border-slate-100">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold/5 blur-3xl -mr-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-1"
+            >
+              <div className="relative overflow-hidden">
+                <img 
+                  className="w-full aspect-video object-cover" 
+                  src={engImg} 
+                />
+              </div>
+            </motion.div>
+            <div className="order-1 lg:order-2">
+              <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-4 sm:mb-6 font-bold leading-tight">Speak English Confidently Using Your Regional Language</h2>
+              <p className="text-base sm:text-xl mb-6 sm:mb-8 leading-relaxed text-on-surface-variant font-sans">
+                Build strong communication skills using your native language as a bridge. No theory overload — only real-world speaking.
+              </p>
+              <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3].map((_, i) => (
+                    <img
+                      key={i}
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white object-cover shadow-sm"
+                      src={`https://lh3.googleusercontent.com/aida-public/AB6AXuBDTC6EtY5VTVTFA2DQJMWRleZKB0zDDGWNruRWxCQQnpxXj2UhGyBk5wqgEG9FJw98NM1mwqFcNhgWI2BnVYvcqmmPcEQ9DBYDS7lXX-lKkri3FZ3kLzEPNe4f66IlkteGBZwNSAf7HBxAG04ZgevCCBJwWOTcK_RnuPc9Hig3TaSq_75zsoamKSnRX-rh99DvTaxbSlpwAWrNKl7-db_jAh7PVMDrPg2_7DrToe8XqO3tj43iV4sCVXFCaXEAwrCcC_rIVcuFp4E`}
+                    />
+                  ))}
+                </div>
+                <p className="font-bold text-accent-gold text-sm sm:text-base">5000+ learners enrolled</p>
+              </div>
+              <button className="brand-gradient-navy text-white px-6 sm:px-10 py-4 sm:py-5 rounded-2xl font-bold font-serif text-sm sm:text-base shadow-xl hover:brightness-110 transition-all uppercase tracking-wide">
+                Start Speaking Today
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Journey Timeline */}
+      <section className="py-0 sm:py-6 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 sm:mb-20"
+          >
+            <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold">Your Path to Mastery</h2>
+            <p className="text-sm sm:text-base text-on-surface-variant font-sans">A structured evolution from novice to industry-expert.</p>
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative"
+          >
+            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 z-0"></div>
+            {[
+              { title: "Foundation", desc: "Communication basics, confidence building, and native language bridging." },
+              { title: "Skill Training", desc: "Practical English, industry-specific skills, and live hands-on projects." },
+              { title: "Certification", desc: "Globally recognized industry certificates to validate your professional expertise." },
+              { title: "Career Launch", desc: "Placement readiness, mock interviews, and direct hiring partner connections." }
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="relative z-10 bg-white p-3 sm:p-4 text-center md:text-left"
+              >
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-slate-100 rounded-3xl flex items-center justify-center text-primary text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 shadow-md mx-auto md:mx-0 font-serif">{i + 1}</div>
+                <h3 className="text-lg sm:text-xl text-primary mb-2 sm:mb-3 font-serif font-bold">{step.title}</h3>
+                <p className="text-on-surface-variant font-sans text-xs sm:text-sm leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Programs Cards */}
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-4 sm:gap-6"
+          >
+            <div className="max-w-xl">
+              <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold">Our Signature Programs</h2>
+              <p className="text-sm sm:text-base text-on-surface-variant font-sans">Specialized tracks designed for rapid skill acquisition and career results.</p>
+            </div>
+            <Link to="/programs" className="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all pb-2 border-b-2 border-accent-gold group uppercase text-xs sm:text-sm tracking-wider">
+              View All Programs <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
+          >
+            <ProgramCard
+              tag="Popular"
+              category="Spoken English"
+              title="Spoken English Mastery"
+              desc="A structured Spoken English program designed to build fluency, confidence, pronunciation, and real-world communication skills."
+              duration="60 Days"
+              img={spokenEnglishImg}
+            />
+            <ProgramCard
+              tag="Career"
+              tagColor="bg-accent-gold/10 text-accent-gold border-accent-gold/20"
+              category="Job Ready"
+              title="Campus to Corporate Program"
+              desc="Intensive preparation program with mock interviews, resume building, and aptitude training for smooth career transitions."
+              duration="45 Days"
+              img={campusToCorporateImg}
+            />
+            <ProgramCard
+              tag="Technical"
+              tagColor="bg-slate-50 text-on-surface-variant border-slate-200"
+              category="BTech"
+              title="Full Stack Java Developer"
+              desc="Master Java, Spring Boot, React, and MySQL to become a complete Full Stack Developer."
+              duration="6 Months"
+              img={fullStackJavaImg}
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Value Prop Section */}
+      <section className="py-16 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-24 overflow-hidden relative border border-slate-100 shadow-2xl">
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-surface rounded-full blur-[100px]"></div>
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center relative z-10">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl text-primary mb-6 sm:mb-8 font-bold leading-tight">Built for <span className="text-accent-gold italic">outcomes</span>. Not curriculum theatre.</h2>
+                <p className="text-base sm:text-xl text-on-surface-variant mb-8 sm:mb-12 font-sans leading-relaxed">
+                  We don't just teach modules; we build careers. Our methodology focuses on the specific gaps that keep talented individuals from reaching their full professional potential.
+                </p>
+                <button className="brand-gradient-navy text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold font-serif text-sm sm:text-base shadow-lg hover:brightness-110 transition-all uppercase tracking-widest">
+                  Learn More About Us
+                </button>
+              </motion.div>
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+              >
+                <ValueCard icon={ShieldCheck} title="Certifications" text="Validated skills for your resume." />
+                <ValueCard icon={Handshake} title="Hands-on" text="Learn by doing, not just watching." />
+                <ValueCard icon={Brain} title="Mentorship" text="Direct access to industry pros." />
+                <ValueCard icon={Wallet} title="Placement" text="Direct leads and support." />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+
+function LogoItem({ alt, src }: { alt: string, src: string }) {
+  return (
+    <img 
+      alt={alt} 
+      className="h-8 md:h-10 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform" 
+      src={src} 
+      referrerPolicy="no-referrer"
+    />
+  );
+}
+
+function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg-slate-100 text-primary border-slate-200" }: { tag: string, category?: string, title: string, desc: string, duration: string, img: string, tagColor?: string }) {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      whileHover={{ y: -8 }}
+      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-slate-100"
+    >
+      <div className="h-64 overflow-hidden relative">
+        <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img} alt={title} />
+      </div>
+      <div className="p-8">
+        <div className="mb-3 flex items-center gap-2">
+          <span className={`${tagColor} px-3 py-1 rounded-md text-[10px] font-bold uppercase inline-block border`}>{tag}</span>
+          {category && (
+            <span className="text-[10px] text-on-surface-variant font-semibold uppercase tracking-wider">• {category}</span>
+          )}
+        </div>
+        <h3 className="text-xl text-primary mb-2 font-serif font-bold group-hover:text-accent-gold transition-colors">{title}</h3>
+        <p className="text-on-surface-variant mb-6 font-sans text-sm leading-relaxed line-clamp-3">{desc}</p>
+        <div className="flex items-center justify-between pt-6 border-t border-slate-100 text-sm">
+          <span className="font-bold text-primary font-serif uppercase tracking-wider">{duration}</span>
+          <div className="bg-surface p-1 rounded-full group-hover:bg-accent-gold group-hover:text-white transition-colors">
+            <ChevronRight size={20} />
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function ValueCard({ icon: Icon, title, text }: { icon: any, title: string, text: string }) {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <motion.div
+      variants={itemVariants}
+      className="bg-surface p-4 sm:p-6 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl transition-all group cursor-default"
+    >
+      <Icon className="text-accent-gold mb-3 sm:mb-4 group-hover:scale-110 transition-transform" size={28} strokeWidth={1.5} />
+      <h4 className="font-bold text-primary mb-2 text-xs sm:text-sm uppercase tracking-wide font-serif">{title}</h4>
+      <p className="text-[11px] sm:text-xs text-on-surface-variant font-sans leading-relaxed">{text}</p>
+    </motion.div>
+  );
+}
