@@ -12,7 +12,7 @@ import bankingFinanceImg from "../assets/programs/banking-finance.png";
 import fullStackJavaImg from "../assets/programs/full-stack-java.png";
 import dataScienceImg from "../assets/programs/data-science-ai.png";
 import autocadImg from "../assets/programs/autocad-design.png";
-import heroStudentsImg from "../assets/hero-students.png";
+import heroStudentsImg from "../assets/careers/hero-students.png";
 
 const CATEGORIES = ["All", "Spoken English", "Schooling", "BTech", "Graduate", "Job Ready"];
 

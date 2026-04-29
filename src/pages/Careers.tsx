@@ -11,6 +11,16 @@ import {
   Target, Linkedin, Instagram, Mail, Phone, Star
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import heroStudentsImg from "../assets/careers/hero-students.png";
+import businessDevImg from "../assets/jobs/business-development-associate.png";
+import digitalMarketingAssocImg from "../assets/jobs/digital-marketing-associate.png";
+import brandGrowthImg from "../assets/jobs/brand-growth-executive.png";
+import salesLeadImg from "../assets/jobs/sales-lead-manager.png";
+import marketingStrategyImg from "../assets/jobs/marketing-strategy-manager.png";
+import campusGrowthImg from "../assets/jobs/campus-growth-partner.png";
+import corporateSalesImg from "../assets/jobs/corporate-sales-executive.png";
+import hrManagerImg from "../assets/jobs/human-resource-manager.png";
+import leadGenImg from "../assets/jobs/lead-generation-specialist.png";
 
 // Color Palette
 const COLORS = {
@@ -56,7 +66,7 @@ const JOB_LISTINGS: Job[] = [
     experience: '0-2 Years',
     salary: '₹4 - ₹7 LPA',
     description: 'Driving growth through strategic inside sales initiatives.',
-    image: '/src/assets/jobs/business-development-associate.png',
+    image: businessDevImg,
     badge: 'Urgent Hire'
   },
   {
@@ -67,7 +77,7 @@ const JOB_LISTINGS: Job[] = [
     experience: '1-3 Years',
     salary: '₹3.5 - ₹6 LPA',
     description: 'Elevating brand presence through creative digital campaigns.',
-    image: '/src/assets/jobs/digital-marketing-associate.png',
+    image: digitalMarketingAssocImg,
     badge: 'New'
   },
   {
@@ -78,7 +88,7 @@ const JOB_LISTINGS: Job[] = [
     experience: '2-4 Years',
     salary: '₹5 - ₹8 LPA',
     description: 'Strategic planning and execution for brand scaling.',
-    image: '/src/assets/jobs/brand-growth-executive.png',
+    image: brandGrowthImg,
   },
   {
     id: '4',
@@ -88,7 +98,7 @@ const JOB_LISTINGS: Job[] = [
     experience: '5+ Years',
     salary: '₹12 - ₹18 LPA',
     description: 'Leading high-performance sales teams to excellence.',
-    image: '/src/assets/jobs/sales-lead-manager.png',
+    image: salesLeadImg,
   },
   {
     id: '5',
@@ -98,7 +108,7 @@ const JOB_LISTINGS: Job[] = [
     experience: '4-6 Years',
     salary: '₹10 - ₹15 LPA',
     description: 'Designing data-driven marketing roadmaps.',
-    image: '/src/assets/jobs/marketing-strategy-manager.png',
+    image: marketingStrategyImg,
   }
 ];
 
@@ -111,7 +121,7 @@ const MORE_JOBS: Job[] = [
     experience: 'Student/Fresher',
     salary: 'Performance Based',
     description: 'Building Arambha communities in educational institutions.',
-    image: '/src/assets/jobs/campus-growth-partner.png',
+    image: campusGrowthImg,
   },
   {
     id: '7',
@@ -121,7 +131,7 @@ const MORE_JOBS: Job[] = [
     experience: '2-5 Years',
     salary: '₹6 - ₹10 LPA',
     description: 'Managing enterprise relationships and solutions.',
-    image: '/src/assets/jobs/corporate-sales-executive.png',
+    image: corporateSalesImg,
   },
   {
     id: '8',
@@ -131,7 +141,7 @@ const MORE_JOBS: Job[] = [
     experience: '3-5 Years',
     salary: '₹7 - ₹12 LPA',
     description: 'Nurturing talent and building corporate culture.',
-    image: '/src/assets/jobs/human-resource-manager.png',
+    image: hrManagerImg,
   },
   {
     id: '9',
@@ -141,7 +151,7 @@ const MORE_JOBS: Job[] = [
     experience: '1-2 Years',
     salary: '₹3 - ₹5 LPA',
     description: 'Identifying and qualifying potential business opportunities.',
-    image: '/src/assets/jobs/lead-generation-specialist.png',
+    image: leadGenImg,
   },
   {
     id: '10',
@@ -151,7 +161,7 @@ const MORE_JOBS: Job[] = [
     experience: 'Fresher',
     salary: '₹15,000 / Month',
     description: 'Learn the ropes of digital marketing in a fast-paced environment.',
-    image: '/src/assets/jobs/digital-marketing-associate.png',
+    image: digitalMarketingAssocImg,
   },
   {
     id: '11',
@@ -161,7 +171,7 @@ const MORE_JOBS: Job[] = [
     experience: 'Academic Credit / Fresher',
     salary: '₹10,000 / Month',
     description: 'Help us grow the Arambha family by identifying great talent.',
-    image: '/src/assets/jobs/human-resource-manager.png',
+    image: hrManagerImg,
   }
 ];
 
@@ -209,7 +219,7 @@ const WelcomeHero = () => (
       </div>
       <div className="flex-1 relative">
         <div className="relative z-10 w-full max-w-3xl mx-auto">
-           <img src="/src/assets/hero-students.png" alt="Arambha Student" className="w-full h-auto object-contain" style={{ filter: 'drop-shadow(0 0 0 transparent)' }} />
+           <img src={heroStudentsImg} alt="Arambha Student" className="w-full h-auto object-contain" style={{ filter: 'drop-shadow(0 0 0 transparent)' }} />
         </div>
       </div>
     </div>
@@ -401,7 +411,7 @@ const FeaturedCourse = () => (
     </div>
     <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row gap-0 transition-all cursor-pointer group" onMouseEnter={(e) => e.currentTarget.style.borderColor = `${COLORS.gold}4D`} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}>
       <div className="relative w-full lg:w-[45%] h-64 lg:h-auto overflow-hidden flex-shrink-0" style={{ backgroundColor: COLORS.primary }}>
-        <img src="/src/assets/jobs/lead-generation-specialist.png" alt="Lead" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+        <img src={leadGenImg} alt="Lead" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${COLORS.primary}CC, transparent)` }} />
         <div className="absolute bottom-6 left-6">
           <span className="text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest mb-2 block w-fit" style={{ backgroundColor: COLORS.gold }}>Featured Role</span>
