@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, useInView, useAnimation } from "motion/react";
 import {
   ArrowRight,
@@ -26,7 +26,7 @@ import {
   Compass
 } from "lucide-react";
 
-import heroBg from "../assets/Hero-Bg.svg";
+import heroBg from "../assets/Hero-Bg.png";
 import engImg from "../assets/home-english.png";
 
 // Import program images
@@ -69,6 +69,8 @@ const iconUrl =
 }
 
 export default function Home() {
+  const navigate = useNavigate();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -353,6 +355,7 @@ export default function Home() {
               title="Spoken English Mastery"
               desc="A structured Spoken English program designed to build fluency, confidence, pronunciation, and real-world communication skills."
               img={spokenEnglishImg}
+              onClick={() => navigate("/programs?program=Spoken English Mastery")}
             />
             <ProgramCard
               tag="Career"
@@ -361,6 +364,7 @@ export default function Home() {
               title="Campus to Corporate Program"
               desc="Intensive preparation program with mock interviews, resume building, and aptitude training for smooth career transitions."
               img={campusToCorporateImg}
+              onClick={() => navigate("/programs?program=Campus to Corporate Program")}
             />
             <ProgramCard
               tag="Technical"
@@ -369,6 +373,7 @@ export default function Home() {
               title="Full Stack Java Developer"
               desc="Master Java, Spring Boot, React, and MySQL to become a complete Full Stack Developer."
               img={fullStackJavaImg}
+              onClick={() => navigate("/programs?program=Full Stack Java Developer")}
             />
           </motion.div>
         </div>
@@ -426,7 +431,7 @@ function LogoItem({ alt, src }: { alt: string, src: string }) {
   );
 }
 
-function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg-slate-100 text-primary border-slate-200" }: { tag: string, category?: string, title: string, desc: string, duration: string, img: string, tagColor?: string }) {
+function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg-slate-100 text-primary border-slate-200", onClick }: { tag: string, category?: string, title: string, desc: string, duration: string, img: string, tagColor?: string, onClick?: () => void }) {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -436,7 +441,8 @@ function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg
     <motion.div
       variants={itemVariants}
       whileHover={{ y: -8 }}
-      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-slate-100"
+      onClick={onClick}
+      className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-slate-100 cursor-pointer"
     >
       <div className="h-64 overflow-hidden relative">
         <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img} alt={title} />
