@@ -12,9 +12,12 @@ import Careers from "./pages/Careers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LegalSupport from "./pages/LegalSupport";
+<<<<<<< HEAD
 import AdminPortal from "./pages/admin/AdminPortal";
 import { AuthProvider } from "./context/AuthContext";
 import { AdminRoute } from "./components/AdminRoute";
+=======
+>>>>>>> 8b86dc3 (feat: implement LegalSupport, Careers, About, and Programs pages with associated assets and updated routing.)
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -49,6 +52,7 @@ export default function App() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <AuthProvider>
       <Router>
         <ScrollToTop />
@@ -77,5 +81,25 @@ export default function App() {
         </div>
       </Router>
     </AuthProvider>
+=======
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/legal-support" element={<LegalSupport />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+>>>>>>> 8b86dc3 (feat: implement LegalSupport, Careers, About, and Programs pages with associated assets and updated routing.)
   );
 }
