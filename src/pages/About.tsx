@@ -32,7 +32,7 @@ import {
   Star
 } from 'lucide-react';
 
-import hereBg from "../assets/Hero-bg-about.png";
+import hereBg from "../assets/Hero-bg-about.jpeg";
 
 const Navbar = () => (
   <nav className="top-0 sticky z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md shadow-sm">
