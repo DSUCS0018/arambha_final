@@ -35,8 +35,18 @@ import campusToCorporateImg from "../assets/programs/campus-to-corporate.png";
 import fullStackJavaImg from "../assets/programs/full-stack-java.png";
 
 function LogoBox({ alt, domain }: { alt: string, domain: string }) {
-  const iconUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+  const customLogos: Record<string, string> = {
+  "tcs.com": "https://i.logos-download.com/113971/29583-s2560-9598f09d0f40cf2bc3d3c47217493980.png/Tata_Consultancy_Services_Logo_2020-s2560.png?dl",
+  "infosys.com": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/500px-Infosys_logo.svg.png",
 
+
+};
+
+const iconUrl =
+  customLogos[domain] ||
+  `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+
+  
   return (
     <div className="flex-shrink-0 px-8 py-4 bg-white border-2 border-slate-100 rounded-2xl shadow-sm flex flex-col items-center justify-center min-w-[200px] h-32 hover:border-accent-gold hover:shadow-lg transition-all group gap-2">
 
@@ -109,22 +119,22 @@ export default function Home() {
                 WhatsApp Now
               </button>
             </motion.div>
-            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-left">
-              <div className="flex items-start gap-3">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-left ">
+              <div className="flex items-start gap-3 relative left-36 ">
                 <Globe className="text-accent-gold" size={24} />
-                <div>
+                <div className= " ">
                   <p className="font-bold text-primary">Daily Practice</p>
                   <p className="text-sm text-on-surface-variant">Native language tailored</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 relative left-34">
                 <Briefcase className="text-accent-gold" size={24} />
                 <div>
                   <p className="font-bold text-primary">Live Projects</p>
                   <p className="text-sm text-on-surface-variant">Real career opportunities</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-3 relative left-28">
                 <CheckCircle2 className="text-accent-gold" size={24} />
                 <div>
                   <p className="font-bold text-primary">Outcome-Driven</p>
@@ -342,7 +352,6 @@ export default function Home() {
               category="Spoken English"
               title="Spoken English Mastery"
               desc="A structured Spoken English program designed to build fluency, confidence, pronunciation, and real-world communication skills."
-              duration="60 Days"
               img={spokenEnglishImg}
             />
             <ProgramCard
@@ -351,7 +360,6 @@ export default function Home() {
               category="Job Ready"
               title="Campus to Corporate Program"
               desc="Intensive preparation program with mock interviews, resume building, and aptitude training for smooth career transitions."
-              duration="45 Days"
               img={campusToCorporateImg}
             />
             <ProgramCard
@@ -360,7 +368,6 @@ export default function Home() {
               category="BTech"
               title="Full Stack Java Developer"
               desc="Master Java, Spring Boot, React, and MySQL to become a complete Full Stack Developer."
-              duration="6 Months"
               img={fullStackJavaImg}
             />
           </motion.div>
