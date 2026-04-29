@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, CheckCircle2, ArrowRight, Users, Clock, Star, BadgeCheck } from "lucide-react";
 
 import skillCertImg   from "../assets/services/skill-certifications.png";
-import manpowerImg    from "../assets/services/manpower-solutions.png";
+import manpowerImg    from "../assets/services/manpower-solutions_lm.png";
 import admissionImg   from "../assets/services/admission-support.png";
 import trainingImg    from "../assets/services/training-workforce.png";
 import placementImg   from "../assets/services/placement-assistance.png";
