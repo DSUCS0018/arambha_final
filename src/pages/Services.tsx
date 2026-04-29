@@ -3,13 +3,14 @@ import { motion } from "motion/react";
 import { Check, GraduationCap, Award, TrendingUp, Layers, Star, ArrowRight } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 
-import hero1 from "../assets/services/hero1.png";
-import skillCertImg from "../assets/services/skill-certification.png";
-import manpowerImg from "../assets/services/manpower-solutions.png";
-import admissionImg from "../assets/services/admission-support.png";
-import trainingImg from "../assets/services/training-workforce.png";
-import placementImg from "../assets/services/placement-assistance.png";
-import liveProjectImg from "../assets/services/live-projects.png";
+import hero1 from "../assets/service/hero1.png";
+import skillCertImg from "../assets/service/skill-certifications.png";
+import manpowerImg from "../assets/service/manpower-solutions.png";
+import admissionImg from "../assets/service/admission-support.png";
+import trainingImg from "../assets/service/training-workforce.png";
+import placementImg from "../assets/service/placement-assistance.png";
+import liveProjectImg from "../assets/service/live-projects.png";
+import yourJourneyImg from "../assets/service/your journey.png";
 import "./Services.css";
 
 const SERVICES_DATA = [
@@ -53,7 +54,19 @@ export default function Services() {
                     src={hero1}
                     alt="E - learning services"
                     className="main-card__img"
+
                   />
+
+                  {/* <img
+                    src={hero1}
+                    alt="E - learning services"
+                    className="
+                       border-none
+                       outline-none
+                       shadow-none
+                       bg-transparent
+                     "
+                  /> */}
                 </div>
 
                 {/* svg connectors */}
@@ -107,6 +120,15 @@ export default function Services() {
               <p className="text-[#3A5785] text-lg mb-6 leading-relaxed max-w-lg">
                 Our comprehensive approach bridges the gap between academic learning and real-world industrial demands through mentorship and practical exposure.
               </p>
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                src={yourJourneyImg}
+                alt="Your Journey"
+                className="w-full max-w-lg object-contain mt-4 rounded-2xl"
+              />
             </motion.div>
 
             {/* Right — Bento Feature Grid */}
@@ -226,18 +248,14 @@ export default function Services() {
                 transition={{ delay: idx * 0.08 }}
                 className="bg-white rounded-2xl overflow-hidden border border-[#E0E3E5] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col text-left"
               >
-                <div className="h-56 overflow-hidden relative">
+                <div className="h-auto overflow-hidden relative bg-gradient-to-b from-[#f0f4ff] to-[#f8faff]">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="service-card-image transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-[#041632]/5 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold font-serif text-[#2C4D8A] mb-3">
-                    {service.title}
-                  </h3>
                   <p className="text-[#3A5785] text-sm leading-relaxed flex-grow font-sans">{service.description}</p>
                   <div className="mt-6 pt-4 border-t border-slate-100">
                     <Link
