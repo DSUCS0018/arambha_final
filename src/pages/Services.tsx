@@ -100,7 +100,7 @@ export default function Services() {
               <span className="inline-block bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#B8860B] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6">
                 Transformation Leaders
               </span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#0d2350] mb-6 leading-[1.1]" style={{ fontFamily: "'Lora', serif" }}>
+              <h2 className="text-4xl md:text-5xl font-extrabold font-serif text-[#0d2350] mb-6 leading-[1.1]">
                 We don't just teach —{" "}
                 <span className="text-[#D4AF37]">we help you build a career.</span>
               </h2>
@@ -128,7 +128,7 @@ export default function Services() {
                   <GraduationCap className="w-20 h-20 text-[#2C4D8A]" />
                 </div>
                 <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
-                <h3 className="text-2xl font-extrabold text-[#0d2350] mb-1" style={{ fontFamily: "'Lora', serif" }}>
+                <h3 className="text-2xl font-extrabold font-serif text-[#0d2350] mb-1">
                   Industry Experts
                 </h3>
                 <p className="text-[#3A5785] text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
@@ -151,7 +151,7 @@ export default function Services() {
                 <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-[#2C4D8A]/5" />
                 <Award className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
                 <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
-                <h3 className="text-lg font-extrabold text-[#0d2350] leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                <h3 className="text-lg font-extrabold font-serif text-[#0d2350] leading-tight">
                   Certified<br />Programs
                 </h3>
                 <p className="text-[#3A5785] text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
@@ -170,7 +170,7 @@ export default function Services() {
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-[#2C4D8A]/5" />
                 <TrendingUp className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
                 <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
-                <h3 className="text-lg font-extrabold text-[#0d2350] leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                <h3 className="text-lg font-extrabold font-serif text-[#0d2350] leading-tight">
                   Career<br />Support
                 </h3>
                 <p className="text-[#3A5785] text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
@@ -192,7 +192,7 @@ export default function Services() {
                 </div>
                 <div>
                   <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
-                  <h3 className="text-xl font-extrabold text-[#0d2350]" style={{ fontFamily: "'Lora', serif" }}>Live Projects</h3>
+                  <h3 className="text-xl font-extrabold font-serif text-[#0d2350]">Live Projects</h3>
                   <p className="text-[#3A5785] text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
                 </div>
               </motion.div>
@@ -212,7 +212,7 @@ export default function Services() {
           <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
             CORE OFFERINGS
           </span>
-          <h2 className="text-4xl font-extrabold text-[#2C4D8A] mb-16" style={{ fontFamily: "'Lora', serif" }}>
+          <h2 className="text-4xl font-extrabold font-serif text-[#2C4D8A] mb-16">
             Expert Solutions for Growth
           </h2>
 
@@ -235,10 +235,10 @@ export default function Services() {
                   <div className="absolute inset-0 bg-[#041632]/5 group-hover:bg-transparent transition-colors" />
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-[#2C4D8A] mb-3" style={{ fontFamily: "'Lora', serif" }}>
+                  <h3 className="text-xl font-bold font-serif text-[#2C4D8A] mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-[#3A5785] text-sm leading-relaxed flex-grow" style={{ fontFamily: "'Lora', serif" }}>{service.description}</p>
+                  <p className="text-[#3A5785] text-sm leading-relaxed flex-grow font-sans">{service.description}</p>
                   <div className="mt-6 pt-4 border-t border-slate-100">
                     <Link
                       to={service.link}
@@ -259,7 +259,7 @@ export default function Services() {
       <section className="py-24 px-6 bg-[#F7F9FB]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-[#2C4D8A] mb-4" style={{ fontFamily: "'Lora', serif" }}>
+            <h2 className="text-4xl font-extrabold font-serif text-[#2C4D8A] mb-4">
               What Our Learners Say
             </h2>
             <p className="text-[#3A5785] max-w-2xl mx-auto">
@@ -310,8 +310,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-extrabold text-white mb-8"
-            style={{ fontFamily: "'Lora', serif" }}
+            className="text-4xl md:text-5xl font-extrabold font-serif text-white mb-8"
           >
             Start Your Confidence Journey Today
           </motion.h2>
@@ -320,8 +319,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-[#8393B5] mb-12 leading-relaxed"
-            style={{ fontFamily: "'Lora', serif" }}
+            className="text-xl text-[#8393B5] mb-12 leading-relaxed font-sans"
           >
             Don't wait for opportunities, create them. Join Arambha Skill Solutions and unlock your professional potential.
           </motion.p>

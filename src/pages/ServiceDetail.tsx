@@ -157,7 +157,7 @@ export default function ServiceDetail() {
   if (!service) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#F7F9FB]">
-        <h1 className="text-4xl font-bold text-[#2C4D8A] mb-4" style={{ fontFamily: "'Lora', serif" }}>
+        <h1 className="text-4xl font-bold font-serif text-[#2C4D8A] mb-4">
           Service Not Found
         </h1>
         <p className="text-[#3A5785] mb-8">The service you're looking for doesn't exist.</p>
@@ -214,7 +214,7 @@ export default function ServiceDetail() {
               <div className="w-12 h-12 rounded-2xl bg-[#2C4D8A]/8 flex items-center justify-center mb-3 text-[#2C4D8A]">
                 {b.icon}
               </div>
-              <p className="text-3xl font-extrabold text-[#2C4D8A] leading-none mb-1" style={{ fontFamily: "'Lora', serif" }}>{b.value}</p>
+              <p className="text-3xl font-extrabold font-serif text-[#2C4D8A] leading-none mb-1">{b.value}</p>
               <p className="text-[11px] text-[#3A5785] uppercase tracking-widest font-bold">{b.label}</p>
             </motion.div>
           ))}
@@ -232,7 +232,7 @@ export default function ServiceDetail() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block">Overview</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#2C4D8A] mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#2C4D8A] mb-6 leading-tight">
               What We Offer
             </h2>
             <p className="text-[#3A5785] leading-relaxed text-base mb-10">
@@ -287,7 +287,7 @@ export default function ServiceDetail() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block">What's Included</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#2C4D8A]" style={{ fontFamily: "'Lora', serif" }}>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#2C4D8A]">
               Key Features
             </h2>
             <p className="text-[#3A5785] mt-3 max-w-xl mx-auto text-sm">
@@ -310,7 +310,7 @@ export default function ServiceDetail() {
                 <div className="w-11 h-11 rounded-2xl bg-[#2C4D8A] group-hover:bg-[#D4AF37] flex items-center justify-center mb-5 text-white font-extrabold text-sm transition-colors duration-300 shadow-md">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-base font-bold text-[#2C4D8A] mb-2" style={{ fontFamily: "'Lora', serif" }}>{f.title}</h3>
+                <h3 className="text-base font-bold font-serif text-[#2C4D8A] mb-2">{f.title}</h3>
                 <p className="text-sm text-[#3A5785] leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
@@ -337,8 +337,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight"
-            style={{ fontFamily: "'Lora', serif" }}
+            className="text-3xl md:text-5xl font-extrabold font-serif text-white mb-5 leading-tight"
           >
             Ready to Transform Your Career?
           </motion.h2>

@@ -127,52 +127,75 @@ const Hero = () => (
 );
 
 function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc, align = "right" }) {
+  const isLeft = align === "left";
+  
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-      
-      {/* TEXT SIDE (UNCHANGED) */}
-      <div className={align === "left" ? "md:order-2" : "md:text-right"}>
-        <div className="inline-block px-4 py-1.5 bg-accent-gold/10 text-accent-gold font-bold text-sm rounded-lg mb-6">
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center mb-24 group"
+    >
+      {/* TEXT SIDE */}
+      <div className={`${isLeft ? "md:order-2" : "md:text-right"}`}>
+        <motion.div 
+          initial={{ scale: 0.5, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="inline-block px-3 py-1 bg-accent-gold/10 text-accent-gold font-bold text-[11px] rounded-full mb-4 border border-accent-gold/20 tracking-wider"
+        >
           {year}
-        </div>
+        </motion.div>
 
-        <h3 className="text-headline-md font-serif mb-4 text-primary italic">
+        <h3 className="text-2xl md:text-3xl font-serif mb-4 text-primary italic font-bold leading-tight">
           {title}
         </h3>
 
-        <p className="text-on-surface-variant leading-relaxed font-sans">
+        <p className="text-on-surface-variant leading-relaxed font-sans text-sm md:text-base max-w-md mx-auto md:mx-0 ml-auto">
           {description}
         </p>
       </div>
 
-      {/* BOX SIDE (THIS NOW MATCHES "GOING GLOBAL") */}
-      <div className="relative">
-        
-        {/* CENTER ICON DOT (UNCHANGED) */}
-        <div className="absolute left-0 md:-left-[45px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full brand-gradient-gold text-white flex items-center justify-center border-4 border-white z-10 shadow-lg hidden md:flex">
+      {/* CENTRAL DOT & CONNECTOR */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center pointer-events-none">
+        <div className="w-10 h-10 rounded-full brand-gradient-gold text-white flex items-center justify-center border-4 border-white shadow-lg group-hover:scale-110 group-hover:rotate-[360deg] transition-all duration-700 relative z-20">
           <Icon className="h-5 w-5" />
         </div>
+        {/* The Connector Line */}
+        <motion.div 
+          initial={{ width: 0, opacity: 0 }}
+          whileInView={{ width: 40, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className={`absolute h-[1px] bg-accent-gold/30 ${isLeft ? 'right-5 rotate-180' : 'left-5'} z-0`}
+        />
+      </div>
 
-        {/* 🔥 SAME STYLE AS "GOING GLOBAL" */}
-        <div className="p-10 brand-gradient-navy rounded-2xl border border-white/10 shadow-2xl">
+      {/* CARD SIDE */}
+      <div className={`relative ${isLeft ? "md:order-1" : ""}`}>
+        <div className="p-8 bg-white rounded-3xl border border-outline-variant shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
+          {/* Glass glare effect */}
+          <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent-gold/5 rounded-full blur-2xl group-hover:bg-accent-gold/10 transition-colors duration-700"></div>
           
-          <div className="flex flex-col items-center text-center text-white">
-            
-            <Icon className="h-12 w-12 text-secondary mb-6" />
+          <div className="flex flex-col items-center text-center relative z-10">
+            <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-6 border border-outline-variant group-hover:scale-105 group-hover:bg-accent-gold/5 transition-all duration-500 shadow-sm">
+               <Icon className="h-8 w-8 text-primary group-hover:text-accent-gold transition-colors" />
+            </div>
 
-            <h4 className="text-2xl font-bold font-serif mb-2 italic">
+            <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-primary">
               {subTitle}
             </h4>
 
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-on-surface-variant text-sm leading-relaxed font-sans max-w-xs">
               {subDesc}
             </p>
-
           </div>
-
+          
+          {/* Subtle animated border */}
+          <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -185,7 +208,7 @@ const Evolution = () => (
         <p className="text-on-surface-variant max-w-2xl mx-auto mt-4 font-sans">Explore the key milestones that have shaped Arambha into a global leader in education, technology, and talent mobility.</p>
       </div>
       <div className="relative">
-        <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 timeline-line hidden md:block"></div>
+        <div className="absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-accent-gold/50 via-outline-variant to-accent-gold/50 hidden md:block"></div>
         
         <TimelineItem 
           year="2015"
@@ -228,23 +251,51 @@ const Evolution = () => (
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center mb-24 group"
         >
           <div className="md:text-right">
-            <div className="inline-block px-4 py-1.5 bg-accent-gold/10 text-accent-gold font-bold text-sm rounded-lg mb-6">2023</div>
-            <h3 className="text-headline-md font-serif mb-4 text-primary italic">Global Impact</h3>
-            <p className="text-on-surface-variant leading-relaxed font-sans">Scaling Innovation Across Borders. Achieved significant milestones and expanded footprint globally.</p>
+            <motion.div 
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="inline-block px-3 py-1 bg-accent-gold/10 text-accent-gold font-bold text-[11px] rounded-full mb-4 border border-accent-gold/20 tracking-wider"
+            >
+              2023
+            </motion.div>
+            <h3 className="text-2xl md:text-3xl font-serif mb-4 text-primary italic font-bold leading-tight">Global Impact</h3>
+            <p className="text-on-surface-variant leading-relaxed font-sans text-sm md:text-base">Scaling Innovation Across Borders. Achieved significant milestones and expanded footprint globally.</p>
           </div>
-          <div className="relative">
-            <div className="absolute left-0 md:-left-[45px] top-1/2 -translate-y-1/2 w-10 h-10 rounded-full brand-gradient-gold text-white flex items-center justify-center border-4 border-white z-10 shadow-lg hidden md:flex">
+
+          {/* CENTRAL DOT & CONNECTOR */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center pointer-events-none">
+            <div className="w-10 h-10 rounded-full brand-gradient-gold text-white flex items-center justify-center border-4 border-white shadow-lg group-hover:scale-110 group-hover:rotate-[360deg] transition-all duration-700 relative z-20">
               <Globe className="h-5 w-5" />
             </div>
-            <div className="p-10 brand-gradient-navy rounded-2xl border border-white/10 shadow-2xl">
-              <div className="flex flex-col items-center text-center text-white">
-                <Rocket className="h-12 w-12 text-secondary mb-6" />
-                <h4 className="text-2xl font-bold font-serif mb-2 italic">Going Global</h4>
+            {/* The Connector Line */}
+            <motion.div 
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: 40, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="absolute h-[1px] bg-accent-gold/30 left-5 z-0"
+            />
+          </div>
+
+          <div className="relative">
+            <div className="p-8 bg-white rounded-3xl border border-outline-variant shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
+              <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent-gold/5 rounded-full blur-2xl group-hover:bg-accent-gold/10 transition-colors duration-700"></div>
+              
+              <div className="flex flex-col items-center text-center relative z-10">
+                <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-6 border border-outline-variant group-hover:scale-105 group-hover:bg-accent-gold/5 transition-all duration-500 shadow-sm">
+                   <Rocket className="h-8 w-8 text-primary group-hover:text-accent-gold transition-colors" />
+                </div>
+                <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-primary">Going Global</h4>
+                <p className="text-on-surface-variant text-sm leading-relaxed font-sans max-w-xs">
+                  Expanding our expertise to global markets.
+                </p>
               </div>
+              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
             </div>
           </div>
         </motion.div>
