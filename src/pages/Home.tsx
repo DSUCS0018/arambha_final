@@ -185,7 +185,7 @@ export default function Home() {
       </section>
 
       {/* Feature Grid Section */}
-      <section className="py-16 sm:py-24 bg-white overflow-hidden">
+      <section className="py-8 sm:py-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 sm:gap-12 lg:gap-20">
             <motion.div
@@ -240,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-8 sm:py-12 bg-white border-t border-slate-100 overflow-hidden">
+      <section className="py-4 sm:py-8 bg-white border-t border-slate-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
             <div className="text-left lg:col-span-4 pr-4">
@@ -281,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Featured Program */}
-      <section className="py-16 sm:py-32 bg-white overflow-hidden relative border-y border-slate-100">
+      <section className="py-8 sm:py-16 bg-white overflow-hidden relative border-y border-slate-100">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold/5 blur-3xl -mr-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
@@ -326,7 +326,7 @@ export default function Home() {
       <RoadmapSection />
 
       {/* Programs Cards */}
-      <section className="py-16 sm:py-32 bg-white">
+      <section className="py-8 sm:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -380,7 +380,7 @@ export default function Home() {
       </section>
 
       {/* Value Prop Section */}
-      <section className="py-16 sm:py-32 bg-white">
+      <section className="py-2 sm:py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-24 overflow-hidden relative border border-slate-100 shadow-2xl">
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-surface rounded-full blur-[100px]"></div>
@@ -512,7 +512,7 @@ function RoadmapSection() {
   }, [isInView]);
 
   return (
-    <section className="py-12 sm:py-20 bg-white" ref={ref}>
+    <section className="py-6 sm:py-12 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
