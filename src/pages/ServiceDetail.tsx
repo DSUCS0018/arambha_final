@@ -171,80 +171,32 @@ export default function ServiceDetail() {
   return (
     <div className="bg-[#F7F9FB] min-h-screen">
 
-      {/* ── HERO: full-viewport, image fills completely ── */}
-      <section className="relative w-full" style={{ height: "calc(100vh - 80px)", minHeight: 520 }}>
-        {/* background image — covers 100% */}
-        <img
-          src={service.image}
-          alt={service.title}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        {/* layered gradient for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#041632]/95 via-[#041632]/70 to-[#041632]/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#041632]/80 via-transparent to-transparent" />
-
-        {/* content */}
-        <div className="relative h-full flex flex-col justify-center max-w-7xl mx-auto px-6 sm:px-10">
-          {/* back link */}
+      {/* ── HERO: Full Bleed Banner Layout ── */}
+      <section className="relative w-full bg-white">
+        <div className="absolute top-6 left-4 sm:left-10 z-20">
           <motion.button
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-white/60 hover:text-[#D4AF37] transition-colors mb-10 w-fit text-sm font-semibold tracking-wide"
+            className="flex items-center gap-2 text-[#0d2350] hover:text-[#D4AF37] transition-colors bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full shadow-md text-sm font-bold tracking-wide"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Services
           </motion.button>
-
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="inline-block bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-5 w-fit backdrop-blur-sm"
-          >
-            Core Offering
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-[1.08] mb-6 max-w-3xl"
-            style={{ fontFamily: "'Lora', serif" }}
-          >
-            {service.title}
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="text-white/75 text-lg sm:text-xl max-w-xl leading-relaxed mb-10"
-          >
-            {service.subtitle}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="flex flex-wrap gap-4"
-          >
-            <Link
-              to="/programs"
-              className="bg-[#D4AF37] hover:brightness-110 text-white px-8 py-3.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all shadow-lg shadow-[#D4AF37]/30"
-            >
-              Explore Programs <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              to="/services"
-              className="border border-white/30 hover:border-white text-white px-8 py-3.5 rounded-xl font-bold text-sm transition-all backdrop-blur-sm bg-white/5 hover:bg-white/10"
-            >
-              All Services
-            </Link>
-          </motion.div>
         </div>
 
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="w-full relative"
+        >
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full h-[500px] md:h-[700px] lg:h-[90vh] object-cover object-center"
+          />
+        </motion.div>
       </section>
 
       {/* ── STATS BAR ── */}
