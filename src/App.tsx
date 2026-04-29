@@ -11,6 +11,7 @@ import ServiceDetail from "./pages/ServiceDetail";
 import Careers from "./pages/Careers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import LegalSupport from "./pages/LegalSupport";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -56,6 +57,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/legal-support" element={<LegalSupport />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
