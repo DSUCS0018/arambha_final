@@ -81,10 +81,10 @@ export default function Services() {
       </section>
 
       {/* ── Why Arambha ── */}
-      <section className="py-28 px-6 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #041632 0%, #0d2b55 50%, #041632 100%)" }}>
-        {/* ambient glows */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#D4AF37]/8 rounded-full blur-[120px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+      <section className="py-16 px-6 relative overflow-hidden bg-white">
+        {/* subtle decorative blobs */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#D4AF37]/5 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#2C4D8A]/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -97,39 +97,16 @@ export default function Services() {
               transition={{ duration: 0.6 }}
               className="lg:w-1/2"
             >
-              <span className="inline-block bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6">
+              <span className="inline-block bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#B8860B] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6">
                 Transformation Leaders
               </span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1]" style={{ fontFamily: "'Lora', serif" }}>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-[#0d2350] mb-6 leading-[1.1]" style={{ fontFamily: "'Lora', serif" }}>
                 We don't just teach —{" "}
                 <span className="text-[#D4AF37]">we help you build a career.</span>
               </h2>
-              <p className="text-white/60 text-lg mb-10 leading-relaxed max-w-lg">
+              <p className="text-[#3A5785] text-lg mb-6 leading-relaxed max-w-lg">
                 Our comprehensive approach bridges the gap between academic learning and real-world industrial demands through mentorship and practical exposure.
               </p>
-              <div className="space-y-4">
-                {[
-                  "Industry-relevant courses & MSME certifications",
-                  "1:1 Personalized mentorship with experts",
-                  "End-to-end placement & resume optimization",
-                  "Hands-on project-based learning model",
-                  "Flexible learning formats for busy schedules",
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center">
-                      <Check className="text-[#D4AF37] w-3.5 h-3.5 stroke-[3px]" />
-                    </div>
-                    <span className="text-white/80 font-medium text-sm group-hover:text-white transition-colors">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             {/* Right — Bento Feature Grid */}
@@ -142,21 +119,21 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0 }}
                 whileHover={{ scale: 1.02 }}
-                className="col-span-2 relative overflow-hidden rounded-3xl p-8 cursor-default group"
-                style={{ background: "linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)", minHeight: 160 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-8 cursor-default group border-t-2 border-[#D4AF37]/40"
+                style={{ background: "linear-gradient(135deg, #0d2350 0%, #162d55 100%)", minHeight: 160 }}
               >
-                <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/10" />
-                <div className="absolute -right-2 -bottom-2 w-20 h-20 rounded-full bg-white/10" />
-                <div className="absolute top-6 right-8 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <GraduationCap className="w-20 h-20 text-white" />
+                <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/5" />
+                <div className="absolute -right-2 -bottom-2 w-20 h-20 rounded-full bg-white/5" />
+                <div className="absolute top-6 right-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <GraduationCap className="w-20 h-20 text-[#D4AF37]" />
                 </div>
-                <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
+                <p className="text-[#D4AF37]/70 text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
                 <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "'Lora', serif" }}>
                   Industry Experts
                 </h3>
-                <p className="text-white/75 text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
-                <div className="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                <p className="text-white/50 text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
+                <div className="mt-4 inline-flex items-center gap-1.5 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold px-3 py-1.5 rounded-full">
+                  <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse" />
                   Live Mentorship Sessions
                 </div>
               </motion.div>
@@ -168,16 +145,16 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group"
-                style={{ background: "linear-gradient(145deg, #1e3a6e 0%, #2563eb 100%)", minHeight: 180 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border-t-2 border-[#D4AF37]/40"
+                style={{ background: "linear-gradient(145deg, #0d2350 0%, #162d55 100%)", minHeight: 180 }}
               >
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-white/10" />
-                <Award className="w-8 h-8 text-blue-300 mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-blue-200 text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-white/5" />
+                <Award className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
                 <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
                   Certified<br />Programs
                 </h3>
-                <p className="text-blue-200 text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
+                <p className="text-white/50 text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
               </motion.div>
 
               {/* Card 3 — Career Support */}
@@ -187,16 +164,16 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 whileHover={{ scale: 1.03 }}
-                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group"
-                style={{ background: "linear-gradient(145deg, #064e3b 0%, #10b981 100%)", minHeight: 180 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border-t-2 border-[#D4AF37]/40"
+                style={{ background: "linear-gradient(145deg, #0d2350 0%, #162d55 100%)", minHeight: 180 }}
               >
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-white/10" />
-                <TrendingUp className="w-8 h-8 text-emerald-300 mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-emerald-200 text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-white/5" />
+                <TrendingUp className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
                 <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
                   Career<br />Support
                 </h3>
-                <p className="text-emerald-200 text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
+                <p className="text-white/50 text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
               </motion.div>
 
               {/* Card 4 — Wide bottom card: Live Projects */}
@@ -206,17 +183,17 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
-                className="col-span-2 relative overflow-hidden rounded-3xl p-7 cursor-default group"
-                style={{ background: "linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)", minHeight: 130 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-7 cursor-default group border-t-2 border-[#D4AF37]/40"
+                style={{ background: "linear-gradient(135deg, #0d2350 0%, #162d55 100%)", minHeight: 130 }}
               >
                 <div className="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-white/5" />
-                <div className="absolute top-5 right-7 opacity-20 group-hover:opacity-40 transition-opacity">
-                  <Layers className="w-16 h-16 text-white" />
+                <div className="absolute top-5 right-7 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Layers className="w-16 h-16 text-[#D4AF37]" />
                 </div>
                 <div>
-                    <p className="text-purple-300 text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
+                    <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
                     <h3 className="text-xl font-extrabold text-white" style={{ fontFamily: "'Lora', serif" }}>Live Projects</h3>
-                    <p className="text-purple-200 text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
+                    <p className="text-white/50 text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
                   </div>
               </motion.div>
 

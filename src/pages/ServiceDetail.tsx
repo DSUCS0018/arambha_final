@@ -245,8 +245,6 @@ export default function ServiceDetail() {
           </motion.div>
         </div>
 
-        {/* bottom fade into stats */}
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ── STATS BAR ── */}
@@ -288,21 +286,21 @@ export default function ServiceDetail() {
             <p className="text-[#3A5785] leading-relaxed text-base mb-10">
               {service.overview}
             </p>
-            <ul className="space-y-3.5">
+            <div className="flex flex-wrap gap-3 mt-2">
               {service.highlights.map((h, i) => (
-                <motion.li
+                <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.07 }}
-                  className="flex items-center gap-3 group"
+                  transition={{ delay: i * 0.07, type: "spring", stiffness: 200 }}
+                  className="flex items-center gap-2.5 bg-white border border-[#E0E8F5] hover:border-[#D4AF37]/60 hover:shadow-md px-4 py-2.5 rounded-xl group transition-all duration-200 cursor-default"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF37] shrink-0 group-hover:scale-125 transition-transform" />
                   <span className="text-[#2C4D8A] font-semibold text-sm">{h}</span>
-                </motion.li>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </motion.div>
           {/* right image */}
           <motion.div
