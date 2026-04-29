@@ -11,6 +11,20 @@ import {
   Target, Linkedin, Instagram, Mail, Phone, Star
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import heroStudentsImg from "../assets/careers/hero-careers.png";
+import designExcellenceImg from "../assets/careers/design-excellence.png";
+import impactfulCollabImg from "../assets/careers/impactful-collaboration.png";
+import growthMindsetImg from "../assets/careers/growth-mindset.png";
+import radicalIntegrityImg from "../assets/careers/radical-integrity.png";
+import businessDevImg from "../assets/jobs/business-development-associate.png";
+import digitalMarketingAssocImg from "../assets/jobs/digital-marketing-associate.png";
+import brandGrowthImg from "../assets/jobs/brand-growth-executive.png";
+import salesLeadImg from "../assets/jobs/sales-lead-manager.png";
+import marketingStrategyImg from "../assets/jobs/marketing-strategy-manager.png";
+import campusGrowthImg from "../assets/jobs/campus-growth-partner.png";
+import corporateSalesImg from "../assets/jobs/corporate-sales-executive.png";
+import hrManagerImg from "../assets/jobs/human-resource-manager.png";
+import leadGenImg from "../assets/jobs/lead-generation-specialist.png";
 
 // Color Palette
 const COLORS = {
@@ -52,53 +66,53 @@ const JOB_LISTINGS: Job[] = [
     id: '1',
     title: 'Business Development Associate – Inside Sales',
     department: 'Sales',
-    location: 'Bangalore / Remote',
-    experience: '0-2 Years',
-    salary: '₹4 - ₹7 LPA',
-    description: 'Driving growth through strategic inside sales initiatives.',
-    image: '/src/assets/jobs/business-development-associate.png',
+    location: 'Bangalore',
+    experience: '0–2 Years',
+    salary: '₹3–5 LPA',
+    description: 'Drive revenue growth through lead conversion and relationship building. Engage with prospective clients, understand their requirements, and close deals effectively.',
+    image: businessDevImg,
     badge: 'Urgent Hire'
   },
   {
     id: '2',
     title: 'Digital Marketing Associate',
     department: 'Marketing',
-    location: 'Mumbai / Hybrid',
-    experience: '1-3 Years',
-    salary: '₹3.5 - ₹6 LPA',
-    description: 'Elevating brand presence through creative digital campaigns.',
-    image: '/src/assets/jobs/digital-marketing-associate.png',
+    location: 'Bangalore',
+    experience: '0–2 Years',
+    salary: '₹3–5 LPA',
+    description: 'Assist in executing digital marketing campaigns across platforms. Manage SEO/SEM activities, track performance metrics, and optimize campaigns to improve engagement and conversions.',
+    image: digitalMarketingAssocImg,
     badge: 'New'
   },
   {
     id: '3',
     title: 'Brand Growth Executive',
-    department: 'Strategy',
-    location: 'Delhi',
-    experience: '2-4 Years',
-    salary: '₹5 - ₹8 LPA',
-    description: 'Strategic planning and execution for brand scaling.',
-    image: '/src/assets/jobs/brand-growth-executive.png',
+    department: 'Marketing',
+    location: 'Work from Home',
+    experience: '0–2 Years',
+    salary: '₹3–6 LPA',
+    description: 'Support brand visibility and online engagement initiatives. Coordinate promotional campaigns and ensure consistent brand communication across all digital platforms.',
+    image: brandGrowthImg,
   },
   {
     id: '4',
     title: 'Sales Lead / Manager',
     department: 'Sales',
-    location: 'Hyderabad',
-    experience: '5+ Years',
-    salary: '₹12 - ₹18 LPA',
-    description: 'Leading high-performance sales teams to excellence.',
-    image: '/src/assets/jobs/sales-lead-manager.png',
+    location: 'Bangalore',
+    experience: '0–2 Years',
+    salary: '₹3–8 LPA',
+    description: 'Lead and motivate the sales team to achieve regional revenue targets. Mandatory experience in the EdTech industry required. Develop sales strategies and monitor KPIs.',
+    image: salesLeadImg,
   },
   {
     id: '5',
     title: 'Marketing Strategy Manager',
     department: 'Marketing',
     location: 'Bangalore',
-    experience: '4-6 Years',
-    salary: '₹10 - ₹15 LPA',
-    description: 'Designing data-driven marketing roadmaps.',
-    image: '/src/assets/jobs/marketing-strategy-manager.png',
+    experience: '0–2 Years',
+    salary: '₹3–8 LPA',
+    description: 'Design and execute data-driven marketing strategies aligned with business objectives. Analyze market trends and oversee campaign performance to drive sustainable growth.',
+    image: marketingStrategyImg,
   }
 ];
 
@@ -106,42 +120,42 @@ const MORE_JOBS: Job[] = [
   {
     id: '6',
     title: 'Campus Growth Partner',
-    department: 'Partnerships',
-    location: 'All India (Campus)',
-    experience: 'Student/Fresher',
-    salary: 'Performance Based',
-    description: 'Building Arambha communities in educational institutions.',
-    image: '/src/assets/jobs/campus-growth-partner.png',
+    department: 'Marketing',
+    location: 'Work from Home',
+    experience: '0–2 Years',
+    salary: '₹3–5 LPA',
+    description: 'Act as the company representative across college campuses. Build student networks, generate leads, and organize engagement activities to increase brand awareness.',
+    image: campusGrowthImg,
   },
   {
     id: '7',
     title: 'Corporate Sales Executive (B2B)',
     department: 'Sales',
-    location: 'Pune',
-    experience: '2-5 Years',
-    salary: '₹6 - ₹10 LPA',
-    description: 'Managing enterprise relationships and solutions.',
-    image: '/src/assets/jobs/corporate-sales-executive.png',
+    location: 'Bangalore',
+    experience: '0–2 Years',
+    salary: '₹4–8 LPA',
+    description: 'Identify and develop corporate partnerships to expand business opportunities. Pitch tailored solutions, close deals, and maintain long-term client relationships.',
+    image: corporateSalesImg,
   },
   {
     id: '8',
     title: 'Human Resource Manager',
-    department: 'HR',
-    location: 'Remote',
-    experience: '3-5 Years',
-    salary: '₹7 - ₹12 LPA',
-    description: 'Nurturing talent and building corporate culture.',
-    image: '/src/assets/jobs/human-resource-manager.png',
+    department: 'Human Resources',
+    location: 'Bangalore, India',
+    experience: '1–4 Years',
+    salary: '₹3–6 LPA',
+    description: 'We are looking for an experienced Human Resource Manager with mandatory experience in the EdTech industry. Lead recruitment, employee engagement, performance management, and HR operations.',
+    image: hrManagerImg,
   },
   {
     id: '9',
     title: 'Lead Generation Specialist',
-    department: 'Sales',
-    location: 'Bangalore',
-    experience: '1-2 Years',
-    salary: '₹3 - ₹5 LPA',
-    description: 'Identifying and qualifying potential business opportunities.',
-    image: '/src/assets/jobs/lead-generation-specialist.png',
+    department: 'Marketing / Sales',
+    location: 'Bangalore, India',
+    experience: '1–2 Years',
+    salary: '₹3–5 LPA',
+    description: 'We are seeking a results-driven Lead Generation Specialist with mandatory experience in the EdTech industry. Generate high-quality leads through digital campaigns, outbound strategies, and data-driven marketing initiatives.',
+    image: leadGenImg,
   },
   {
     id: '10',
@@ -151,7 +165,7 @@ const MORE_JOBS: Job[] = [
     experience: 'Fresher',
     salary: '₹15,000 / Month',
     description: 'Learn the ropes of digital marketing in a fast-paced environment.',
-    image: '/src/assets/jobs/digital-marketing-associate.png',
+    image: digitalMarketingAssocImg,
   },
   {
     id: '11',
@@ -161,7 +175,7 @@ const MORE_JOBS: Job[] = [
     experience: 'Academic Credit / Fresher',
     salary: '₹10,000 / Month',
     description: 'Help us grow the Arambha family by identifying great talent.',
-    image: '/src/assets/jobs/human-resource-manager.png',
+    image: hrManagerImg,
   }
 ];
 
@@ -207,10 +221,12 @@ const WelcomeHero = () => (
           ))}
         </div>
       </div>
-      <div className="flex-1 relative">
-        <div className="relative z-10 w-full max-w-3xl mx-auto">
-           <img src="/src/assets/hero-students.png" alt="Arambha Student" className="w-full h-auto object-contain" style={{ filter: 'drop-shadow(0 0 0 transparent)' }} />
-        </div>
+      <div className="flex-1 relative flex items-center justify-center">
+        <img
+          src={heroStudentsImg}
+          alt="Arambha Team"
+          className="w-[140%] h-auto object-contain max-w-none -mt-20"
+        />
       </div>
     </div>
   </div>
@@ -401,7 +417,7 @@ const FeaturedCourse = () => (
     </div>
     <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row gap-0 transition-all cursor-pointer group" onMouseEnter={(e) => e.currentTarget.style.borderColor = `${COLORS.gold}4D`} onMouseLeave={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}>
       <div className="relative w-full lg:w-[45%] h-64 lg:h-auto overflow-hidden flex-shrink-0" style={{ backgroundColor: COLORS.primary }}>
-        <img src="/src/assets/jobs/lead-generation-specialist.png" alt="Lead" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
+        <img src={leadGenImg} alt="Lead" className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
         <div className="absolute inset-0" style={{ background: `linear-gradient(to top, ${COLORS.primary}CC, transparent)` }} />
         <div className="absolute bottom-6 left-6">
           <span className="text-white px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest mb-2 block w-fit font-sans" style={{ backgroundColor: COLORS.gold }}>Featured Role</span>
@@ -437,10 +453,10 @@ const GoogleSection = () => (
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {[
-        { title: "Design Excellence", desc: "Pushing boundaries.", img: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&q=80" },
-        { title: "Impactful Collaboration", desc: "Working as one team.", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80" },
-        { title: "Growth Mindset", desc: "invest in evolution.", img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&q=80" },
-        { title: "Radical Integrity", desc: "Transparency & trust.", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80" }
+        { title: "Design Excellence", desc: "Pushing boundaries.", img: designExcellenceImg },
+        { title: "Impactful Collaboration", desc: "Working as one team.", img: impactfulCollabImg },
+        { title: "Growth Mindset", desc: "invest in evolution.", img: growthMindsetImg },
+        { title: "Radical Integrity", desc: "Transparency & trust.", img: radicalIntegrityImg }
       ].map((v, i) => (
         <motion.div key={i} className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all group" whileHover={{ y: -10 }}>
           <div className="h-48 overflow-hidden relative">
@@ -551,12 +567,8 @@ export default function App() {
         ) : (
           <>
             <CourseCarousel id="active-hires" title="Active Hiring" subtitle="Top roles based on your profile" courses={JOB_LISTINGS} />
-            <CourseCarousel id="sales-roles" title="Business Development & Sales" subtitle='Join our high-performance growth engine' courses={MORE_JOBS.filter(j => j.department === 'Sales' || j.department === 'Partnerships')} />
-            <FeaturedCourse />
-            <CourseCarousel id="trending-tech" title="Trending Career Tracks" subtitle="Skill paths in high demand this week" courses={[...JOB_LISTINGS].reverse()} />
-            <CourseCarousel id="management" title="Management & Leadership" courses={JOB_LISTINGS.filter(j => j.title.includes('Manager') || j.title.includes('Lead'))} />
+            <CourseCarousel id="sales-roles" title="Business Development & Sales" subtitle='Join our high-performance growth engine' courses={MORE_JOBS.filter(j => j.department === 'Sales' || j.department === 'Marketing / Sales')} />
             <CourseCarousel id="internships" title="Campus Partnerships & Internships" subtitle="Start your career journey with us" courses={MORE_JOBS.filter(j => j.experience.toLowerCase().includes('fresher') || j.experience.toLowerCase().includes('student'))} />
-            <CourseCarousel id="strategic" title="Strategic Growth Roles" courses={JOB_LISTINGS.filter(j => j.department === 'Strategy' || j.department === 'Marketing')} />
           </>
         )}
 

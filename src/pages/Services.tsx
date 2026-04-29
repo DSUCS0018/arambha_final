@@ -4,12 +4,13 @@ import { Check, GraduationCap, Award, TrendingUp, Layers, Star, ArrowRight, Cale
 import { useNavigate, Link } from "react-router-dom";
 
 import hero1 from "../assets/services/hero1.png";
-import skillCertImg from "../assets/services/skill-certification.jpg";
-import manpowerImg from "../assets/services/manpower-solutions.jpg";
-import admissionImg from "../assets/services/admission-support.jpg";
-import trainingImg from "../assets/services/training-workforce.jpg";
-import placementImg from "../assets/services/placement-assistance.jpg";
-import liveProjectImg from "../assets/services/live-projects.jpg";
+import skillCertImg from "../assets/services/skill-certifications.png";
+import manpowerImg from "../assets/services/manpower-solutions.png";
+import admissionImg from "../assets/services/admission-support.png";
+import trainingImg from "../assets/services/training-workforce.png";
+import placementImg from "../assets/services/placement-assistance.png";
+import liveProjectImg from "../assets/services/live-projects.png";
+import yourJourneyImg from "../assets/services/your journey.png";
 import "./Services.css";
 
 const SERVICES_DATA = [
@@ -134,6 +135,15 @@ export default function Services() {
               <p className="text-[#3A5785] text-lg mb-6 leading-relaxed max-w-lg font-sans">
                 Our comprehensive approach bridges the gap between academic learning and real-world industrial demands through mentorship and practical exposure.
               </p>
+              <motion.img
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                src={yourJourneyImg}
+                alt="Your Journey"
+                className="w-full max-w-lg object-contain mt-4 rounded-2xl"
+              />
             </motion.div>
 
             {/* Right — Bento Feature Grid */}

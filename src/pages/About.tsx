@@ -33,7 +33,7 @@ import {
   Star
 } from 'lucide-react';
 
-import hereBg from "../assets/Hero-bg-about.png";
+import hereBg from "../assets/Hero-bg-about.jpeg";
 
 // --- Helper Components ---
 
@@ -303,7 +303,7 @@ const Differentiation = () => (
   <section className="pt-16 pb-32 bg-[#e1e8f2]">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-20">
-        <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-primary mb-6 leading-tight max-w-4xl mx-auto italic">
+        <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-primary mb-6 leading-tight max-w-4xl mx-auto lora">
           Why Organizations & Learners Choose Arambha Skill Solutions
         </h2>
         <div className="h-1.5 w-20 bg-accent-gold mx-auto rounded-full"></div>
