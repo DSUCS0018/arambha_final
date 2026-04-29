@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/ALogo.png";
+import logo from "../assets/ARAMBHA.svg";
+import arambhaText from "../assets/arambha-text.svg";
 
 export default function Navbar() {
   const location = useLocation();
@@ -47,13 +48,14 @@ export default function Navbar() {
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img
             alt="Arambha Logo"
-            className="h-10 sm:h-12 w-auto"
+            className="h-10 sm:h-14 w-auto object-contain scale-150"
             src={logo}
           />
-          <div className="text-base sm:text-xl font-extrabold text-primary tracking-tighter leading-none font-serif">
-            Arambha<br />
-            <span className="text-accent-gold text-xs sm:text-sm font-bold tracking-normal font-sans">Skill Solutions</span>
-          </div>
+          <img
+  src={arambhaText}
+  alt="Arambha Skill Solutions"
+  className="h-12 sm:h-14 w-auto object-contain scale-300 ml-12"
+/>
         </Link>
 
         {/* Desktop Navigation */}
