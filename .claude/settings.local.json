@@ -10,7 +10,8 @@
       "Bash(cp \"c:/Users/Ankita/Downloads/Manpower solutions.jpeg\" \"M:/Florix technologies/arambha-skill-solutions \\(3\\)/arambha-skill-solutions \\(2\\)/arambha-skill-solutions/src/assets/services/manpower-solutions.jpg\")",
       "Bash(cp \"c:/Users/Ankita/Downloads/Admisiion support.jpeg\" \"M:/Florix technologies/arambha-skill-solutions \\(3\\)/arambha-skill-solutions \\(2\\)/arambha-skill-solutions/src/assets/services/admission-support.jpg\")",
       "Bash(cp \"c:/Users/Ankita/Downloads/Training for skilled and Unskilled.jpeg\" \"M:/Florix technologies/arambha-skill-solutions \\(3\\)/arambha-skill-solutions \\(2\\)/arambha-skill-solutions/src/assets/services/training-workforce.jpg\")",
-      "Bash(cp \"c:/Users/Ankita/Downloads/Placemnt Assistantnce.jpeg\" \"M:/Florix technologies/arambha-skill-solutions \\(3\\)/arambha-skill-solutions \\(2\\)/arambha-skill-solutions/src/assets/services/placement-assistance.jpg\")"
+      "Bash(cp \"c:/Users/Ankita/Downloads/Placemnt Assistantnce.jpeg\" \"M:/Florix technologies/arambha-skill-solutions \\(3\\)/arambha-skill-solutions \\(2\\)/arambha-skill-solutions/src/assets/services/placement-assistance.jpg\")",
+      "Bash(npm run build:*)"
     ]
   }
 }
