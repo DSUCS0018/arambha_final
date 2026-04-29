@@ -3,14 +3,14 @@ import { motion } from "motion/react";
 import { Check, GraduationCap, Award, TrendingUp, Layers, Star, ArrowRight } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 
-import hero1 from "../assets/service/hero1.png";
-import skillCertImg from "../assets/service/skill-certifications.png";
-import manpowerImg from "../assets/service/manpower-solutions.png";
-import admissionImg from "../assets/service/admission-support.png";
-import trainingImg from "../assets/service/training-workforce.png";
-import placementImg from "../assets/service/placement-assistance.png";
-import liveProjectImg from "../assets/service/live-projects.png";
-import yourJourneyImg from "../assets/service/your journey.png";
+import hero1 from "../assets/services/hero1.png";
+import skillCertImg from "../assets/services/skill-certifications.png";
+import manpowerImg from "../assets/services/manpower-solutions.png";
+import admissionImg from "../assets/services/admission-support.png";
+import trainingImg from "../assets/services/training-workforce.png";
+import placementImg from "../assets/services/placement-assistance.png";
+import liveProjectImg from "../assets/services/live-projects.png";
+import yourJourneyImg from "../assets/services/your journey.png";
 import "./Services.css";
 
 const SERVICES_DATA = [
