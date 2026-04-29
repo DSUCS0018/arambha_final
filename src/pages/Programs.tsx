@@ -3,13 +3,13 @@ import { useState } from "react";
 import { ArrowRight, BookOpen, GraduationCap, Users, CheckCircle2 } from "lucide-react";
 
 // Import program images
-import spokenEnglishImg from "../assets/programs/spoken-english-mastery.jpg";
-import foundation60Img from "../assets/programs/foundation-60.jpg";
+import spokenEnglishImg from "../assets/programs/spoken-english-mastery.png";
+import foundation60Img from "../assets/programs/foundation-60.png";
 import digitalMarketingImg from "../assets/programs/digital-marketing-expert.png";
 import campusToCorporateImg from "../assets/programs/campus-to-corporate.png";
 import hrManagementImg from "../assets/programs/hr-management.png";
 import bankingFinanceImg from "../assets/programs/banking-finance.png";
-import fullStackJavaImg from "../assets/programs/full-stack-java.jpg";
+import fullStackJavaImg from "../assets/programs/full-stack-java.png";
 import dataScienceImg from "../assets/programs/data-science-ai.png";
 import autocadImg from "../assets/programs/autocad-design.png";
 import heroStudentsImg from "../assets/hero-students.png";
@@ -166,11 +166,29 @@ export default function ProgramsScreen() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex-1 relative"
             >
-              <img
+              {/* <img
                 src={heroStudentsImg}
                 alt="Students learning"
-                className="w-full h-auto -mt-25 -ml-10 [mask-image:linear-gradient(to_right,transparent,black_20%)]"
-              />
+                className="w-full lg:w-[140%] h-auto mt-20 lg:-ml-5 -ml-5 border-none shadow-none [mask-image:linear-gradient(90deg,transparent_0%,black_12%,black_88%,transparent_100%)]"
+              /> */}
+
+
+              <img
+  src={heroStudentsImg}
+  alt="Students learning"
+  className="
+    w-[130%] lg:w-[150%]
+    max-w-none
+    h-auto
+    mt-10 lg:mt-0
+    -ml-10 lg:-ml-10
+    -mr-10
+    border-none shadow-none
+    object-contain
+  "
+/>
+
+
             </motion.div>
           </div>
         </div>
@@ -220,7 +238,7 @@ export default function ProgramsScreen() {
       </div>
 
       {/* Why Choose Us */}
-      <section style={{ backgroundColor: '#3a5785' }} className="py-24 mb-20">
+      <section style={{ backgroundColor: '#D4AF37' }} className="py-24 mb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-white">Why Choose Arambha Programs?</h2>
