@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Check, School, BadgeCheck, Briefcase, RotateCcw, Star, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import hero1 from "../assets/services/hero1.png";
 import skillCertImg from "../assets/services/skill-certification.jpg";
@@ -13,12 +13,12 @@ import liveProjectImg from "../assets/services/live-projects.jpg";
 import "./Services.css";
 
 const SERVICES_DATA = [
-  { title: "Skill Certification", description: "We offer industry-relevant courses and upskilling programs designed to enhance knowledge and employability. Learners receive recognized certifications upon successful completion.", image: skillCertImg },
-  { title: "Manpower Solutions for Companies", description: "We provide skilled and job-ready candidates to meet the manpower requirements of various organizations across industries, ensuring the right talent for the right role.", image: manpowerImg },
-  { title: "Admission Support for Colleges & Learners", description: "We assist students and institutions with seamless admission processes, helping learners choose the right courses and colleges for their career growth.", image: admissionImg },
-  { title: "Training for Skilled & Unskilled Workforce", description: "We deliver practical training programs for both skilled and unskilled individuals, focusing on job readiness, productivity, and career development.", image: trainingImg },
-  { title: "Placement Assistance & Career Support", description: "We support learners with placement opportunities, interview preparation, and career guidance to help them secure suitable jobs.", image: placementImg },
-  { title: "Live Projects & Industry-Driven Learning", description: "Get hands-on experience by working on real-time projects under the guidance of industry experts. Build practical skills and become job-ready with confidence.", image: liveProjectImg },
+  { title: "Skill Certification", description: "We offer industry-relevant courses and upskilling programs designed to enhance knowledge and employability. Learners receive recognized certifications upon successful completion.", image: skillCertImg, link: "/services/skill-certification" },
+  { title: "Manpower Solutions for Companies", description: "We provide skilled and job-ready candidates to meet the manpower requirements of various organizations across industries, ensuring the right talent for the right role.", image: manpowerImg, link: "/services/manpower-solutions" },
+  { title: "Admission Support for Colleges & Learners", description: "We assist students and institutions with seamless admission processes, helping learners choose the right courses and colleges for their career growth.", image: admissionImg, link: "/services/admission-support" },
+  { title: "Training for Skilled & Unskilled Workforce", description: "We deliver practical training programs for both skilled and unskilled individuals, focusing on job readiness, productivity, and career development.", image: trainingImg, link: "/services/training-workforce" },
+  { title: "Placement Assistance & Career Support", description: "We support learners with placement opportunities, interview preparation, and career guidance to help them secure suitable jobs.", image: placementImg, link: "/services/placement-assistance" },
+  { title: "Live Projects & Industry-Driven Learning", description: "Get hands-on experience by working on real-time projects under the guidance of industry experts. Build practical skills and become job-ready with confidence.", image: liveProjectImg, link: "/services/live-projects" },
 ];
 
 const TESTIMONIALS = [
@@ -177,7 +177,16 @@ export default function Services() {
                   <h3 className="text-xl font-bold text-[#2C4D8A] mb-3" style={{ fontFamily: "'Lora', serif" }}>
                     {service.title}
                   </h3>
-                  <p className="text-[#3A5785] text-sm leading-relaxed" style={{ fontFamily: "'Lora', serif" }}>{service.description}</p>
+                  <p className="text-[#3A5785] text-sm leading-relaxed flex-grow" style={{ fontFamily: "'Lora', serif" }}>{service.description}</p>
+                  <div className="mt-6 pt-4 border-t border-slate-100">
+                    <Link
+                      to={service.link}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-sm text-white bg-[#2C4D8A] hover:bg-[#D4AF37] transition-all duration-300 group/btn"
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, useInView, useAnimation } from "motion/react";
 import {
   ArrowRight,
   MessageCircle,
@@ -21,7 +21,9 @@ import {
   Handshake,
   Brain,
   Wallet,
-  Zap
+  Zap,
+  Award,
+  Compass
 } from "lucide-react";
 
 import heroBg from "../assets/Hero-Bg.svg";
@@ -34,16 +36,16 @@ import fullStackJavaImg from "../assets/programs/full-stack-java.png";
 
 function LogoBox({ alt, domain }: { alt: string, domain: string }) {
   const iconUrl = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-  
+
   return (
-    <div className="flex-shrink-0 px-10 py-6 bg-white border-2 border-slate-100 rounded-2xl shadow-sm flex items-center justify-center min-w-[200px] h-28 hover:border-accent-gold hover:shadow-lg transition-all group">
-      
-      <div className="w-16 h-16 rounded-lg bg-slate-50 flex items-center justify-center group-hover:bg-accent-gold/10 transition-colors shrink-0 overflow-hidden border border-slate-100">
-        
-        <img 
+    <div className="flex-shrink-0 px-8 py-4 bg-white border-2 border-slate-100 rounded-2xl shadow-sm flex flex-col items-center justify-center min-w-[200px] h-32 hover:border-accent-gold hover:shadow-lg transition-all group gap-2">
+
+      <div className="w-14 h-14 rounded-lg bg-slate-50 flex items-center justify-center group-hover:bg-accent-gold/10 transition-colors shrink-0 overflow-hidden border border-slate-100">
+
+        <img
           src={iconUrl}
           alt={`${alt} logo`}
-          className="w-12 h-12 object-contain transition-transform group-hover:scale-110"
+          className="w-10 h-10 object-contain transition-transform group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             target.src = `https://ui-avatars.com/api/?name=${alt}&background=transparent&color=1B2B48&bold=true`;
@@ -51,6 +53,7 @@ function LogoBox({ alt, domain }: { alt: string, domain: string }) {
         />
 
       </div>
+      <span className="text-xs font-extrabold text-primary/80 uppercase tracking-widest font-sans group-hover:text-accent-gold transition-colors duration-300">{alt}</span>
     </div>
   );
 }
@@ -84,7 +87,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center lg:text-left grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -130,7 +133,7 @@ export default function Home() {
               </div>
             </motion.div>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -187,7 +190,7 @@ export default function Home() {
                 <span className="uppercase tracking-wider text-sm">Built for rapid growth</span>
               </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -225,44 +228,37 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-16 sm:py-24 bg-white border-t border-slate-100 overflow-hidden">
+      <section className="py-8 sm:py-12 bg-white border-t border-slate-100 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-1 items-center">
-            <div className="text-left">
+          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
+            <div className="text-left lg:col-span-4 pr-4">
               <p className="text-[10px] sm:text-xs text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest font-bold">Trusted by Alumni At</p>
               <h2 className="font-serif text-2xl sm:text-4xl text-primary leading-tight font-bold">
                 Teams speaking at the world's most ambitious <span className="text-accent-gold">companies</span>.
               </h2>
             </div>
-            <div className="relative w-full overflow-hidden py-12">
+            <div className="relative w-full overflow-hidden py-6 lg:col-span-8">
               <div 
-  className="flex whitespace-nowrap items-center py-4 gap-8 animate-scroll"
-  style={{ animation: "scroll 1s linear infinite" }}
->
-                {[
-                  { name: 'Netflix', domain: 'netflix.com' },
-                  { name: 'Amazon', domain: 'amazon.com' },
-                  { name: 'Cisco', domain: 'cisco.com' },
-                  { name: 'Infosys', domain: 'infosys.com' },
-                  { name: 'Cognizant', domain: 'cognizant.com' },
-                  { name: 'Flipkart', domain: 'flipkart.com' },
-                  { name: 'EY', domain: 'ey.com' },
-                  { name: 'TCS', domain: 'tcs.com' },
-                  { name: 'Capgemini', domain: 'capgemini.com' },
-                  { name: 'Tech Mahindra', domain: 'techmahindra.com' },
-                ].concat([
-                  { name: 'Netflix', domain: 'netflix.com' },
-                  { name: 'Amazon', domain: 'amazon.com' },
-                  { name: 'Cisco', domain: 'cisco.com' },
-                  { name: 'Infosys', domain: 'infosys.com' },
-                  { name: 'Cognizant', domain: 'cognizant.com' },
-                  { name: 'Flipkart', domain: 'flipkart.com' },
-                  { name: 'EY', domain: 'ey.com' },
-                  { name: 'TCS', domain: 'tcs.com' },
-                  { name: 'Capgemini', domain: 'capgemini.com' },
-                  { name: 'Tech Mahindra', domain: 'techmahindra.com' },
-                ]).map((company, i) => (
-                  <LogoBox key={i} alt={company.name} domain={company.domain} />
+                className="flex w-max items-center py-4 animate-scroll hover:[animation-play-state:paused]"
+                style={{ animation: "scroll 20s linear infinite" }}
+              >
+                {[...Array(2)].map((_, groupIndex) => (
+                  <div key={groupIndex} className="flex w-max items-center gap-8 pr-8">
+                    {[
+                      { name: 'Netflix', domain: 'netflix.com' },
+                      { name: 'Amazon', domain: 'amazon.com' },
+                      { name: 'Cisco', domain: 'cisco.com' },
+                      { name: 'Infosys', domain: 'infosys.com' },
+                      { name: 'Cognizant', domain: 'cognizant.com' },
+                      { name: 'Flipkart', domain: 'flipkart.com' },
+                      { name: 'EY', domain: 'ey.com' },
+                      { name: 'TCS', domain: 'tcs.com' },
+                      { name: 'Capgemini', domain: 'capgemini.com' },
+                      { name: 'Tech Mahindra', domain: 'techmahindra.com' },
+                    ].map((company, i) => (
+                      <LogoBox key={`${groupIndex}-${i}`} alt={company.name} domain={company.domain} />
+                    ))}
+                  </div>
                 ))}
               </div>
               <div className="absolute top-0 left-0 w-40 h-full bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
@@ -277,16 +273,16 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold/5 blur-3xl -mr-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="order-2 lg:order-1"
             >
               <div className="relative overflow-hidden">
-                <img 
-                  className="w-full aspect-video object-cover" 
-                  src={engImg} 
+                <img
+                  className="w-full aspect-video object-cover"
+                  src={engImg}
                 />
               </div>
             </motion.div>
@@ -315,44 +311,7 @@ export default function Home() {
         </div>
       </section>
       {/* Journey Timeline */}
-      <section className="py-0 sm:py-6 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-20"
-          >
-            <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold">Your Path to Mastery</h2>
-            <p className="text-sm sm:text-base text-on-surface-variant font-sans">A structured evolution from novice to industry-expert.</p>
-          </motion.div>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 relative"
-          >
-            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 z-0"></div>
-            {[
-              { title: "Foundation", desc: "Communication basics, confidence building, and native language bridging." },
-              { title: "Skill Training", desc: "Practical English, industry-specific skills, and live hands-on projects." },
-              { title: "Certification", desc: "Globally recognized industry certificates to validate your professional expertise." },
-              { title: "Career Launch", desc: "Placement readiness, mock interviews, and direct hiring partner connections." }
-            ].map((step, i) => (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                className="relative z-10 bg-white p-3 sm:p-4 text-center md:text-left"
-              >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white border-2 border-slate-100 rounded-3xl flex items-center justify-center text-primary text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 shadow-md mx-auto md:mx-0 font-serif">{i + 1}</div>
-                <h3 className="text-lg sm:text-xl text-primary mb-2 sm:mb-3 font-serif font-bold">{step.title}</h3>
-                <p className="text-on-surface-variant font-sans text-xs sm:text-sm leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <RoadmapSection />
 
       {/* Programs Cards */}
       <section className="py-16 sm:py-32 bg-white">
@@ -451,10 +410,10 @@ export default function Home() {
 
 function LogoItem({ alt, src }: { alt: string, src: string }) {
   return (
-    <img 
-      alt={alt} 
-      className="h-8 md:h-10 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform" 
-      src={src} 
+    <img
+      alt={alt}
+      className="h-8 md:h-10 opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform"
+      src={src}
       referrerPolicy="no-referrer"
     />
   );
@@ -476,12 +435,6 @@ function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg
         <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src={img} alt={title} />
       </div>
       <div className="p-8">
-        <div className="mb-3 flex items-center gap-2">
-          <span className={`${tagColor} px-3 py-1 rounded-md text-[10px] font-bold uppercase inline-block border`}>{tag}</span>
-          {category && (
-            <span className="text-[10px] text-on-surface-variant font-semibold uppercase tracking-wider">• {category}</span>
-          )}
-        </div>
         <h3 className="text-xl text-primary mb-2 font-serif font-bold group-hover:text-accent-gold transition-colors">{title}</h3>
         <p className="text-on-surface-variant mb-6 font-sans text-sm leading-relaxed line-clamp-3">{desc}</p>
         <div className="flex items-center justify-between pt-6 border-t border-slate-100 text-sm">
@@ -510,5 +463,149 @@ function ValueCard({ icon: Icon, title, text }: { icon: any, title: string, text
       <h4 className="font-bold text-primary mb-2 text-xs sm:text-sm uppercase tracking-wide font-serif">{title}</h4>
       <p className="text-[11px] sm:text-xs text-on-surface-variant font-sans leading-relaxed">{text}</p>
     </motion.div>
+  );
+}
+
+const ROADMAP_STEPS = [
+  { title: "Foundation",    desc: "Communication basics, confidence building, and native language bridging.", icon: Compass },
+  { title: "Skill Training",desc: "Practical English, industry-specific skills, and live hands-on projects.",  icon: Zap    },
+  { title: "Certification", desc: "Globally recognized industry certificates to validate your expertise.",      icon: Award  },
+  { title: "Career Launch", desc: "Placement readiness, mock interviews, and direct hiring partner connections.", icon: Rocket },
+];
+
+function RoadmapSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [activeStep, setActiveStep] = useState(-1);
+  const pathRef = useRef<SVGPathElement>(null);
+
+  useEffect(() => {
+    if (!isInView) return;
+    // Animate path draw
+    const path = pathRef.current;
+    if (path) {
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = `${len}`;
+      path.style.strokeDashoffset = `${len}`;
+      path.style.transition = "stroke-dashoffset 2s cubic-bezier(0.4,0,0.2,1)";
+      requestAnimationFrame(() => {
+        path.style.strokeDashoffset = "0";
+      });
+    }
+    // Sequentially activate each step icon
+    ROADMAP_STEPS.forEach((_, i) => {
+      setTimeout(() => setActiveStep(i), 400 + i * 500);
+    });
+  }, [isInView]);
+
+  return (
+    <section className="py-12 sm:py-20 bg-white" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14 sm:mb-20"
+        >
+          <span className="text-[10px] text-accent-gold uppercase tracking-widest font-bold mb-3 block">Learning Journey</span>
+          <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold">Your Path to Mastery</h2>
+          <p className="text-sm sm:text-base text-on-surface-variant font-sans">A structured evolution from novice to industry-expert.</p>
+        </motion.div>
+
+        {/* Steps Grid */}
+        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+
+          {/* Animated SVG Roadmap Path (desktop only) */}
+          <div className="hidden md:block absolute inset-x-0 top-0 h-[7rem] z-0 pointer-events-none">
+            <svg
+              width="100%"
+              height="100%"
+              viewBox="0 0 800 112"
+              preserveAspectRatio="none"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stopColor="#e2e8f0" />
+                  <stop offset="30%"  stopColor="#d4af37" />
+                  <stop offset="70%"  stopColor="#d4af37" />
+                  <stop offset="100%" stopColor="#e2e8f0" />
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                  <feMerge><feMergeNode in="coloredBlur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+              {/* Curved path connecting all 4 icon centers */}
+              <path
+                ref={pathRef}
+                d="M 100 56 C 160 20, 240 92, 300 56 S 440 20, 500 56 S 640 92, 700 56"
+                stroke="url(#rg)"
+                strokeWidth="3"
+                strokeLinecap="round"
+                filter="url(#glow)"
+              />
+            </svg>
+          </div>
+
+          {/* Step Cards */}
+          {ROADMAP_STEPS.map((step, i) => {
+            const isActive = activeStep >= i;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 32 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.15, ease: "easeOut" }}
+                className="relative z-10 flex flex-col items-center text-center group cursor-default"
+              >
+                {/* Floating Icon Box */}
+                <motion.div
+                  animate={isActive
+                    ? { y: [0, -6, 0], boxShadow: ["0 4px 16px #0001", "0 8px 32px #d4af3740", "0 4px 16px #0001"] }
+                    : { y: 0 }}
+                  transition={isActive ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" } : {}}
+                  className={`relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-3xl flex items-center justify-center mb-5 sm:mb-7 transition-all duration-500 ${
+                    isActive
+                      ? "border-2 border-accent-gold shadow-[0_0_24px_4px_rgba(212,175,55,0.25)]"
+                      : "border-2 border-slate-100 shadow-md"
+                  }`}
+                >
+                  {/* Number badge */}
+                  <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center text-xs font-extrabold shadow-md border-2 transition-all duration-500 ${
+                    isActive
+                      ? "bg-accent-gold text-white border-accent-gold"
+                      : "bg-white text-on-surface-variant border-slate-100"
+                  }`}>
+                    {i + 1}
+                  </div>
+
+                  {/* Icon */}
+                  <motion.div
+                    animate={isActive ? { scale: [1, 1.12, 1] } : { scale: 1 }}
+                    transition={isActive ? { duration: 1.5, repeat: Infinity, ease: "easeInOut" } : {}}
+                  >
+                    <step.icon
+                      size={34}
+                      strokeWidth={1.5}
+                      className={`transition-colors duration-500 ${isActive ? "text-accent-gold" : "text-slate-400"}`}
+                    />
+                  </motion.div>
+                </motion.div>
+
+                <h3 className={`text-base sm:text-lg font-serif font-bold mb-2 transition-colors duration-500 ${isActive ? "text-primary" : "text-slate-400"}`}>
+                  {step.title}
+                </h3>
+                <p className="text-on-surface-variant font-sans text-xs sm:text-sm leading-relaxed max-w-[200px]">
+                  {step.desc}
+                </p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

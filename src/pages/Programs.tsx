@@ -220,10 +220,10 @@ export default function ProgramsScreen() {
       </div>
 
       {/* Why Choose Us */}
-      <section style={{ backgroundColor: '#293961' }} className="py-24 mb-20">
+      <section style={{ backgroundColor: '#3a5785' }} className="py-24 mb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold" style={{ color: '#02367B' }}>Why Choose Arambha Programs?</h2>
+            <h2 className="text-4xl font-serif font-bold text-white">Why Choose Arambha Programs?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {WHY_CHOOSE_US.map((item, i) => (
@@ -292,12 +292,6 @@ function ProgramSection({ title, programs }: { title: string, programs: typeof P
               <img src={program.image} alt={program.title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
             </div>
             <div className="p-8 flex-grow flex flex-col">
-              <div className="flex justify-between items-center mb-4">
-                <span className={`px-4 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest ${getBadgeColor(program.color)}`}>
-                  {program.category}
-                </span>
-                <span className="text-xs font-bold text-text-muted uppercase tracking-tighter">{program.duration}</span>
-              </div>
               <h3 className="text-2xl font-bold text-primary mb-4 leading-tight group">
                 <span className="title-accent">{program.title}</span>
               </h3>

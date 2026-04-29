@@ -7,10 +7,8 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-16 relative z-10">
         <div className="col-span-1">
           <div className="flex items-start gap-6 mb-8">
-<img 
-  src={logo} 
-  style={{ width: "200px", height: "200px", background: "red" }} 
-/>            <div>
+            <img src={logo} style={{ width: "200px", height: "200px" }} alt="Arambha Logo" />
+           <div>
               <div className="text-lg font-bold text-primary mb-1 font-serif tracking-tight">Arambha</div>
               <div className="text-xs text-accent-gold font-bold tracking-wide">Skill Solutions</div>
             </div>
