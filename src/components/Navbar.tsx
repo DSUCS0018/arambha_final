@@ -1,11 +1,30 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/ALogo.png";
 
 export default function Navbar() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      // Show navbar when scrolling up OR near the top
+      if (currentY < 10 || currentY < lastScrollY.current) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+        setIsMenuOpen(false); // close mobile menu when hiding
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -20,7 +39,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md shadow-sm">
+    <nav
+      className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-md shadow-sm transition-transform duration-300 ease-in-out"
+      style={{ transform: visible ? "translateY(0)" : "translateY(-100%)" }}
+    >
       <div className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 py-4 w-full">
         <Link to="/" className="flex items-center gap-2 sm:gap-3">
           <img

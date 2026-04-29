@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Check, School, BadgeCheck, Briefcase, RotateCcw, Star, ArrowRight } from "lucide-react";
+import { Check, GraduationCap, Award, TrendingUp, Layers, Star, ArrowRight } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 
 import hero1 from "../assets/services/hero1.png";
@@ -40,7 +40,7 @@ export default function Services() {
 
       {/* ── Hero Section ── redesigned */}
       <section className="services-hero" aria-label="Our Services">
-        <div className="services-hero__inner max-w-7xl mx-auto px-6 py-16">
+        <div className="services-hero__inner max-w-7xl mx-auto px-6 py-24">
           <motion.div className="services-hero__grid" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
 
             {/* LEFT: visual illustration */}
@@ -81,23 +81,30 @@ export default function Services() {
       </section>
 
       {/* ── Why Arambha ── */}
-      <section className="py-24 px-6 relative">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-28 px-6 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #041632 0%, #0d2b55 50%, #041632 100%)" }}>
+        {/* ambient glows */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#D4AF37]/8 rounded-full blur-[120px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-[120px] translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
+
+            {/* Left — text */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="lg:w-1/2"
             >
-              <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
-                TRANSFORMATION LEADERS
+              <span className="inline-block bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6">
+                Transformation Leaders
               </span>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#2C4D8A] mb-6 leading-tight" style={{ fontFamily: "'Lora', serif" }}>
-                We don't just teach — we help you{" "}
-                <span style={{ color: '#02367B' }}>build a career</span>.
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-[1.1]" style={{ fontFamily: "'Lora', serif" }}>
+                We don't just teach —{" "}
+                <span className="text-[#D4AF37]">we help you build a career.</span>
               </h2>
-              <p className="text-lg text-[#3A5785] mb-10 leading-relaxed max-w-xl">
+              <p className="text-white/60 text-lg mb-10 leading-relaxed max-w-lg">
                 Our comprehensive approach bridges the gap between academic learning and real-world industrial demands through mentorship and practical exposure.
               </p>
               <div className="space-y-4">
@@ -108,42 +115,118 @@ export default function Services() {
                   "Hands-on project-based learning model",
                   "Flexible learning formats for busy schedules",
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
-                      <Check className="text-[#D4AF37] w-4 h-4 stroke-[3px]" />
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex items-center gap-4 group"
+                  >
+                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#D4AF37]/15 border border-[#D4AF37]/30 flex items-center justify-center">
+                      <Check className="text-[#D4AF37] w-3.5 h-3.5 stroke-[3px]" />
                     </div>
-                    <span className="text-[#2C4D8A] font-semibold">{item}</span>
-                  </div>
+                    <span className="text-white/80 font-medium text-sm group-hover:text-white transition-colors">{item}</span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {[
-                { Icon: School, title: "Learn from Industry Experts", desc: "Get trained by professionals with real-world experience.", delay: 0, offset: false, neg: false },
-                { Icon: BadgeCheck, title: "Certified Programs", desc: "Earn certifications that actually matter in the job market.", delay: 0.1, offset: true, neg: false },
-                { Icon: Briefcase, title: "Career Support", desc: "Resume building, interview prep, and placement guidance.", delay: 0.2, offset: false, neg: true },
-                { Icon: RotateCcw, title: "Live Projects", desc: "Work on real-world projects to build your portfolio.", delay: 0.3, offset: false, neg: false },
-              ].map(({ Icon, title, desc, delay, offset, neg }, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay }}
-                  className={`bg-white p-8 rounded-2xl shadow-sm border-t-4 border-[#D4AF37] group hover:shadow-xl transition-all duration-300 ${offset ? 'sm:mt-8' : ''} ${neg ? 'sm:-mt-8' : ''}`}
-                >
-                  <div className="w-14 h-14 bg-[#F5F7FB] rounded-full flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                    <Icon className="text-[#2C4D8A] group-hover:text-white transition-colors" />
+            {/* Right — Bento Feature Grid */}
+            <div className="lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-auto">
+
+              {/* Card 1 — Wide top card: Industry Experts */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0 }}
+                whileHover={{ scale: 1.02 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-8 cursor-default group"
+                style={{ background: "linear-gradient(135deg, #D4AF37 0%, #B8860B 100%)", minHeight: 160 }}
+              >
+                <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/10" />
+                <div className="absolute -right-2 -bottom-2 w-20 h-20 rounded-full bg-white/10" />
+                <div className="absolute top-6 right-8 opacity-20 group-hover:opacity-40 transition-opacity">
+                  <GraduationCap className="w-20 h-20 text-white" />
+                </div>
+                <p className="text-white/70 text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
+                <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "'Lora', serif" }}>
+                  Industry Experts
+                </h3>
+                <p className="text-white/75 text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
+                <div className="mt-4 inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                  Live Mentorship Sessions
+                </div>
+              </motion.div>
+
+              {/* Card 2 — Certified Programs */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.03 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group"
+                style={{ background: "linear-gradient(145deg, #1e3a6e 0%, #2563eb 100%)", minHeight: 180 }}
+              >
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-white/10" />
+                <Award className="w-8 h-8 text-blue-300 mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-blue-200 text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
+                <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                  Certified<br />Programs
+                </h3>
+                <p className="text-blue-200 text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
+              </motion.div>
+
+              {/* Card 3 — Career Support */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                whileHover={{ scale: 1.03 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group"
+                style={{ background: "linear-gradient(145deg, #064e3b 0%, #10b981 100%)", minHeight: 180 }}
+              >
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-white/10" />
+                <TrendingUp className="w-8 h-8 text-emerald-300 mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-emerald-200 text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
+                <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                  Career<br />Support
+                </h3>
+                <p className="text-emerald-200 text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
+              </motion.div>
+
+              {/* Card 4 — Wide bottom card: Live Projects */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.02 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-7 cursor-default group"
+                style={{ background: "linear-gradient(135deg, #3b0764 0%, #7c3aed 100%)", minHeight: 130 }}
+              >
+                <div className="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-white/5" />
+                <div className="absolute top-5 right-7 opacity-20 group-hover:opacity-40 transition-opacity">
+                  <Layers className="w-16 h-16 text-white" />
+                </div>
+                <div>
+                    <p className="text-purple-300 text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
+                    <h3 className="text-xl font-extrabold text-white" style={{ fontFamily: "'Lora', serif" }}>Live Projects</h3>
+                    <p className="text-purple-200 text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
                   </div>
-                  <h3 className="text-xl font-bold text-[#2C4D8A] mb-3" style={{ fontFamily: "'Lora', serif" }}>{title}</h3>
-                  <p className="text-sm text-[#3A5785]">{desc}</p>
-                </motion.div>
-              ))}
+              </motion.div>
+
             </div>
+
+
           </div>
         </div>
       </section>
+
 
       {/* ── Expert Solutions / Service Cards ── */}
       <section className="py-24 px-6 bg-white">
