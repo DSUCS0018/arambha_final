@@ -225,7 +225,7 @@ const WelcomeHero = () => (
         <img
           src={heroStudentsImg}
           alt="Arambha Team"
-          className="w-full h-auto object-contain max-w-4xl scale-200 -mt-20"
+          className="w-full h-auto object-contain max-w-3xl scale-200 -mt-20"
         />
       </div>
     </div>
