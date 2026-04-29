@@ -173,26 +173,26 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
 
       {/* CARD SIDE */}
       <div className={`relative ${isLeft ? "md:order-1" : ""}`}>
-        <div className="p-8 bg-white rounded-3xl border border-outline-variant shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
+        <div className="p-8 bg-[#e1e8f2] rounded-3xl border border-[#2c4d8a]/10 shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
           {/* Glass glare effect */}
-          <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent-gold/5 rounded-full blur-2xl group-hover:bg-accent-gold/10 transition-colors duration-700"></div>
+          <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#2c4d8a]/5 rounded-full blur-2xl group-hover:bg-[#2c4d8a]/10 transition-colors duration-700"></div>
           
           <div className="flex flex-col items-center text-center relative z-10">
-            <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-6 border border-outline-variant group-hover:scale-105 group-hover:bg-accent-gold/5 transition-all duration-500 shadow-sm">
-               <Icon className="h-8 w-8 text-primary group-hover:text-accent-gold transition-colors" />
+            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 border border-[#2c4d8a]/10 group-hover:scale-105 group-hover:bg-[#2c4d8a]/5 transition-all duration-500 shadow-sm">
+               <Icon className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
             </div>
 
-            <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-primary">
+            <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-[#2c4d8a]">
               {subTitle}
             </h4>
 
-            <p className="text-on-surface-variant text-sm leading-relaxed font-sans max-w-xs">
+            <p className="text-[#3A5785] text-sm leading-relaxed font-sans max-w-xs">
               {subDesc}
             </p>
           </div>
           
           {/* Subtle animated border */}
-          <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+          <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-[#2c4d8a] to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
         </div>
       </div>
     </motion.div>
@@ -283,19 +283,19 @@ const Evolution = () => (
           </div>
 
           <div className="relative">
-            <div className="p-8 bg-white rounded-3xl border border-outline-variant shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
-              <div className="absolute -top-12 -left-12 w-24 h-24 bg-accent-gold/5 rounded-full blur-2xl group-hover:bg-accent-gold/10 transition-colors duration-700"></div>
+            <div className="p-8 bg-[#e1e8f2] rounded-3xl border border-[#2c4d8a]/10 shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
+              <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#2c4d8a]/5 rounded-full blur-2xl group-hover:bg-[#2c4d8a]/10 transition-colors duration-700"></div>
               
               <div className="flex flex-col items-center text-center relative z-10">
-                <div className="w-16 h-16 bg-surface rounded-2xl flex items-center justify-center mb-6 border border-outline-variant group-hover:scale-105 group-hover:bg-accent-gold/5 transition-all duration-500 shadow-sm">
-                   <Rocket className="h-8 w-8 text-primary group-hover:text-accent-gold transition-colors" />
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 border border-[#2c4d8a]/10 group-hover:scale-105 group-hover:bg-[#2c4d8a]/5 transition-all duration-500 shadow-sm">
+                   <Rocket className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
                 </div>
-                <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-primary">Going Global</h4>
-                <p className="text-on-surface-variant text-sm leading-relaxed font-sans max-w-xs">
+                <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-[#2c4d8a]">Going Global</h4>
+                <p className="text-[#3A5785] text-sm leading-relaxed font-sans max-w-xs">
                   Expanding our expertise to global markets.
                 </p>
               </div>
-              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
+              <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-[#2c4d8a] to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
             </div>
           </div>
         </motion.div>
@@ -326,7 +326,7 @@ const FeatureCard = ({ icon: Icon, title, desc }) => (
 );
 
 const Differentiation = () => (
-  <section className="py-32 bg-surface">
+  <section className="py-32 bg-[#e1e8f2]">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-20">
         <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-primary mb-6 leading-tight max-w-4xl mx-auto italic">
@@ -335,48 +335,59 @@ const Differentiation = () => (
         <div className="h-1.5 w-20 bg-accent-gold mx-auto rounded-full"></div>
       </div>
         
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
         {[
           { 
             title: "Industry-Relevant Learning", 
-            desc: "Programs aligned with real market needs.",
-            icon: Code2
+            desc: "Programs aligned with real market needs and cutting-edge technologies.",
+            icon: Brain
           },
           { 
             title: "Career-Focused Outcomes", 
-            desc: "Training designed for employability.",
-            icon: Briefcase
+            desc: "Training designed specifically to maximize employability and growth.",
+            icon: Award
           },
           { 
             title: "Expert Mentorship", 
-            desc: "Learn from professionals and practitioners.",
+            desc: "Learn from industry professionals with years of practical experience.",
             icon: GraduationCap
           },
           { 
             title: "End-to-End Support", 
-            desc: "From learning to placement.",
-            icon: BadgeCheck
+            desc: "Complete guidance from the initial learning phase to final placement.",
+            icon: Layers
           },
           { 
             title: "Global Opportunities", 
-            desc: "Preparing talent for the future workforce.",
+            desc: "Preparing local talent for the international workforce and global standards.",
             icon: Globe
           }
         ].map((item, idx) => (
           <motion.div 
             key={idx}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="group p-8 bg-white rounded-2xl border border-outline-variant hover:border-secondary transition-all hover:shadow-xl flex flex-col items-center text-center"
+            transition={{ delay: idx * 0.1, duration: 0.6 }}
+            className="group p-10 bg-white rounded-[2rem] border border-outline-variant hover:border-secondary/30 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] flex flex-col items-center text-center relative overflow-hidden"
           >
-            <div className="w-14 h-14 bg-surface rounded-xl flex items-center justify-center border border-outline-variant shadow-sm group-hover:bg-secondary/10 transition-colors mb-6">
-              <item.icon className="h-7 w-7 text-secondary" />
+            {/* Subtle card background glow */}
+            <div className="absolute -top-20 -right-20 w-40 h-40 bg-secondary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+            <div className="relative w-20 h-20 mb-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+              {/* Layered Decorative Background */}
+              <div className="absolute inset-0 bg-secondary/10 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
+              <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 group-hover:-rotate-6 transition-transform duration-500 border border-primary/10"></div>
+              
+              {/* Main Icon Container */}
+              <div className="relative z-10 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md border border-outline-variant group-hover:border-secondary transition-colors duration-500">
+                <item.icon className="h-8 w-8 text-primary group-hover:text-secondary transition-colors duration-500" />
+              </div>
             </div>
-            <div className="font-sans">
-              <h4 className="text-xl font-bold text-primary mb-3 font-serif italic">{item.title}</h4>
-              <p className="text-on-surface-variant leading-relaxed">{item.desc}</p>
+
+            <div className="relative z-10">
+              <h4 className="text-2xl font-bold text-primary mb-4 font-serif italic">{item.title}</h4>
+              <p className="text-on-surface-variant leading-relaxed font-sans">{item.desc}</p>
             </div>
           </motion.div>
         ))}
