@@ -200,7 +200,7 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
 }
 
 const Evolution = () => (
-  <section className="py-32 bg-white relative overflow-hidden">
+  <section className="pt-32 pb-16 bg-white relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-24">
         <h2 className="text-headline-lg font-serif text-primary mb-4 italic">Our Evolution</h2>
@@ -326,7 +326,7 @@ const FeatureCard = ({ icon: Icon, title, desc }) => (
 );
 
 const Differentiation = () => (
-  <section className="py-32 bg-[#e1e8f2]">
+  <section className="pt-16 pb-32 bg-[#e1e8f2]">
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-20">
         <h2 className="text-4xl md:text-5xl font-serif font-extrabold text-primary mb-6 leading-tight max-w-4xl mx-auto italic">
