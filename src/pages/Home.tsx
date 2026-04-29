@@ -238,7 +238,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="relative w-full overflow-hidden py-6 lg:col-span-8">
-              <div 
+              <div
                 className="flex w-max items-center py-4 animate-scroll hover:[animation-play-state:paused]"
                 style={{ animation: "scroll 20s linear infinite" }}
               >
@@ -467,9 +467,9 @@ function ValueCard({ icon: Icon, title, text }: { icon: any, title: string, text
 }
 
 const ROADMAP_STEPS = [
-  { title: "Foundation",    desc: "Communication basics, confidence building, and native language bridging.", icon: Compass },
-  { title: "Skill Training",desc: "Practical English, industry-specific skills, and live hands-on projects.",  icon: Zap    },
-  { title: "Certification", desc: "Globally recognized industry certificates to validate your expertise.",      icon: Award  },
+  { title: "Foundation", desc: "Communication basics, confidence building, and native language bridging.", icon: Compass },
+  { title: "Skill Training", desc: "Practical English, industry-specific skills, and live hands-on projects.", icon: Zap },
+  { title: "Certification", desc: "Globally recognized industry certificates to validate your expertise.", icon: Award },
   { title: "Career Launch", desc: "Placement readiness, mock interviews, and direct hiring partner connections.", icon: Rocket },
 ];
 
@@ -528,9 +528,9 @@ function RoadmapSection() {
             >
               <defs>
                 <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%"   stopColor="#e2e8f0" />
-                  <stop offset="30%"  stopColor="#d4af37" />
-                  <stop offset="70%"  stopColor="#d4af37" />
+                  <stop offset="0%" stopColor="#e2e8f0" />
+                  <stop offset="30%" stopColor="#d4af37" />
+                  <stop offset="70%" stopColor="#d4af37" />
                   <stop offset="100%" stopColor="#e2e8f0" />
                 </linearGradient>
                 <filter id="glow">
@@ -567,18 +567,16 @@ function RoadmapSection() {
                     ? { y: [0, -6, 0], boxShadow: ["0 4px 16px #0001", "0 8px 32px #d4af3740", "0 4px 16px #0001"] }
                     : { y: 0 }}
                   transition={isActive ? { duration: 2.4, repeat: Infinity, ease: "easeInOut" } : {}}
-                  className={`relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-3xl flex items-center justify-center mb-5 sm:mb-7 transition-all duration-500 ${
-                    isActive
+                  className={`relative w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-3xl flex items-center justify-center mb-5 sm:mb-7 transition-all duration-500 ${isActive
                       ? "border-2 border-accent-gold shadow-[0_0_24px_4px_rgba(212,175,55,0.25)]"
                       : "border-2 border-slate-100 shadow-md"
-                  }`}
+                    }`}
                 >
                   {/* Number badge */}
-                  <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center text-xs font-extrabold shadow-md border-2 transition-all duration-500 ${
-                    isActive
+                  <div className={`absolute -top-3 -right-3 w-8 h-8 rounded-full flex items-center justify-center text-xs font-extrabold shadow-md border-2 transition-all duration-500 ${isActive
                       ? "bg-accent-gold text-white border-accent-gold"
                       : "bg-white text-on-surface-variant border-slate-100"
-                  }`}>
+                    }`}>
                     {i + 1}
                   </div>
 

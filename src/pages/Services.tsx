@@ -112,27 +112,27 @@ export default function Services() {
             {/* Right — Bento Feature Grid */}
             <div className="lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-auto">
 
-              {/* Card 1 — Wide top card: Industry Experts */}
+              {/* Card 1 — Wide top: Industry Experts */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0 }}
                 whileHover={{ scale: 1.02 }}
-                className="col-span-2 relative overflow-hidden rounded-3xl p-8 cursor-default group border-t-2 border-[#D4AF37]/40"
-                style={{ background: "linear-gradient(135deg, #0d2350 0%, #162d55 100%)", minHeight: 160 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-8 cursor-default group border border-[#E8ECF5] hover:shadow-lg transition-all"
+                style={{ background: "linear-gradient(135deg, #EEF2FB 0%, #F5F7FF 100%)", minHeight: 160 }}
               >
-                <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-white/5" />
-                <div className="absolute -right-2 -bottom-2 w-20 h-20 rounded-full bg-white/5" />
+                <div className="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-[#2C4D8A]/5" />
+                <div className="absolute -right-2 -bottom-2 w-20 h-20 rounded-full bg-[#2C4D8A]/5" />
                 <div className="absolute top-6 right-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <GraduationCap className="w-20 h-20 text-[#D4AF37]" />
+                  <GraduationCap className="w-20 h-20 text-[#2C4D8A]" />
                 </div>
-                <p className="text-[#D4AF37]/70 text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
-                <h3 className="text-2xl font-extrabold text-white mb-1" style={{ fontFamily: "'Lora', serif" }}>
+                <p className="text-[#D4AF37] text-xs font-bold uppercase tracking-widest mb-2">01 — Learn</p>
+                <h3 className="text-2xl font-extrabold text-[#0d2350] mb-1" style={{ fontFamily: "'Lora', serif" }}>
                   Industry Experts
                 </h3>
-                <p className="text-white/50 text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
-                <div className="mt-4 inline-flex items-center gap-1.5 bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold px-3 py-1.5 rounded-full">
+                <p className="text-[#3A5785] text-sm max-w-xs">Get trained by professionals with real-world experience in top companies.</p>
+                <div className="mt-4 inline-flex items-center gap-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#B8860B] text-xs font-bold px-3 py-1.5 rounded-full">
                   <span className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full animate-pulse" />
                   Live Mentorship Sessions
                 </div>
@@ -145,16 +145,16 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border-t-2 border-[#D4AF37]/40"
-                style={{ background: "linear-gradient(145deg, #0d2350 0%, #162d55 100%)", minHeight: 180 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border border-[#E8ECF5] hover:shadow-lg transition-all"
+                style={{ background: "linear-gradient(145deg, #F0F4FF 0%, #F8F9FF 100%)", minHeight: 180 }}
               >
-                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-white/5" />
+                <div className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-[#2C4D8A]/5" />
                 <Award className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
-                <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">02 — Certify</p>
+                <h3 className="text-lg font-extrabold text-[#0d2350] leading-tight" style={{ fontFamily: "'Lora', serif" }}>
                   Certified<br />Programs
                 </h3>
-                <p className="text-white/50 text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
+                <p className="text-[#3A5785] text-sm mt-3 leading-relaxed">Earn certifications that actually matter in the job market.</p>
               </motion.div>
 
               {/* Card 3 — Career Support */}
@@ -164,38 +164,39 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
                 whileHover={{ scale: 1.03 }}
-                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border-t-2 border-[#D4AF37]/40"
-                style={{ background: "linear-gradient(145deg, #0d2350 0%, #162d55 100%)", minHeight: 180 }}
+                className="col-span-1 relative overflow-hidden rounded-3xl p-6 cursor-default group border border-[#E8ECF5] hover:shadow-lg transition-all"
+                style={{ background: "linear-gradient(145deg, #F0F4FF 0%, #F8F9FF 100%)", minHeight: 180 }}
               >
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-white/5" />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-full bg-[#2C4D8A]/5" />
                 <TrendingUp className="w-8 h-8 text-[#D4AF37] mb-4 group-hover:scale-110 transition-transform" />
-                <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
-                <h3 className="text-lg font-extrabold text-white leading-tight" style={{ fontFamily: "'Lora', serif" }}>
+                <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">03 — Launch</p>
+                <h3 className="text-lg font-extrabold text-[#0d2350] leading-tight" style={{ fontFamily: "'Lora', serif" }}>
                   Career<br />Support
                 </h3>
-                <p className="text-white/50 text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
+                <p className="text-[#3A5785] text-sm mt-3 leading-relaxed">Resume building, interview prep, and placement guidance.</p>
               </motion.div>
 
-              {/* Card 4 — Wide bottom card: Live Projects */}
+              {/* Card 4 — Wide bottom: Live Projects */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
-                className="col-span-2 relative overflow-hidden rounded-3xl p-7 cursor-default group border-t-2 border-[#D4AF37]/40"
-                style={{ background: "linear-gradient(135deg, #0d2350 0%, #162d55 100%)", minHeight: 130 }}
+                className="col-span-2 relative overflow-hidden rounded-3xl p-7 cursor-default group border border-[#E8ECF5] hover:shadow-lg transition-all"
+                style={{ background: "linear-gradient(135deg, #EEF2FB 0%, #F5F7FF 100%)", minHeight: 130 }}
               >
-                <div className="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-white/5" />
+                <div className="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-[#2C4D8A]/5" />
                 <div className="absolute top-5 right-7 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Layers className="w-16 h-16 text-[#D4AF37]" />
+                  <Layers className="w-16 h-16 text-[#2C4D8A]" />
                 </div>
                 <div>
-                    <p className="text-[#D4AF37]/70 text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
-                    <h3 className="text-xl font-extrabold text-white" style={{ fontFamily: "'Lora', serif" }}>Live Projects</h3>
-                    <p className="text-white/50 text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
-                  </div>
+                  <p className="text-[#D4AF37] text-[11px] font-bold uppercase tracking-widest mb-1">04 — Build</p>
+                  <h3 className="text-xl font-extrabold text-[#0d2350]" style={{ fontFamily: "'Lora', serif" }}>Live Projects</h3>
+                  <p className="text-[#3A5785] text-sm mt-1 max-w-sm">Work on real client briefs and build a portfolio that gets you hired.</p>
+                </div>
               </motion.div>
+
 
             </div>
 
