@@ -4,12 +4,12 @@ import { Check, GraduationCap, Award, TrendingUp, Layers, Star, ArrowRight } fro
 import { useNavigate, Link } from "react-router-dom";
 
 import hero1 from "../assets/services/hero1.png";
-import skillCertImg from "../assets/services/skill-certification.jpg";
-import manpowerImg from "../assets/services/manpower-solutions.jpg";
-import admissionImg from "../assets/services/admission-support.jpg";
-import trainingImg from "../assets/services/training-workforce.jpg";
-import placementImg from "../assets/services/placement-assistance.jpg";
-import liveProjectImg from "../assets/services/live-projects.jpg";
+import skillCertImg from "../assets/services/skill-certification.png";
+import manpowerImg from "../assets/services/manpower-solutions.png";
+import admissionImg from "../assets/services/admission-support.png";
+import trainingImg from "../assets/services/training-workforce.png";
+import placementImg from "../assets/services/placement-assistance.png";
+import liveProjectImg from "../assets/services/live-projects.png";
 import "./Services.css";
 
 const SERVICES_DATA = [
