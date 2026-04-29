@@ -586,7 +586,6 @@ const Values = () => {
                   key={i}
                   initial={{ pathLength: 0, opacity: 0 }}
                   whileInView={{ pathLength: 1, opacity: 0.2 }}
-                  viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1, duration: 0.8, ease: "easeOut" }}
                   x1="0" y1="0" x2={node.x} y2={node.y} 
                   stroke="#D4AF37" 
@@ -603,7 +602,6 @@ const Values = () => {
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
               className="w-56 h-56 bg-primary rounded-full flex flex-col items-center justify-center text-center p-6 border-4 border-white shadow-2xl relative"
             >
               <Star className="h-10 w-10 text-secondary mb-3 fill-secondary" />
@@ -623,7 +621,6 @@ const Values = () => {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
                 transition={{ delay: 0.4 + idx * 0.1, type: 'spring', bounce: 0.5 }}
                 className="group relative flex flex-col items-center justify-center"
               >
@@ -658,7 +655,6 @@ const Values = () => {
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="flex items-center gap-6 bg-surface p-6 rounded-2xl border border-outline-variant hover:border-secondary transition-all shadow-sm"
             >
               <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-sm shrink-0 border border-outline-variant">
