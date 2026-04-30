@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { ArrowLeft, CheckCircle2, ArrowRight, Users, Clock, Star, BadgeCheck } from "lucide-react";
 
 import skillCertImg   from "../assets/services/skill-certifications.png";
-import manpowerImg    from "../assets/services/manpower-solutions_lm.png";
+import manpowerImg    from "../assets/services/manpower-solutions.png";
 import admissionImg   from "../assets/services/admission-support.png";
 import trainingImg    from "../assets/services/training-workforce.png";
 import placementImg   from "../assets/services/placement-assistance.png";
@@ -156,8 +156,8 @@ export default function ServiceDetail() {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#F7F9FB] font-sans">
-        <h1 className="text-4xl font-bold font-serif italic text-[#2C4D8A] mb-4">
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-[#F7F9FB]">
+        <h1 className="text-4xl font-bold font-serif text-[#2C4D8A] mb-4">
           Service Not Found
         </h1>
         <p className="text-[#3A5785] mb-8">The service you're looking for doesn't exist.</p>
@@ -169,23 +169,7 @@ export default function ServiceDetail() {
   }
 
   return (
-    <div className="bg-[#F7F9FB] min-h-screen font-sans">
-      <style dangerouslySetInnerHTML={{ __html: `
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap');
-
-        :root {
-          --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-          --font-serif: "Lora", serif;
-        }
-
-        .font-serif {
-          font-family: var(--font-serif), serif;
-        }
-
-        .font-sans {
-          font-family: var(--font-sans), sans-serif;
-        }
-      `}} />
+    <div className="bg-[#F7F9FB] min-h-screen">
 
       {/* ── HERO: Full Bleed Banner Layout ── */}
       <section className="relative w-full bg-white">
@@ -195,7 +179,7 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
             onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-[#0d2350] hover:text-[#D4AF37] transition-colors bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full shadow-md text-sm font-bold tracking-wide font-sans"
+            className="flex items-center gap-2 text-[#0d2350] hover:text-[#D4AF37] transition-colors bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full shadow-md text-sm font-bold tracking-wide"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Services
           </motion.button>
@@ -230,8 +214,8 @@ export default function ServiceDetail() {
               <div className="w-12 h-12 rounded-2xl bg-[#2C4D8A]/8 flex items-center justify-center mb-3 text-[#2C4D8A]">
                 {b.icon}
               </div>
-              <p className="text-3xl font-extrabold font-serif italic text-[#2C4D8A] leading-none mb-1">{b.value}</p>
-              <p className="text-[11px] text-[#3A5785] uppercase tracking-widest font-bold font-sans">{b.label}</p>
+              <p className="text-3xl font-extrabold font-serif text-[#2C4D8A] leading-none mb-1">{b.value}</p>
+              <p className="text-[11px] text-[#3A5785] uppercase tracking-widest font-bold">{b.label}</p>
             </motion.div>
           ))}
         </div>
@@ -247,11 +231,11 @@ export default function ServiceDetail() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block font-sans">Overview</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-serif italic text-[#2C4D8A] mb-6 leading-tight">
+            <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block">Overview</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#2C4D8A] mb-6 leading-tight">
               What We Offer
             </h2>
-            <p className="text-[#3A5785] leading-relaxed text-base mb-10 font-sans">
+            <p className="text-[#3A5785] leading-relaxed text-base mb-10">
               {service.overview}
             </p>
             <div className="flex flex-wrap gap-3 mt-2">
@@ -265,7 +249,7 @@ export default function ServiceDetail() {
                   className="flex items-center gap-2.5 bg-white border border-[#E0E8F5] hover:border-[#D4AF37]/60 hover:shadow-md px-4 py-2.5 rounded-xl group transition-all duration-200 cursor-default"
                 >
                   <span className="w-2 h-2 rounded-full bg-[#D4AF37] shrink-0 group-hover:scale-125 transition-transform" />
-                  <span className="text-[#2C4D8A] font-semibold text-sm font-sans">{h}</span>
+                  <span className="text-[#2C4D8A] font-semibold text-sm">{h}</span>
                 </motion.div>
               ))}
             </div>
@@ -289,7 +273,7 @@ export default function ServiceDetail() {
               <div className="w-10 h-10 bg-[#D4AF37] rounded-xl flex items-center justify-center">
                 <Star className="w-5 h-5 text-white fill-white" />
               </div>
-              <div className="font-sans">
+              <div>
                 <p className="font-extrabold text-[#2C4D8A] text-sm">Trusted by thousands</p>
                 <p className="text-xs text-[#3A5785]">across India</p>
               </div>
@@ -302,11 +286,11 @@ export default function ServiceDetail() {
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block font-sans">What's Included</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold font-serif italic text-[#2C4D8A]">
+            <span className="text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] mb-4 block">What's Included</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold font-serif text-[#2C4D8A]">
               Key Features
             </h2>
-            <p className="text-[#3A5785] mt-3 max-w-xl mx-auto text-sm font-sans">
+            <p className="text-[#3A5785] mt-3 max-w-xl mx-auto text-sm">
               Every feature is designed to give you a practical edge in your career journey.
             </p>
           </div>
@@ -323,11 +307,11 @@ export default function ServiceDetail() {
               >
                 {/* decorative corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#D4AF37]/10 to-transparent rounded-bl-3xl" />
-                <div className="w-11 h-11 rounded-2xl bg-[#2C4D8A] group-hover:bg-[#D4AF37] flex items-center justify-center mb-5 text-white font-extrabold text-sm transition-colors duration-300 shadow-md font-sans">
+                <div className="w-11 h-11 rounded-2xl bg-[#2C4D8A] group-hover:bg-[#D4AF37] flex items-center justify-center mb-5 text-white font-extrabold text-sm transition-colors duration-300 shadow-md">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-base font-bold font-serif italic text-[#2C4D8A] mb-2">{f.title}</h3>
-                <p className="text-sm text-[#3A5785] leading-relaxed font-sans">{f.desc}</p>
+                <h3 className="text-base font-bold font-serif text-[#2C4D8A] mb-2">{f.title}</h3>
+                <p className="text-sm text-[#3A5785] leading-relaxed">{f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -345,7 +329,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6 font-sans"
+            className="inline-block bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] font-bold tracking-[0.22em] uppercase text-[11px] px-4 py-1.5 rounded-full mb-6"
           >
             Get Started Today
           </motion.span>
@@ -353,7 +337,7 @@ export default function ServiceDetail() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-extrabold font-serif italic text-white mb-5 leading-tight"
+            className="text-3xl md:text-5xl font-extrabold font-serif text-white mb-5 leading-tight"
           >
             Ready to Transform Your Career?
           </motion.h2>
@@ -362,7 +346,7 @@ export default function ServiceDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 mb-10 text-base max-w-xl mx-auto leading-relaxed font-sans"
+            className="text-white/60 mb-10 text-base max-w-xl mx-auto leading-relaxed"
           >
             Join thousands of learners who have transformed their futures with Arambha Skill Solutions.
           </motion.p>
@@ -375,13 +359,13 @@ export default function ServiceDetail() {
           >
             <Link
               to="/programs"
-              className="bg-[#D4AF37] hover:brightness-110 text-white px-10 py-4 rounded-xl font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 flex items-center justify-center gap-2 transition-all font-serif italic"
+              className="bg-[#D4AF37] hover:brightness-110 text-white px-10 py-4 rounded-xl font-extrabold text-sm shadow-xl shadow-[#D4AF37]/20 flex items-center justify-center gap-2 transition-all"
             >
               Explore Programs <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               to="/services"
-              className="border border-white/25 hover:border-white/70 text-white px-10 py-4 rounded-xl font-extrabold text-sm flex items-center justify-center gap-2 transition-all hover:bg-white/5 font-serif italic"
+              className="border border-white/25 hover:border-white/70 text-white px-10 py-4 rounded-xl font-extrabold text-sm flex items-center justify-center gap-2 transition-all hover:bg-white/5"
             >
               <ArrowLeft className="w-4 h-4" /> All Services
             </Link>
