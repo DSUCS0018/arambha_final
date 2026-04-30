@@ -370,6 +370,7 @@ function ProgramSection({
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
         {programs.map((program, i) => (
           const isEnrolled = enrolledProgramIds.includes(programs?.id);
+        return (
           <motion.div
             key={program.id}
             initial={{ opacity: 0, y: 20 }}
