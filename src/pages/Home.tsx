@@ -397,7 +397,6 @@ export default function Home() {
 
       {/* Value Prop Section */}
       <section className="py-16 sm:py-32 bg-white font-sans">
-      <section className="py-16 sm:py-32 bg-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-24 overflow-hidden relative border border-slate-100 shadow-2xl">
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-surface rounded-full blur-[100px]"></div>
