@@ -1,14 +1,30 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogOut, ShieldCheck, Filter } from "lucide-react";
 import logo from "../assets/ARAMBHA.svg";
 import arambhaText from "../assets/arambha-text.svg";
+import { useAuth } from "../context/AuthContext";
+import { isUserAdmin } from "../services/adminService";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebase";
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { currentUser } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPortalDropdownOpen, setIsPortalDropdownOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    if (currentUser) {
+      isUserAdmin(currentUser.uid).then(setIsAdmin);
+    } else {
+      setIsAdmin(false);
+    }
+  }, [currentUser]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,11 +89,34 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          {isAdmin && (
+            <Link
+              to="/admin/portal"
+              className={`text-sm font-bold tracking-tight transition-colors pb-1 flex items-center gap-1.5 ${
+                location.pathname.startsWith('/admin')
+                  ? 'text-accent-gold border-b-2 border-accent-gold'
+                  : 'text-accent-gold/80 hover:text-accent-gold'
+              }`}
+            >
+              <ShieldCheck size={16} />
+              Portal
+            </Link>
+          )}
         </div>
 
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link to="/login" className="hidden lg:block text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Login</Link>
+          {!currentUser ? (
+            <Link to="/login" className="hidden lg:block text-sm font-semibold text-on-surface-variant hover:text-primary transition-all">Login</Link>
+          ) : (
+            <button 
+              onClick={() => signOut(auth).then(() => navigate('/'))}
+              className="hidden lg:flex items-center gap-2 text-sm font-semibold text-red-500 hover:text-red-600 transition-all cursor-pointer"
+            >
+              <LogOut size={16} />
+              Logout
+            </button>
+          )}
           <button className="brand-gradient-gold text-white px-4 lg:px-6 py-2.5 rounded-lg text-sm font-semibold shadow-md hover:brightness-110 active:scale-95 transition-all whitespace-nowrap">
             Book a Class
           </button>
@@ -111,13 +150,44 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/login"
-              className="block px-4 py-3 rounded-lg font-semibold text-on-surface-variant hover:bg-slate-50 transition-all"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Login
-            </Link>
+            {isAdmin && (
+              <div className="space-y-3">
+                <Link
+                  to="/admin/portal"
+                  className={`block px-4 py-3 rounded-lg font-bold transition-all border-2 border-accent-gold/20 flex items-center gap-2 ${
+                    location.pathname.startsWith('/admin')
+                      ? 'bg-accent-gold text-white'
+                      : 'text-accent-gold hover:bg-accent-gold/5'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <ShieldCheck size={20} />
+                  Admin Portal
+                </Link>
+              </div>
+            )}
+            {!currentUser ? (
+              <Link
+                to="/login"
+                className="block px-4 py-3 rounded-lg font-semibold text-on-surface-variant hover:bg-slate-50 transition-all"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Login
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  signOut(auth).then(() => {
+                    navigate('/');
+                    setIsMenuOpen(false);
+                  });
+                }}
+                className="w-full flex items-center gap-2 px-4 py-3 rounded-lg font-semibold text-red-500 hover:bg-red-50 transition-all"
+              >
+                <LogOut size={20} />
+                Logout
+              </button>
+            )}
             <button className="w-full brand-gradient-gold text-white px-6 py-3 rounded-lg font-semibold shadow-md">
               Book a Class
             </button>

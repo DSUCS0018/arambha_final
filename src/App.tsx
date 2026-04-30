@@ -12,6 +12,9 @@ import Careers from "./pages/Careers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import LegalSupport from "./pages/LegalSupport";
+import AdminPortal from "./pages/admin/AdminPortal";
+import { AuthProvider } from "./context/AuthContext";
+import { AdminRoute } from "./components/AdminRoute";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -46,23 +49,33 @@ export default function App() {
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/legal-support" element={<LegalSupport />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen bg-white">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/legal-support" element={<LegalSupport />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route 
+              path="/admin/portal" 
+              element={
+                <AdminRoute>
+                  <AdminPortal />
+                </AdminRoute>
+              } 
+            />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
