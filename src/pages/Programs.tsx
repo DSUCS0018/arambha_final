@@ -368,9 +368,10 @@ function ProgramSection({
         <div className="mx-auto mt-3 h-1 w-16 rounded-full" style={{ backgroundColor: '#D4AF37' }}></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-        {programs.map((program, i) => (
-          const isEnrolled = enrolledProgramIds.includes(programs?.id);
-        return (
+  {programs.map((program, i) => {
+    const isEnrolled = enrolledProgramIds.includes(program?.id);
+
+    return (
           <motion.div
             key={program.id}
             initial={{ opacity: 0, y: 20 }}
@@ -383,18 +384,7 @@ function ProgramSection({
             <div className="h-60 overflow-hidden">
               <img src={program.image} alt={program.title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
             </div>
-            <div className="p-8 flex-grow flex flex-col">
-              <h3 className="text-2xl font-bold text-primary mb-4 leading-tight group font-serif italic">
-                <span className="title-accent">{program.title}</span>
-              </h3>
-              <p className="text-text-muted text-sm line-clamp-3 mb-8 font-sans leading-relaxed">
-                {program.description}
-              </p>
-              <div className="mt-auto">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-transparent border-2 border-accent-gold text-primary font-bold rounded-lg hover:bg-accent-gold hover:text-white transition-all group font-serif italic">
-                  Enroll Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+            
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold text-primary mb-4 leading-tight group">
                   <span className="title-accent">{program?.title || 'Untitled Program'}</span>
