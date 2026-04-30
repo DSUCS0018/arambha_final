@@ -1,15 +1,10 @@
 import { motion } from "motion/react";
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
-import { ArrowRight, BookOpen, GraduationCap, Users, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, Users, CheckCircle2, Loader2, Calendar } from "lucide-react";
 import { getCourses, Course } from "../services/courseService";
 import { useAuth } from "../context/AuthContext";
 import { isUserAdmin } from "../services/adminService";
-=======
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, GraduationCap, Users, CheckCircle2, Calendar } from "lucide-react";
->>>>>>> 03136cc (version-9)
 
 // Import program images
 import spokenEnglishImg from "../assets/programs/spoken-english-mastery.png";
@@ -225,7 +220,6 @@ export default function ProgramsScreen() {
       </section>
 
       {/* Program Sections */}
-<<<<<<< HEAD
       <div className="max-w-7xl mx-auto px-6">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
@@ -261,11 +255,6 @@ export default function ProgramsScreen() {
               />
             </>
           ) : (
-=======
-      <div className="max-w-7xl mx-auto px-6 font-sans">
-        {selectedCategory === "All" ? (
-          <>
->>>>>>> 03136cc (version-9)
             <ProgramSection
               title={`${selectedCategory} Programs`}
               programs={filteredPrograms}
@@ -379,24 +368,8 @@ function ProgramSection({
         <div className="mx-auto mt-3 h-1 w-16 rounded-full" style={{ backgroundColor: '#D4AF37' }}></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-<<<<<<< HEAD
-        {programs.map((program, i) => {
-          const isEnrolled = enrolledProgramIds.includes(program?.id);
-          
-          return (
-            <motion.div
-              key={program?.id || i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-transparent border-2 rounded-3xl overflow-hidden flex flex-col transition-all hover:-translate-y-2 hover:shadow-xl"
-              style={{ borderColor: '#006CA5' }}
-            >
-              <div className="h-60 overflow-hidden">
-                <img src={program?.image || fullStackJavaImg} alt={program?.title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
-=======
         {programs.map((program, i) => (
+          const isEnrolled = enrolledProgramIds.includes(programs?.id);
           <motion.div
             key={program.id}
             initial={{ opacity: 0, y: 20 }}
@@ -420,7 +393,6 @@ function ProgramSection({
                 <button className="flex items-center gap-2 px-5 py-2.5 bg-transparent border-2 border-accent-gold text-primary font-bold rounded-lg hover:bg-accent-gold hover:text-white transition-all group font-serif italic">
                   Enroll Now <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
->>>>>>> 03136cc (version-9)
               </div>
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold text-primary mb-4 leading-tight group">
@@ -457,7 +429,7 @@ function ProgramSection({
                 </div>
               </div>
             </motion.div>
-          );
+               );
         })}
       </div>
     </section>
