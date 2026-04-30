@@ -293,26 +293,7 @@ export default function Services() {
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
-                <div className="h-64 overflow-hidden relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <h3 className="text-xl text-primary mb-3 font-serif font-bold italic group-hover:text-accent-gold transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-on-surface-variant mb-6 font-sans text-sm leading-relaxed line-clamp-3 flex-grow">
-                    {service.description}
-                  </p>
-                  <div className="flex items-center justify-between pt-6 border-t border-slate-100 text-sm mt-auto">
-                    <span className="font-bold text-primary font-serif italic uppercase tracking-wider">Learn More</span>
-                    <div className="bg-[#F7F9FB] p-1 rounded-full group-hover:bg-accent-gold group-hover:text-white transition-colors">
-                      <ChevronRight size={20} />
-                    </div>
-                  </div>
+                
                 </div>
                   </div>
               </motion.div>
