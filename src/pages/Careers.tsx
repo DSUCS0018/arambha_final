@@ -11,7 +11,7 @@ import {
   Target, Linkedin, Instagram, Mail, Phone, Star
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroStudentsImg from "../assets/careers/hero-careers.png";
+import heroStudentsImg from "../assets/careers/hero-careers.svg";
 import designExcellenceImg from "../assets/careers/design-excellence.png";
 import impactfulCollabImg from "../assets/careers/impactful-collaboration.png";
 import growthMindsetImg from "../assets/careers/growth-mindset.png";
@@ -182,51 +182,51 @@ const MORE_JOBS: Job[] = [
 // --- Helper Components ---
 
 const WelcomeHero = () => (
-  <div className="relative pt-6 pb-20 overflow-hidden font-sans">
-    <div className="max-w-[1340px] mx-auto flex flex-col md:flex-row items-center gap-12 px-4">
-      <div className="flex-1 z-10 text-center md:text-left">
-        <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 font-serif italic" style={{ color: COLORS.primary }}>
-          From Learning <br />
-          to <span style={{ color: COLORS.gold }}>Earning</span> – <br />
-          Start Your <br />
-          Journey Today.
-        </h1>
-        <p className="text-gray-500 text-lg mb-8 max-w-lg leading-relaxed font-medium font-sans">
-          Speak confidently, gain skills, and step into your career. We bridge the gap between where you are and where you want to be with academic excellence.
-        </p>
-        <div className="flex flex-wrap items-center gap-4 justify-center md:justify-start mb-12">
-          <button className="text-white px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all font-serif italic" style={{ backgroundColor: COLORS.gold }}>
-            Book a Class <ArrowRight className="w-4 h-4" />
-          </button>
-          <button className="bg-white border border-gray-200 px-8 py-3.5 rounded-lg font-bold flex items-center gap-2 hover:bg-gray-50 transition-all shadow-sm font-serif italic" style={{ color: COLORS.primary }}>
-            <MessageSquare className="w-4 h-4 text-green-500" />
-            WhatsApp Now
-          </button>
-        </div>
-        <div className="flex flex-wrap items-center gap-8 justify-center md:justify-start font-sans">
-          {[
-            { icon: BookOpen, title: 'Daily Practice', sub: 'Native language tailored' },
-            { icon: Briefcase, title: 'Live Projects', sub: 'Real career opportunities' },
-            { icon: Target, title: 'Outcome-Driven', sub: 'Measurable results' }
-          ].map((feature, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${COLORS.gold}1A`, color: COLORS.gold }}>
-                <feature.icon className="w-5 h-5" />
+  <div className="relative w-full overflow-hidden font-sans" style={{ minHeight: '80vh', width: '100%' }}>
+    <div className="absolute inset-0 w-full h-full">
+      <img
+        src={heroStudentsImg}
+        alt="Arambha Team"
+        className="w-full h-full object-cover object-center"
+      />
+    </div>
+
+    <div className="relative z-10 flex items-center justify-center w-full" style={{ minHeight: '80vh', padding: '2rem', gap: '2rem' }}>
+      <div className="w-full max-w-7xl">
+        <div className="max-w-2xl">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 font-serif italic" style={{ textShadow: 'none', color: COLORS.primary }}>
+            Build Your Career with <span style={{ color: COLORS.gold }}>Arambha</span>
+          </h1>
+          <p className="text-lg sm:text-xl lg:text-2xl mb-10 leading-relaxed font-medium font-sans" style={{ textShadow: 'none', color: COLORS.primary }}>
+            We go beyond jobs—we create <span className="font-bold" style={{ color: COLORS.gold }}>growth opportunities</span> for <span className="font-bold" style={{ color: COLORS.primary }}>ambitious, result-driven</span> individuals. Join a culture that rewards <span className="font-bold" style={{ color: COLORS.primary }}>dedication</span>, fosters <span className="font-bold" style={{ color: COLORS.primary }}>leadership</span>, and drives <span className="font-bold" style={{ color: COLORS.primary }}>success</span>.
+          </p>
+          <div className="flex flex-col sm:flex-row items-start gap-4 mb-10">
+            <button className="w-full sm:w-auto text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all font-serif italic text-base sm:text-lg" style={{ backgroundColor: COLORS.gold }}>
+              Book a Class <ArrowRight className="w-5 h-5" />
+            </button>
+            <button className="w-full sm:w-auto bg-white text-gray-800 px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-serif italic text-base sm:text-lg">
+              <MessageSquare className="w-5 h-5 text-green-500" />
+              WhatsApp Now
+            </button>
+          </div>
+          <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 font-sans flex-nowrap">
+            {[
+              { icon: BookOpen, title: 'Daily Practice', sub: 'Native language tailored' },
+              { icon: Briefcase, title: 'Live Projects', sub: 'Real career opportunities' },
+              { icon: Target, title: 'Outcome-Driven', sub: 'Measurable results' }
+            ].map((feature, i) => (
+              <div key={i} className="flex items-center gap-3 flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: COLORS.gold }}>
+                  <feature.icon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm sm:text-base font-bold font-serif italic" style={{ textShadow: 'none', color: COLORS.primary }}>{feature.title}</div>
+                  <div className="text-xs sm:text-sm font-medium font-sans" style={{ textShadow: 'none', color: COLORS.primary }}>{feature.sub}</div>
+                </div>
               </div>
-              <div className="text-left">
-                <div className="text-sm font-bold font-serif italic" style={{ color: COLORS.primary }}>{feature.title}</div>
-                <div className="text-[10px] text-gray-400 font-medium font-sans">{feature.sub}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="flex-1 relative flex items-center justify-center">
-        <img
-          src={heroStudentsImg}
-          alt="Arambha Team"
-          className="w-[140%] h-auto object-contain max-w-none -mt-20"
-        />
       </div>
     </div>
   </div>
@@ -249,7 +249,7 @@ const JobFilter = ({ onSearch }: { onSearch: (filters: { search: string; locatio
   };
 
   return (
-    <div className="relative -mt-10 mb-16 z-20 px-4 font-sans">
+    <div className="relative mb-16 z-20 px-4 font-sans">
       <div className={`bg-white p-2 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col lg:flex-row items-stretch transition-all duration-300`} style={isFocused ? { boxShadow: `0 0 0 4px ${COLORS.gold}33, 0 10px 40px rgba(0,0,0,0.08)`, transform: 'translateY(-2px)' } : {}}>
         <div className="flex-grow flex items-center px-4 border-b lg:border-b-0 lg:border-r border-gray-100 min-h-[60px]">
           <Search className="w-5 h-5 mr-3 transition-colors" style={{ color: isFocused ? COLORS.gold : '#9ca3af' }} />
@@ -535,8 +535,8 @@ export default function App() {
           font-family: var(--font-sans), sans-serif;
         }
       `}} />
+      <WelcomeHero />
       <main className="flex-grow max-w-[1340px] mx-auto px-4 lg:px-6 w-full overflow-x-hidden pb-0 pt-4">
-        <WelcomeHero />
         <JobFilter onSearch={handleSearch} />
 
         {isSearchActive ? (
