@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion, useInView, useAnimation } from "motion/react";
+import { motion, useInView, useAnimation, type Variants } from "motion/react";
 import {
   ArrowRight,
   MessageCircle,
@@ -71,7 +71,7 @@ const iconUrl =
 export default function Home() {
   const navigate = useNavigate();
   
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -82,7 +82,7 @@ export default function Home() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -448,7 +448,7 @@ function LogoItem({ alt, src }: { alt: string, src: string }) {
   );
 }
 
-function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg-slate-100 text-primary border-slate-200", onClick }: { tag: string, category?: string, title: string, desc: string, duration: string, img: string, tagColor?: string, onClick?: () => void }) {
+function ProgramCard({ tag, category, title, desc, duration, img, tagColor = "bg-slate-100 text-primary border-slate-200", onClick }: { tag: string, category?: string, title: string, desc: string, duration?: string, img: string, tagColor?: string, onClick?: () => void }) {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }

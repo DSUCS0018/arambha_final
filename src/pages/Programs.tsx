@@ -16,7 +16,7 @@ import bankingFinanceImg from "../assets/programs/banking-finance.png";
 import fullStackJavaImg from "../assets/programs/full-stack-java.png";
 import dataScienceImg from "../assets/programs/data-science-ai.png";
 import autocadImg from "../assets/programs/autocad-design.png";
-import heroStudentsImg from "../assets/careers/hero-students.png";
+import programsHeroImg from "../assets/programs-hero.svg";
 
 const CATEGORIES = ["All", "Spoken English", "Schooling", "BTech", "Graduate", "Job Ready"];
 
@@ -122,7 +122,7 @@ export default function ProgramsScreen() {
     : allPrograms.filter(program => program.category === selectedCategory);
 
   return (
-    <div className="w-full font-sans">
+    <div className="w-full font-sans programs-page-root">
       <style dangerouslySetInnerHTML={{ __html: `
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap');
 
@@ -138,32 +138,95 @@ export default function ProgramsScreen() {
         .font-sans {
           font-family: var(--font-sans), sans-serif;
         }
+
+        /* ── Responsive: prevent horizontal overflow on the whole page ── */
+        .programs-page-root {
+          overflow-x: hidden;
+        }
+
+        /* ── Hero image: normal on mobile, oversized bleed only on desktop ── */
+        .programs-hero-img {
+          width: 100%;
+          max-width: 100%;
+          margin-right: 0;
+          height: auto;
+          object-fit: contain;
+        }
+
+        @media (min-width: 1024px) {
+          .programs-hero-img {
+            width: 160%;
+            max-width: none;
+            margin-right: -8%;
+          }
+        }
+
+        /* ── Category filter: allow pills to scroll on very small screens ── */
+        .category-filter-bar {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+        }
+
+        @media (min-width: 480px) {
+          .category-filter-bar {
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow-x: visible;
+          }
+        }
+
+        /* ── Program card image: shorter on mobile to save vertical space ── */
+        @media (max-width: 639px) {
+          .program-card-img {
+            height: 180px;
+          }
+        }
+
+        /* ── Why-choose-us cards: equal height in grid rows ── */
+        .why-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        /* ── CTA section heading: scale down gracefully on small screens ── */
+        @media (max-width: 639px) {
+          .cta-heading {
+            font-size: 1.6rem;
+            line-height: 1.2;
+          }
+          .cta-body {
+            font-size: 0.95rem;
+          }
+        }
       `}} />
       {/* Hero Section */}
-      <section className="relative pt-16 pb-20 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <motion.div 
+      <section className="relative pt-10 sm:pt-14 pb-0 sm:pb-4 overflow-hidden bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-0">
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex-1 text-left"
+              className="flex-1 text-left w-full flex flex-col justify-center py-8 lg:py-12"
             >
-              <h1 className="text-5xl lg:text-7xl font-serif font-bold text-primary leading-[1.1] mb-6 italic">
-                Choose the Right Program to<br />
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-primary leading-[1.1] mb-4 sm:mb-6 italic">
+                Choose the Right Program to{" "}
                 <span className="text-accent-gold">Start Your Career Journey</span>
               </h1>
-              <p className="text-lg text-text-muted mb-10 max-w-xl font-sans">
+              <p className="text-base sm:text-lg text-text-muted mb-7 sm:mb-10 max-w-xl font-sans">
                 Explore skill-based, career-focused programs designed to take you from learning to earning with confidence.
               </p>
-              <div className="flex flex-wrap gap-4 font-sans">
+              <div className="flex flex-wrap gap-3 sm:gap-4 font-sans">
                 <button
-                  className="bg-accent-gold hover:bg-accent-gold-dark text-white px-8 py-4 rounded-xl font-bold shadow-lg shadow-accent-gold/20 transition-all font-serif italic"
+                  className="bg-accent-gold hover:bg-accent-gold-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold shadow-lg shadow-accent-gold/20 transition-all font-serif italic text-sm sm:text-base"
                   onClick={() => document.getElementById('programs-section')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Programs
                 </button>
-                <button className="border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold hover:bg-primary/5 transition-all font-serif italic">
+                <button className="border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold hover:bg-primary/5 transition-all font-serif italic text-sm sm:text-base">
                   Book a Free Class
                 </button>
               </div>
@@ -171,40 +234,24 @@ export default function ProgramsScreen() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex-1 relative"
+              className="flex-1 relative w-full flex justify-center lg:justify-end items-center"
             >
-              {/* <img
-                src={heroStudentsImg}
-                alt="Students learning"
-                className="w-full lg:w-[140%] h-auto mt-20 lg:-ml-5 -ml-5 border-none shadow-none [mask-image:linear-gradient(90deg,transparent_0%,black_12%,black_88%,transparent_100%)]"
-              /> */}
-
-
+              {/* programs-hero-img: 100% wide on mobile, 160% bleed only on lg+ (see <style> above) */}
               <img
-  src={heroStudentsImg}
-  alt="Students learning"
-  className="
-    w-[130%] lg:w-[150%]
-    max-w-none
-    h-auto
-    mt-10 lg:mt-0
-    -ml-10 lg:-ml-10
-    -mr-10
-    border-none shadow-none
-    object-contain
-  "
-/>
-
-
+                src={programsHeroImg}
+                alt="Students learning together"
+                className="programs-hero-img"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section id="programs-section" className="max-w-7xl mx-auto px-6 mb-20 font-sans">
-        <h2 className="text-center text-4xl font-serif text-primary font-bold mb-10 italic">Explore Our Programs</h2>
-        <div className="bg-white border-2 border-accent-gold p-2 rounded-2xl flex flex-wrap justify-between md:justify-center gap-2 shadow-lg max-w-3xl mx-auto">
+      <section id="programs-section" className="max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-20 font-sans">
+        <h2 className="text-center text-2xl sm:text-4xl font-serif text-primary font-bold mb-6 sm:mb-10 italic">Explore Our Programs</h2>
+        {/* category-filter-bar: scrollable on tiny screens, wraps on ≥480px (see <style> above) */}
+        <div className="bg-white border-2 border-accent-gold p-2 rounded-2xl flex gap-2 shadow-lg max-w-3xl mx-auto category-filter-bar">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
@@ -220,7 +267,7 @@ export default function ProgramsScreen() {
       </section>
 
       {/* Program Sections */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <Loader2 className="w-12 h-12 text-accent-gold animate-spin mb-4" />
@@ -272,17 +319,17 @@ export default function ProgramsScreen() {
       </div>
 
       {/* Why Choose Us */}
-      <section style={{ backgroundColor: '#D4AF37' }} className="py-24 mb-20 font-sans">
-        <div className="max-w-7xl mx-auto px-6">
+      <section style={{ backgroundColor: '#D4AF37' }} className="py-14 sm:py-24 mb-12 sm:mb-20 font-sans">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold text-white italic">Why Choose Arambha Programs?</h2>
+            <h2 className="text-2xl sm:text-4xl font-serif font-bold text-white italic">Why Choose Arambha Programs?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {WHY_CHOOSE_US.map((item, i) => (
               <motion.div
                 key={i}
                 whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/5 text-center"
+                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/5 text-center why-card"
               >
                 <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 transform rotate-3" style={{ backgroundColor: '#006CA5' }}>
                   {item.icon}
@@ -296,13 +343,14 @@ export default function ProgramsScreen() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-4">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="brand-gradient-gold rounded-3xl p-12 lg:p-24 text-center relative overflow-hidden shadow-2xl">
+      <section className="py-4 sm:py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="brand-gradient-gold rounded-3xl p-8 sm:p-12 lg:p-24 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_#ffffff,_transparent)]"></div>
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-headline-lg font-serif font-extrabold text-primary mb-8 italic">Start Your Confidence Journey Today</h2>
-              <p className="text-primary/80 max-w-2xl mx-auto mb-12 text-lg font-medium font-sans">
+              {/* cta-heading / cta-body: scale down on mobile (see <style> above) */}
+              <h2 className="text-3xl md:text-headline-lg font-serif font-extrabold text-primary mb-8 italic cta-heading">Start Your Confidence Journey Today</h2>
+              <p className="text-primary/80 max-w-2xl mx-auto mb-12 text-lg font-medium font-sans cta-body">
                 Join structured live training sessions from anywhere in Karnataka. Transform your communication and career with Arambha's proven system.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center font-serif italic">
@@ -364,7 +412,7 @@ function ProgramSection({
   return (
     <section className="mb-20">
       <div className="text-center mb-2">
-        <h2 className="text-4xl lg:text-5xl font-serif font-bold inline-block italic" style={{ color: '#02367B' }}>{title}</h2>
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif font-bold inline-block italic" style={{ color: '#02367B' }}>{title}</h2>
         <div className="mx-auto mt-3 h-1 w-16 rounded-full" style={{ backgroundColor: '#D4AF37' }}></div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
@@ -381,7 +429,8 @@ function ProgramSection({
             className="bg-transparent border-2 rounded-3xl overflow-hidden flex flex-col transition-all hover:-translate-y-2 hover:shadow-xl"
             style={{ borderColor: '#006CA5' }}
           >
-            <div className="h-60 overflow-hidden">
+            {/* program-card-img: h-60 on tablet+, shorter on mobile (see <style> above) */}
+            <div className="h-60 overflow-hidden program-card-img">
               <img src={program.image} alt={program.title} className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
             </div>
             
