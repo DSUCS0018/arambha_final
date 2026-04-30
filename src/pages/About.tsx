@@ -1,29 +1,29 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
-  Building, 
-  Puzzle, 
-  Briefcase, 
-  Cpu, 
-  Globe, 
-  Rocket, 
-  GraduationCap, 
-  Wrench, 
-  Brain, 
-  Code2, 
-  Mic2, 
-  BadgeCheck, 
-  Users, 
-  TrendingUp, 
-  TrendingDown, 
-  Quote, 
-  Compass, 
-  Eye, 
-  UserRound, 
-  Scale, 
-  MousePointer2, 
-  Accessibility, 
-  ArrowRight, 
+import {
+  Building,
+  Puzzle,
+  Briefcase,
+  Cpu,
+  Globe,
+  Rocket,
+  GraduationCap,
+  Wrench,
+  Brain,
+  Code2,
+  Mic2,
+  BadgeCheck,
+  Users,
+  TrendingUp,
+  TrendingDown,
+  Quote,
+  Compass,
+  Eye,
+  UserRound,
+  Scale,
+  MousePointer2,
+  Accessibility,
+  ArrowRight,
   Calendar,
   Mail,
   Phone,
@@ -33,68 +33,106 @@ import {
   Star
 } from 'lucide-react';
 
-import hereBg from "../assets/Hero-bg-about.jpeg";
+import hereBg from "../assets/About page-hero.svg";
 
 // --- Helper Components ---
 
 const Hero = () => (
-  <section 
-    className="relative min-h-[800px] flex items-center justify-center overflow-hidden px-6 bg-no-repeat" 
-    style={{ 
+  <section
+    className="relative min-h-[800px] flex items-center justify-start overflow-hidden px-6 bg-no-repeat"
+    style={{
       backgroundImage: `url(${hereBg})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }}
   >
-    <div className="relative z-10 max-w-5xl px-4 text-right">
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="inline-block px-4 py-1.5 mb-6 rounded-full border border-accent-gold/40 bg-accent-gold/10 text-accent-gold font-semibold tracking-widest text-xs uppercase"
-      >
-        Our Legacy of Innovation & Transformation
-      </motion.div>
-      <motion.h1 
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="text-5xl md:text-display-xl font-serif mb-8 leading-tight tracking-tighter font-extrabold text-primary"
-      >
-        Empowering <span className="text-secondary font-serif italic">Talent.</span> Igniting <span className="text-secondary font-serif italic">Innovation.</span> Shaping Global <span className="text-secondary font-serif italic">Futures.</span>
-      </motion.h1>
-      <motion.p 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="text-xl md:text-2xl max-w-3xl mb-16 leading-relaxed font-medium text-on-surface-variant ml-auto font-sans"
-      >
-        A Decade of Disruption, Growth & Transformational Impact. We are not just an institution; we are the bridge between potential and excellence.
-      </motion.p>
-      <div className="flex flex-wrap gap-10 md:gap-16 justify-end max-w-4xl ml-auto">
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }} className="flex flex-col items-center text-center">
+    <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-left">
+      <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl mt-12 md:mt-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="inline-block px-4 py-1.5 mb-6 rounded-full border border-accent-gold/40 bg-accent-gold/10 text-accent-gold font-semibold tracking-widest text-xs uppercase"
+        >
+          Our Legacy of Innovation & Transformation
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-5xl md:text-6xl xl:text-7xl font-serif mb-8 leading-tight tracking-tighter font-extrabold text-primary"
+        >
+          Empowering <span className="text-secondary font-serif italic">Talent.</span><br />
+          Igniting <span className="text-secondary font-serif italic">Innovation.</span><br />
+          Shaping Global <span className="text-secondary font-serif italic">Futures.</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="text-lg text-text-muted mb-10 max-w-xl font-sans ml-10"
+        >
+
+          A Decade of Disruption, Growth & Transformational  Impact
+          We <br />are not  just an institution; we are the bridge between potential <br /> and excellence.
+
+
+        </motion.p>
+      </div>
+    </div>
+  </section>
+);
+
+const Stats = () => (
+  <section className="py-12 bg-white relative z-20 border-b border-outline-variant/30">
+    <div className="max-w-7xl mx-auto px-6 overflow-x-auto">
+
+      {/* ✅ FORCE SINGLE LINE */}
+      <div className="flex flex-nowrap items-center justify-between min-w-[900px]">
+
+        {/* ITEM */}
+        <motion.div className="flex flex-col items-center text-center px-6">
           <span className="text-4xl md:text-5xl font-black font-serif text-primary">50+</span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Industry Programs</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent-gold font-bold mt-2 whitespace-nowrap">
+            Industry Programs
+          </span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300"></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }} className="flex flex-col items-center text-center">
+
+        <div className="w-px h-16 bg-slate-300"></div>
+
+        <motion.div className="flex flex-col items-center text-center px-6">
           <span className="text-4xl md:text-5xl font-black font-serif text-primary">12K+</span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Alumni Network</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent-gold font-bold mt-2 whitespace-nowrap">
+            Alumni Network
+          </span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300"></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className="flex flex-col items-center text-center">
+
+        <div className="w-px h-16 bg-slate-300"></div>
+
+        <motion.div className="flex flex-col items-center text-center px-6">
           <span className="text-4xl md:text-5xl font-black font-serif text-primary">95%</span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Placement Rate</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent-gold font-bold mt-2 whitespace-nowrap">
+            Placement Rate
+          </span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300 "></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.9 }} className="flex flex-col items-center text-center -translate-x-30">
-          <span className="text-4xl md:text-5xl font-black font-serif text-primary ml-6">500+</span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Strategic Partnerships</span>
+
+        <div className="w-px h-16 bg-slate-300"></div>
+
+        <motion.div className="flex flex-col items-center text-center px-6">
+          <span className="text-4xl md:text-5xl font-black font-serif text-primary">500+</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent-gold font-bold mt-2 whitespace-nowrap">
+            Strategic Partnerships
+          </span>
         </motion.div>
-        <div className="w-px h-16 hidden md:block bg-slate-300 -translate-x-34"></div>
-        <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.0 }} className="flex flex-col items-center text-center -translate-x-40">
+
+        <div className="w-px h-16 bg-slate-300"></div>
+
+        <motion.div className="flex flex-col items-center text-center px-6">
           <span className="text-4xl md:text-5xl font-black font-serif text-primary">100+</span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-accent-gold font-bold">Institutional Collaborations</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-accent-gold font-bold mt-2 whitespace-nowrap">
+            Institutional Collabs
+          </span>
         </motion.div>
+
       </div>
     </div>
   </section>
@@ -102,9 +140,9 @@ const Hero = () => (
 
 function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc, align = "right" }) {
   const isLeft = align === "left";
-  
+
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -113,7 +151,7 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
     >
       {/* TEXT SIDE */}
       <div className={`${isLeft ? "md:order-2" : "md:text-right"}`}>
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -137,7 +175,7 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
           <Icon className="h-5 w-5" />
         </div>
         {/* The Connector Line */}
-        <motion.div 
+        <motion.div
           initial={{ width: 0, opacity: 0 }}
           whileInView={{ width: 40, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
@@ -150,10 +188,10 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
         <div className="p-8 bg-[#e1e8f2] rounded-3xl border border-[#2c4d8a]/10 shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
           {/* Glass glare effect */}
           <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#2c4d8a]/5 rounded-full blur-2xl group-hover:bg-[#2c4d8a]/10 transition-colors duration-700"></div>
-          
+
           <div className="flex flex-col items-center text-center relative z-10">
             <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 border border-[#2c4d8a]/10 group-hover:scale-105 group-hover:bg-[#2c4d8a]/5 transition-all duration-500 shadow-sm">
-               <Icon className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
+              <Icon className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
             </div>
 
             <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-[#2c4d8a]">
@@ -164,7 +202,7 @@ function TimelineItem({ year, title, description, icon: Icon, subTitle, subDesc,
               {subDesc}
             </p>
           </div>
-          
+
           {/* Subtle animated border */}
           <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-[#2c4d8a] to-transparent w-0 group-hover:w-full transition-all duration-700"></div>
         </div>
@@ -183,8 +221,8 @@ const Evolution = () => (
       </div>
       <div className="relative">
         <div className="absolute left-1/2 -translate-x-1/2 h-full w-[2px] bg-gradient-to-b from-accent-gold/50 via-outline-variant to-accent-gold/50 hidden md:block"></div>
-        
-        <TimelineItem 
+
+        <TimelineItem
           year="2015"
           title="Foundation"
           description="Launched with a mission to bridge the gap between education and industry through practical, learner-focused training. Built the foundation for scalable skill development."
@@ -193,7 +231,7 @@ const Evolution = () => (
           subDesc="The start of a journey to bridge the industry-academia gap."
         />
 
-        <TimelineItem 
+        <TimelineItem
           year="2017"
           title="Expansion"
           description="Expanded into holistic development with technical, soft skills, leadership, and internship programs. Reached thousands of learners across institutions."
@@ -203,7 +241,7 @@ const Evolution = () => (
           align="left"
         />
 
-        <TimelineItem 
+        <TimelineItem
           year="2019"
           title="Job Placement Launch"
           description="Empowering Talent, Enabling Opportunities. Launched dedicated placement and recruitment solutions to support career outcomes."
@@ -212,7 +250,7 @@ const Evolution = () => (
           subDesc="Formalizing the bridge between skilled talent and top employers."
         />
 
-        <TimelineItem 
+        <TimelineItem
           year="2021"
           title="IT Services Division"
           description="Driving Digital Transformation Through Innovation. Diversified into custom IT solutions to support businesses alongside workforce development."
@@ -222,7 +260,7 @@ const Evolution = () => (
           align="left"
         />
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -230,7 +268,7 @@ const Evolution = () => (
           className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center mb-24 group"
         >
           <div className="md:text-right">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.3 }}
@@ -248,7 +286,7 @@ const Evolution = () => (
               <Globe className="h-5 w-5" />
             </div>
             {/* The Connector Line */}
-            <motion.div 
+            <motion.div
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: 40, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -259,10 +297,10 @@ const Evolution = () => (
           <div className="relative">
             <div className="p-8 bg-[#e1e8f2] rounded-3xl border border-[#2c4d8a]/10 shadow-sm group-hover:shadow-md group-hover:-translate-y-1 transition-all duration-500 relative overflow-hidden z-10">
               <div className="absolute -top-12 -left-12 w-24 h-24 bg-[#2c4d8a]/5 rounded-full blur-2xl group-hover:bg-[#2c4d8a]/10 transition-colors duration-700"></div>
-              
+
               <div className="flex flex-col items-center text-center relative z-10">
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 border border-[#2c4d8a]/10 group-hover:scale-105 group-hover:bg-[#2c4d8a]/5 transition-all duration-500 shadow-sm">
-                   <Rocket className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
+                  <Rocket className="h-8 w-8 text-[#2c4d8a] group-hover:text-accent-gold transition-colors" />
                 </div>
                 <h4 className="text-xl md:text-2xl font-bold font-serif mb-2 italic text-[#2c4d8a]">Going Global</h4>
                 <p className="text-[#3A5785] text-sm leading-relaxed font-sans max-w-xs">
@@ -274,7 +312,7 @@ const Evolution = () => (
           </div>
         </motion.div>
 
-        <TimelineItem 
+        <TimelineItem
           year="2025 & Beyond"
           title="The Future Ahead"
           description="Architecting the future of work through innovation-led growth. Focusing on AI-driven learning, EdTech product innovation, and global talent ecosystems."
@@ -289,7 +327,7 @@ const Evolution = () => (
 );
 
 const FeatureCard = ({ icon: Icon, title, desc }) => (
-  <motion.div 
+  <motion.div
     whileHover={{ y: -4 }}
     className="p-8 bg-white rounded-xl border border-outline-variant hover-lift text-center"
   >
@@ -308,36 +346,36 @@ const Differentiation = () => (
         </h2>
         <div className="h-1.5 w-20 bg-accent-gold mx-auto rounded-full"></div>
       </div>
-        
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
         {[
-          { 
-            title: "Industry-Relevant Learning", 
+          {
+            title: "Industry-Relevant Learning",
             desc: "Programs aligned with real market needs and cutting-edge technologies.",
             icon: Brain
           },
-          { 
-            title: "Career-Focused Outcomes", 
+          {
+            title: "Career-Focused Outcomes",
             desc: "Training designed specifically to maximize employability and growth.",
             icon: Award
           },
-          { 
-            title: "Expert Mentorship", 
+          {
+            title: "Expert Mentorship",
             desc: "Learn from industry professionals with years of practical experience.",
             icon: GraduationCap
           },
-          { 
-            title: "End-to-End Support", 
+          {
+            title: "End-to-End Support",
             desc: "Complete guidance from the initial learning phase to final placement.",
             icon: Layers
           },
-          { 
-            title: "Global Opportunities", 
+          {
+            title: "Global Opportunities",
             desc: "Preparing local talent for the international workforce and global standards.",
             icon: Globe
           }
         ].map((item, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -352,7 +390,7 @@ const Differentiation = () => (
               {/* Layered Decorative Background */}
               <div className="absolute inset-0 bg-secondary/10 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-500"></div>
               <div className="absolute inset-0 bg-primary/5 rounded-3xl -rotate-3 group-hover:-rotate-6 transition-transform duration-500 border border-primary/10"></div>
-              
+
               {/* Main Icon Container */}
               <div className="relative z-10 w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-md border border-outline-variant group-hover:border-secondary transition-colors duration-500">
                 <item.icon className="h-8 w-8 text-primary group-hover:text-secondary transition-colors duration-500" />
@@ -380,23 +418,23 @@ const Problem = () => (
       </div>
 
       {/* ZERO GAP BENTO GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-outline-variant/60 overflow-hidden shadow-2xl border border-outline-variant relative">
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[1px] bg-outline-variant/60 overflow-hidden shadow-2xl border border-outline-variant relative">
+
         {/* Card 1: Transformation (Spans 2 cols, 2 rows) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 bg-white p-10 md:p-16 relative group overflow-hidden flex flex-col justify-center hover:bg-slate-50 transition-colors duration-500"
+          className="col-span-1 md:col-span-2 xl:col-span-2 xl:row-span-2 bg-white p-10 md:p-16 relative group overflow-hidden flex flex-col justify-center hover:bg-slate-50 transition-colors duration-500"
         >
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-transparent via-transparent to-accent-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-          
+
           <div className="relative z-10">
             <div className="w-20 h-20 bg-surface rounded-3xl flex items-center justify-center mb-10 border border-outline-variant shadow-sm group-hover:scale-110 group-hover:bg-accent-gold/10 transition-all duration-500">
               <Users className="h-10 w-10 text-secondary" />
             </div>
             <h3 className="text-4xl md:text-5xl font-black mb-6 leading-tight font-serif italic text-primary">
-              Transformation<br/>Stories That Inspire
+              Transformation<br />Stories That Inspire
             </h3>
             <p className="text-lg text-on-surface-variant mb-12 font-sans leading-relaxed max-w-md">
               Thousands of students and professionals have transformed their careers through our ecosystem.
@@ -419,7 +457,7 @@ const Problem = () => (
           { icon: Users, title: "Meetings", desc: "Staying silent while others take the professional lead." },
           { icon: TrendingDown, title: "Missed Growth", desc: "Slow growth despite having strong technical skills." }
         ].map((item, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -436,7 +474,7 @@ const Problem = () => (
               <h4 className="font-bold mb-4 text-primary text-2xl font-serif italic transition-colors duration-500">{item.title}</h4>
               <p className="text-base text-on-surface-variant font-sans leading-relaxed transition-colors duration-500">{item.desc}</p>
             </div>
-            
+
             <div className="absolute bottom-0 left-0 w-full h-1.5 bg-accent-gold translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
           </motion.div>
         ))}
@@ -450,16 +488,16 @@ const MissionVision = () => (
   <section className="py-20 bg-surface relative overflow-hidden">
     <div className="max-w-5xl mx-auto px-6 relative z-10">
       <div className="flex flex-col md:flex-row items-stretch justify-center gap-8 relative">
-        
+
         {/* MISSION CARD */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="flex-1 bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-outline-variant relative group hover:-translate-y-2 hover:shadow-xl hover:border-accent-gold/50 transition-all duration-500"
         >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl"></div>
-          
+
           <div className="w-14 h-14 bg-surface rounded-2xl flex items-center justify-center mb-6 border border-outline-variant group-hover:scale-110 group-hover:bg-accent-gold/10 transition-all duration-500">
             <Compass className="w-7 h-7 text-primary group-hover:text-accent-gold transition-colors" />
           </div>
@@ -470,7 +508,7 @@ const MissionVision = () => (
         </motion.div>
 
         {/* VISION CARD */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -547,35 +585,35 @@ const Values = () => {
         </div>
 
         {/* Desktop Orbit Layout */}
-        <div className="hidden lg:flex relative w-full max-w-[1000px] mx-auto h-[700px] items-center justify-center mt-12">
-          
+        <div className="hidden xl:flex relative w-full max-w-[1000px] mx-auto h-[700px] items-center justify-center mt-12">
+
           {/* SVG Connecting Lines & Rings */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <svg className="w-full h-full" viewBox="-500 -350 1000 700" fill="none">
               {/* Outer dashed rotating ring */}
-              <motion.circle 
+              <motion.circle
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 animate={{ rotate: 360 }}
                 transition={{ rotate: { duration: 100, repeat: Infinity, ease: "linear" } }}
-                cx="0" cy="0" r="280" stroke="#D4AF37" strokeWidth="1" strokeDasharray="8 16" opacity="0.4" 
+                cx="0" cy="0" r="280" stroke="#D4AF37" strokeWidth="1" strokeDasharray="8 16" opacity="0.4"
                 style={{ transformOrigin: 'center' }}
               />
-              
+
               {/* Inner solid ring */}
               <circle cx="0" cy="0" r="160" stroke="#E2E8F0" strokeWidth="1" opacity="0.6" />
 
               {/* Connecting Lines */}
               {orbitalNodes.map((node, i) => (
-                <motion.line 
+                <motion.line
                   key={i}
                   initial={{ pathLength: 0, opacity: 0 }}
                   whileInView={{ pathLength: 1, opacity: 0.2 }}
                   transition={{ delay: 0.2 + i * 0.1, duration: 0.8, ease: "easeOut" }}
-                  x1="0" y1="0" x2={node.x} y2={node.y} 
-                  stroke="#D4AF37" 
-                  strokeWidth="2" 
-                  strokeDasharray="6 6" 
+                  x1="0" y1="0" x2={node.x} y2={node.y}
+                  stroke="#D4AF37"
+                  strokeWidth="2"
+                  strokeDasharray="6 6"
                 />
               ))}
             </svg>
@@ -584,13 +622,13 @@ const Values = () => {
           {/* Center Hub */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="absolute inset-0 bg-accent-gold/20 rounded-full blur-3xl animate-pulse"></div>
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               className="w-56 h-56 bg-primary rounded-full flex flex-col items-center justify-center text-center p-6 border-4 border-white shadow-2xl relative"
             >
               <Star className="h-10 w-10 text-secondary mb-3 fill-secondary" />
-              <div className="text-white font-bold font-serif text-2xl leading-tight italic">Our Core<br/>Philosophy</div>
+              <div className="text-white font-bold font-serif text-2xl leading-tight italic">Our Core<br />Philosophy</div>
             </motion.div>
           </div>
 
@@ -613,13 +651,12 @@ const Values = () => {
                 <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-outline-variant shadow-lg group-hover:border-secondary group-hover:shadow-secondary/20 transition-all hover-lift relative z-10 cursor-default">
                   <node.icon className="h-8 w-8 text-primary group-hover:text-secondary transition-colors" />
                 </div>
-                
+
                 {/* Label */}
-                <div className={`absolute pointer-events-none ${
-                  node.align === 'top' ? 'bottom-[110%] left-1/2 -translate-x-1/2 text-center mb-4 w-64' :
+                <div className={`absolute pointer-events-none ${node.align === 'top' ? 'bottom-[110%] left-1/2 -translate-x-1/2 text-center mb-4 w-64' :
                   node.align === 'right' ? 'left-[110%] top-1/2 -translate-y-1/2 ml-6 text-left w-64' :
-                  'right-[110%] top-1/2 -translate-y-1/2 mr-6 text-right w-64'
-                }`}>
+                    'right-[110%] top-1/2 -translate-y-1/2 mr-6 text-right w-64'
+                  }`}>
                   <h4 className="font-bold font-serif text-primary text-xl italic group-hover:text-secondary transition-colors">{node.title}</h4>
                   <p className="text-sm text-on-surface-variant mt-2 font-sans leading-relaxed">{node.desc}</p>
                 </div>
@@ -628,15 +665,15 @@ const Values = () => {
           ))}
         </div>
 
-        {/* Mobile / Tablet Layout */}
-        <div className="lg:hidden flex flex-col gap-8 mt-12 relative z-20">
+        {/* Mobile / Tablet / Laptop Layout */}
+        <div className="xl:hidden flex flex-col gap-8 mt-12 relative z-20">
           <div className="bg-primary text-white rounded-3xl p-8 text-center shadow-xl mb-8 border-l-8 border-secondary">
             <Star className="h-10 w-10 text-secondary mb-4 mx-auto fill-secondary" />
             <h3 className="text-2xl font-bold font-serif italic">Our Core Philosophy</h3>
           </div>
-          
+
           {orbitalNodes.map((node, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -685,10 +722,10 @@ const CTA = () => (
 const Footer = () => (
   <footer className="bg-primary text-white border-t border-white/10 full-width relative overflow-hidden">
     <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-30">
-      <img 
-        alt="ARAMBHA Background Text" 
-        className="w-full h-full object-contain select-none" 
-        src="https://lh3.googleusercontent.com/aida/ADBb0uh5x2tlJe8QlgjqBeZdz9P8z9UnNTRvzS7v39ahKVoNOQ_-jTyurn-WCNHyrXI0PtvaE7Hg2QnMDjdfAsTHwRo2B1c_jIhcPTS6H-_z-YUmxMOuK87RdBzpTRA3liSPzBwJUlX6QuNpo0YwoZkuFIFakPtnQapKEv9VLIp86_OKGwb_nMD09QIDWCa3DpXO8O5j-ul6xKjkzTGehI-WpIg6fpO7zZiBwDSO1xoLfzxuK8PqzzVGy-KcQC4FZVWoQLEROvru5U9k" 
+      <img
+        alt="ARAMBHA Background Text"
+        className="w-full h-full object-contain select-none"
+        src="https://lh3.googleusercontent.com/aida/ADBb0uh5x2tlJe8QlgjqBeZdz9P8z9UnNTRvzS7v39ahKVoNOQ_-jTyurn-WCNHyrXI0PtvaE7Hg2QnMDjdfAsTHwRo2B1c_jIhcPTS6H-_z-YUmxMOuK87RdBzpTRA3liSPzBwJUlX6QuNpo0YwoZkuFIFakPtnQapKEv9VLIp86_OKGwb_nMD09QIDWCa3DpXO8O5j-ul6xKjkzTGehI-WpIg6fpO7zZiBwDSO1xoLfzxuK8PqzzVGy-KcQC4FZVWoQLEROvru5U9k"
       />
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 py-20 relative z-10">
@@ -736,7 +773,8 @@ const Footer = () => (
 export default function App() {
   return (
     <div className="min-h-screen bg-white text-primary font-sans">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap');
 
         :root {
@@ -791,6 +829,7 @@ export default function App() {
       `}} />
       <main>
         <Hero />
+        <Stats />
         <Evolution />
         <Differentiation />
         <Problem />
