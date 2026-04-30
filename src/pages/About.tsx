@@ -47,7 +47,7 @@ const Hero = () => (
     }}
   >
     <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-left">
-      <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl mt-12 md:mt-0">
+      <div className="w-full md:max-w-lg lg:max-w-xl xl:max-w-2xl mt-12 md:mt-0 pr-4 md:pr-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -59,7 +59,7 @@ const Hero = () => (
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-5xl md:text-6xl xl:text-7xl font-serif mb-8 leading-tight tracking-tighter font-extrabold text-primary"
+          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-8 leading-tight tracking-tighter font-extrabold text-primary"
         >
           Empowering <span className="text-secondary font-serif italic">Talent.</span><br />
           Igniting <span className="text-secondary font-serif italic">Innovation.</span><br />
@@ -69,13 +69,9 @@ const Hero = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-lg text-text-muted mb-10 max-w-xl font-sans ml-10"
+          className=" text-base sm:text-lg md:text-xl text-[#02367B] mb-8 md:mb-10 w-full max-w-[90%] md:max-w-md lg:max-w-lg xl:max-w-xl font-sans ml-0 lg:ml-10 leading-relaxed"
         >
-
-          A Decade of Disruption, Growth & Transformational  Impact
-          We <br />are not  just an institution; we are the bridge between potential <br /> and excellence.
-
-
+          A Decade of Disruption, Growth & Transformational Impact. We are not just an institution; we are the bridge between potential and excellence.
         </motion.p>
       </div>
     </div>
