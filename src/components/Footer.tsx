@@ -1,5 +1,6 @@
 import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 import logo from "../assets/ARAMBHA(1).svg";
+
 import arambhaText from "../assets/arambha-text.svg";
 import { Link } from "react-router-dom";
 
