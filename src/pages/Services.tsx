@@ -314,6 +314,7 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
+                  </div>
               </motion.div>
             ))}
           </div>
