@@ -182,50 +182,40 @@ const MORE_JOBS: Job[] = [
 // --- Helper Components ---
 
 const WelcomeHero = () => (
-  <div className="relative w-full overflow-hidden font-sans" style={{ minHeight: '80vh', width: '100%' }}>
-    <div className="absolute inset-0 w-full h-full">
+  <div className="relative w-full bg-white font-sans" style={{ paddingTop: '4rem', paddingBottom: '3rem' }}>
+    {/* Background image - right side on larger screens */}
+    <div className="absolute top-0 right-0 w-full md:w-3/5 lg:w-3/5 h-full">
       <img
         src={heroStudentsImg}
         alt="Arambha Team"
         className="w-full h-full object-cover object-center"
+        style={{ objectFit: 'cover' }}
       />
     </div>
 
-    <div className="relative z-10 flex items-center justify-center w-full" style={{ minHeight: '80vh', padding: '2rem', gap: '2rem' }}>
-      <div className="w-full max-w-7xl">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 font-serif italic" style={{ textShadow: 'none', color: COLORS.primary }}>
-            Build Your Career with <span style={{ color: COLORS.gold }}>Arambha</span>
-          </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-10 leading-relaxed font-medium font-sans" style={{ textShadow: 'none', color: COLORS.primary }}>
-            We go beyond jobs—we create <span className="font-bold" style={{ color: COLORS.gold }}>growth opportunities</span> for <span className="font-bold" style={{ color: COLORS.primary }}>ambitious, result-driven</span> individuals. Join a culture that rewards <span className="font-bold" style={{ color: COLORS.primary }}>dedication</span>, fosters <span className="font-bold" style={{ color: COLORS.primary }}>leadership</span>, and drives <span className="font-bold" style={{ color: COLORS.primary }}>success</span>.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-4 mb-10">
-            <button className="w-full sm:w-auto text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all font-serif italic text-base sm:text-lg" style={{ backgroundColor: COLORS.gold }}>
-              Book a Class <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="w-full sm:w-auto bg-white text-gray-800 px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-serif italic text-base sm:text-lg">
-              <MessageSquare className="w-5 h-5 text-green-500" />
-              WhatsApp Now
-            </button>
-          </div>
-          <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 font-sans flex-nowrap">
-            {[
-              { icon: BookOpen, title: 'Daily Practice', sub: 'Native language tailored' },
-              { icon: Briefcase, title: 'Live Projects', sub: 'Real career opportunities' },
-              { icon: Target, title: 'Outcome-Driven', sub: 'Measurable results' }
-            ].map((feature, i) => (
-              <div key={i} className="flex items-center gap-3 flex-shrink-0">
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: COLORS.gold }}>
-                  <feature.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-left">
-                  <div className="text-sm sm:text-base font-bold font-serif italic" style={{ textShadow: 'none', color: COLORS.primary }}>{feature.title}</div>
-                  <div className="text-xs sm:text-sm font-medium font-sans" style={{ textShadow: 'none', color: COLORS.primary }}>{feature.sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+    {/* Content - left side */}
+    <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full md:w-[55%] lg:w-[50%]">
+        {/* Small label */}
+        <div className="text-xs font-bold uppercase tracking-widest mb-3 font-sans" style={{ color: COLORS.gold }}>
+          Join Our Team
+        </div>
+
+        {/* Main heading */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 font-serif italic" style={{ color: COLORS.primary }}>
+          Build Your Career with <span style={{ color: COLORS.gold }}>Arambha</span>
+        </h1>
+
+        {/* Subheading / Description */}
+        <p className="text-base sm:text-lg mb-8 font-sans leading-relaxed max-w-lg" style={{ color: '#4b5563' }}>
+          We go beyond jobs. We create growth opportunities for ambitious, result-driven individuals who are ready to make an impact.
+        </p>
+
+        {/* CTA Button */}
+        <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+          <button className="text-white px-8 py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all font-serif italic text-sm sm:text-base" style={{ backgroundColor: COLORS.primary }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.secondary} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.primary}>
+            Explore Roles <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </div>
@@ -472,6 +462,500 @@ const GoogleSection = () => (
   </section>
 );
 
+// --- Registration Form Component ---
+
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  whatsapp: string;
+  address: string;
+  skills: string;
+  areaOfInterest: string;
+  course: string;
+  others: string;
+  collegeName: string;
+  yearOfPassing: string;
+  certifications: string;
+  highestEducation: string;
+  workExperienceStatus: string;
+  portfolioUrl: string;
+  linkedinUrl: string;
+  githubUrl: string;
+  referenceName: string;
+  resume: File | null;
+}
+
+const RegistrationForm = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    phone: '',
+    whatsapp: '',
+    address: '',
+    skills: '',
+    areaOfInterest: '',
+    course: '',
+    others: '',
+    collegeName: '',
+    yearOfPassing: '',
+    certifications: '',
+    highestEducation: '',
+    workExperienceStatus: '',
+    portfolioUrl: '',
+    linkedinUrl: '',
+    githubUrl: '',
+    referenceName: '',
+    resume: null,
+  });
+
+  const [resumeFileName, setResumeFileName] = useState('');
+  const dragRef = useRef<HTMLDivElement>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (file: File | null) => {
+    if (file && (file.type === 'application/pdf' || file.type === 'application/msword' || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')) {
+      if (file.size <= 5 * 1024 * 1024) {
+        setFormData(prev => ({ ...prev, resume: file }));
+        setResumeFileName(file.name);
+      } else {
+        alert('File size must be less than 5MB');
+      }
+    } else {
+      alert('Only PDF, DOC, and DOCX files are allowed');
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dragRef.current) {
+      dragRef.current.style.backgroundColor = '#f0f4ff';
+    }
+  };
+
+  const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dragRef.current) {
+      dragRef.current.style.backgroundColor = '#ffffff';
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (dragRef.current) {
+      dragRef.current.style.backgroundColor = '#ffffff';
+    }
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      handleFileChange(files[0]);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    alert('Thank you for your application! We will review it shortly.');
+  };
+
+  return (
+    <section className="py-16 font-sans" style={{ backgroundColor: '#f8f9fb' }}>
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Title Section */}
+        <div className="mb-10">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 font-serif italic" style={{ color: COLORS.primary }}>
+            Registration Form
+          </h2>
+          <p className="text-base text-gray-600 font-sans" style={{ color: '#4b5563' }}>
+            Please fill out all the required information
+          </p>
+        </div>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg border" style={{ borderColor: '#e5e7eb' }}>
+          {/* Section A: Personal Information */}
+          <div className="mb-10">
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Personal Information
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Name <span style={{ color: COLORS.gold }}>*</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="Your full name"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Email <span style={{ color: COLORS.gold }}>*</span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Phone Number <span style={{ color: COLORS.gold }}>*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="+91 XXXXX XXXXX"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  WhatsApp Number <span style={{ color: COLORS.gold }}>*</span>
+                </label>
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  value={formData.whatsapp}
+                  onChange={handleInputChange}
+                  required
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="+91 XXXXX XXXXX"
+                />
+              </div>
+              <div className="flex flex-col md:col-span-2">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Address <span style={{ color: COLORS.gold }}>*</span>
+                </label>
+                <input
+                  type="text"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleInputChange}
+                  required
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="Full address"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Section B: Skills & Interests */}
+          <div className="mb-10 pb-10 border-b" style={{ borderColor: '#e5e7eb' }}>
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Skills & Interests
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col md:col-span-2">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Skills
+                </label>
+                <textarea
+                  name="skills"
+                  value={formData.skills}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="List your key skills, separated by commas or newlines"
+                />
+              </div>
+              <div className="flex flex-col md:col-span-2">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Area of Interest
+                </label>
+                <textarea
+                  name="areaOfInterest"
+                  value={formData.areaOfInterest}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="What areas are you interested in?"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Section C: Education */}
+          <div className="mb-10 pb-10 border-b" style={{ borderColor: '#e5e7eb' }}>
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Education
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Course
+                </label>
+                <select
+                  name="course"
+                  value={formData.course}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                >
+                  <option value="">Select a course</option>
+                  <option value="B.Tech">B.Tech</option>
+                  <option value="B.Sc">B.Sc</option>
+                  <option value="B.Com">B.Com</option>
+                  <option value="B.A">B.A</option>
+                  <option value="MBA">MBA</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Others
+                </label>
+                <input
+                  type="text"
+                  name="others"
+                  value={formData.others}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="If other, please specify"
+                />
+              </div>
+              <div className="flex flex-col md:col-span-2">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  College Name
+                </label>
+                <input
+                  type="text"
+                  name="collegeName"
+                  value={formData.collegeName}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="Your college name"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Year of Passing
+                </label>
+                <input
+                  type="text"
+                  name="yearOfPassing"
+                  value={formData.yearOfPassing}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="YYYY"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Highest Education Qualification
+                </label>
+                <select
+                  name="highestEducation"
+                  value={formData.highestEducation}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                >
+                  <option value="">Select qualification</option>
+                  <option value="10th">10th</option>
+                  <option value="12th">12th</option>
+                  <option value="Graduate">Graduate</option>
+                  <option value="Post Graduate">Post Graduate</option>
+                </select>
+              </div>
+              <div className="flex flex-col md:col-span-2">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Certifications
+                </label>
+                <textarea
+                  name="certifications"
+                  value={formData.certifications}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="List your certifications, if any"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Section D: Work Experience */}
+          <div className="mb-10 pb-10 border-b" style={{ borderColor: '#e5e7eb' }}>
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Work Experience
+            </h3>
+            <div className="flex flex-col">
+              <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                Work Experience Status
+              </label>
+              <select
+                name="workExperienceStatus"
+                value={formData.workExperienceStatus}
+                onChange={handleInputChange}
+                className="px-4 py-2.5 border rounded text-sm font-sans"
+                style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+              >
+                <option value="">Select status</option>
+                <option value="Fresher">Fresher</option>
+                <option value="0-2 Years">0-2 Years</option>
+                <option value="2-4 Years">2-4 Years</option>
+                <option value="4-6 Years">4-6 Years</option>
+                <option value="6+ Years">6+ Years</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Section E: Professional Links */}
+          <div className="mb-10 pb-10 border-b" style={{ borderColor: '#e5e7eb' }}>
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Professional Links
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Portfolio URL
+                </label>
+                <input
+                  type="url"
+                  name="portfolioUrl"
+                  value={formData.portfolioUrl}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="https://your-portfolio.com"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  LinkedIn URL
+                </label>
+                <input
+                  type="url"
+                  name="linkedinUrl"
+                  value={formData.linkedinUrl}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="https://linkedin.com/in/yourprofile"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  GitHub URL
+                </label>
+                <input
+                  type="url"
+                  name="githubUrl"
+                  value={formData.githubUrl}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="https://github.com/yourprofile"
+                />
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm font-bold mb-2 font-sans" style={{ color: COLORS.primary }}>
+                  Reference Name
+                </label>
+                <input
+                  type="text"
+                  name="referenceName"
+                  value={formData.referenceName}
+                  onChange={handleInputChange}
+                  className="px-4 py-2.5 border rounded text-sm font-sans"
+                  style={{ borderColor: '#e5e7eb', color: COLORS.primary }}
+                  placeholder="Name of reference"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Section F: Resume Upload */}
+          <div className="mb-10 pb-10 border-b" style={{ borderColor: '#e5e7eb' }}>
+            <h3 className="text-xl font-bold mb-6 font-serif italic" style={{ color: COLORS.primary }}>
+              Resume Upload
+            </h3>
+            <div
+              ref={dragRef}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              className="p-8 border-2 border-dashed rounded-lg text-center cursor-pointer transition-colors"
+              style={{ borderColor: '#e5e7eb' }}
+            >
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={(e) => handleFileChange(e.target.files?.[0] || null)}
+                className="hidden"
+                id="resume-upload"
+              />
+              <label htmlFor="resume-upload" className="cursor-pointer">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: COLORS.gold + '20' }}>
+                    <span style={{ color: COLORS.gold, fontSize: '20px' }}>📎</span>
+                  </div>
+                  <p className="text-sm font-bold font-sans" style={{ color: COLORS.primary }}>
+                    Drag & drop your resume here
+                  </p>
+                  <p className="text-xs text-gray-400 font-sans">
+                    or click to browse
+                  </p>
+                  <p className="text-xs text-gray-400 font-sans mt-1">
+                    PDF, DOC, DOCX (max 5MB)
+                  </p>
+                </div>
+              </label>
+              {resumeFileName && (
+                <p className="text-sm mt-4 font-sans" style={{ color: COLORS.gold }}>
+                  ✓ {resumeFileName}
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="text-white px-8 py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:shadow-lg transition-all font-serif italic"
+              style={{ backgroundColor: COLORS.primary }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.secondary}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = COLORS.primary}
+            >
+              Submit Registration
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  );
+};
+
 // --- Main App ---
 
 export default function App() {
@@ -571,6 +1055,8 @@ export default function App() {
             <CourseCarousel id="internships" title="Campus Partnerships & Internships" subtitle="Start your career journey with us" courses={MORE_JOBS.filter(j => j.experience.toLowerCase().includes('fresher') || j.experience.toLowerCase().includes('student'))} />
           </>
         )}
+
+        <RegistrationForm />
 
         <GoogleSection />
       </main>
