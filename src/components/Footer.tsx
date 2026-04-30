@@ -1,5 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
-import logo from "../assets/ARAMBHA.svg";
+import logo from "../assets/ARAMBHA(1).svg";
 import arambhaText from "../assets/arambha-text.svg";
 import { Link } from "react-router-dom";
 
@@ -10,10 +10,7 @@ export default function Footer() {
         <div className="col-span-1">
           <div className="flex items-start gap-6 mb-8">
             <img src={logo} style={{ width: "200px", height: "200px" }} alt="Arambha Logo" />
-            <div>
-              <div className="text-lg font-bold text-primary mb-1 font-serif italic tracking-tight">Arambha</div>
-              <div className="text-xs text-accent-gold font-bold tracking-wide font-sans">Skill Solutions</div>
-            </div>
+            
           </div>
           <p className="text-sm text-on-surface-variant mb-6 leading-relaxed font-sans">
             Elevating professional mastery through visionary learning. Bridging the gap between student life and career success with academic excellence.

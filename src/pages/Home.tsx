@@ -114,7 +114,7 @@ export default function Home() {
         className="relative pt-16 sm:pt-24 pb-20 sm:pb-32 overflow-hidden bg-cover bg-center bg-no-repeat font-sans"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center lg:text-left grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center lg:text-left grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -203,7 +203,7 @@ export default function Home() {
       {/* Feature Grid Section */}
       <section className="py-16 sm:py-24 bg-white overflow-hidden font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center gap-8 sm:gap-12 lg:gap-20">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-6 sm:gap-8 lg:gap-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -258,7 +258,7 @@ export default function Home() {
       {/* Trusted By Section */}
       <section className="py-8 sm:py-12 bg-white border-t border-slate-100 overflow-hidden font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-6 items-center">
             <div className="text-left lg:col-span-4 pr-4">
               <p className="text-[10px] sm:text-xs text-on-surface-variant uppercase mb-3 sm:mb-4 tracking-widest font-bold font-sans">Trusted by Alumni At</p>
               <h2 className="font-serif text-2xl sm:text-4xl text-primary leading-tight font-bold italic">
@@ -300,7 +300,7 @@ export default function Home() {
       <section className="py-16 sm:py-32 bg-white overflow-hidden relative border-y border-slate-100 font-sans">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold/5 blur-3xl -mr-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -342,13 +342,13 @@ export default function Home() {
       <RoadmapSection />
 
       {/* Programs Cards */}
-      <section className="py-16 sm:py-32 bg-white font-sans">
+      <section className="py-8 sm:py-16 bg-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-4 sm:gap-6"
+            className="flex flex-col md:flex-row justify-between items-start md:items-end mb-0 sm:mb-0 gap-3 sm:gap-4"
           >
             <div className="max-w-xl">
               <h2 className="font-serif text-2xl sm:text-4xl text-primary mb-3 sm:mb-4 font-bold italic">Our Signature Programs</h2>
@@ -363,7 +363,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
           >
             <ProgramCard
               tag="Popular"
@@ -396,11 +396,11 @@ export default function Home() {
       </section>
 
       {/* Value Prop Section */}
-      <section className="py-16 sm:py-32 bg-white font-sans">
+      <section className="py-2 sm:py-8 bg-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-12 md:p-24 overflow-hidden relative border border-slate-100 shadow-2xl">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-16 overflow-hidden relative border border-slate-100 shadow-2xl">
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-surface rounded-full blur-[100px]"></div>
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center relative z-10">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 items-center relative z-10">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -422,7 +422,7 @@ export default function Home() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
               >
                 <ValueCard icon={ShieldCheck} title="Certifications" text="Validated skills for your resume." />
                 <ValueCard icon={Handshake} title="Hands-on" text="Learn by doing, not just watching." />
@@ -544,7 +544,7 @@ function RoadmapSection() {
         </motion.div>
 
         {/* Steps Grid */}
-        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
 
           {/* Animated SVG Roadmap Path (desktop only) */}
           <div className="hidden md:block absolute inset-x-0 top-0 h-[7rem] z-0 pointer-events-none">
