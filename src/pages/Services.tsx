@@ -276,7 +276,6 @@ export default function Services() {
                 onClick={() => navigate(service.link)}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-slate-100 cursor-pointer text-left flex flex-col"
               >
-<<<<<<< HEAD
                 <div className="h-auto overflow-hidden relative bg-gradient-to-b from-[#f0f4ff] to-[#f8faff]">
                   <img
                     src={service.image}
@@ -294,7 +293,6 @@ export default function Services() {
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Link>
-=======
                 <div className="h-64 overflow-hidden relative">
                   <img
                     src={service.image}
@@ -314,7 +312,6 @@ export default function Services() {
                     <div className="bg-[#F7F9FB] p-1 rounded-full group-hover:bg-accent-gold group-hover:text-white transition-colors">
                       <ChevronRight size={20} />
                     </div>
->>>>>>> 03136cc (version-9)
                   </div>
                 </div>
               </motion.div>
