@@ -185,7 +185,7 @@ export default function Home() {
       </section>
 
       {/* Feature Grid Section */}
-      <section className="py-8 sm:py-12 bg-white overflow-hidden">
+      <section className="py-8 sm:py-12 bg-white overflow-hidden font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 sm:gap-12 lg:gap-20">
             <motion.div
@@ -240,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-4 sm:py-8 bg-white border-t border-slate-100 overflow-hidden">
+      <section className="py-4 sm:py-8 bg-white border-t border-slate-100 overflow-hidden font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 items-center">
             <div className="text-left lg:col-span-4 pr-4">
@@ -281,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Featured Program */}
-      <section className="py-8 sm:py-16 bg-white overflow-hidden relative border-y border-slate-100">
+      <section className="py-8 sm:py-16 bg-white overflow-hidden relative border-y border-slate-100 font-sans">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent-gold/5 blur-3xl -mr-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
@@ -326,7 +326,7 @@ export default function Home() {
       <RoadmapSection />
 
       {/* Programs Cards */}
-      <section className="py-8 sm:py-16 bg-white">
+      <section className="py-8 sm:py-16 bg-white font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
